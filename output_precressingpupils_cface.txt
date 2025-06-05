@@ -1,0 +1,231 @@
+{Index exceeds the number of array elements. Index must not exceed 1.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 35)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',35,0)">line 35</a>)
+            subjectNumber =  splitPath(2);
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',35,1)">35  </a>            subjectNumber =  splitPath(2);
+edfFilePath
+
+edfFilePath =
+
+    '/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF'
+
+splitPath
+
+splitPath =
+
+  1×1 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'003'}
+
+cFacePupilData
+Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
+{Unrecognized function or variable 'Edf2Mat'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
+            edf = Edf2Mat(edfFilePath);
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,1)">39  </a>            edf = Edf2Mat(edfFilePath);
+splitPath = split(splitPath{end},'_')
+
+splitPath =
+
+  1×1 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'003'}
+
+Edf2Mat
+{Unrecognized function or variable 'Edf2Mat'.
+} 
+addpath(genpath('/Users/sarah/Projects/Toolboxes/edf-converter-master'));
+savepath
+cFacePupilData
+{Index exceeds the number of array elements. Index must not exceed 1.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 35)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',35,0)">line 35</a>)
+            subjectNumber =  splitPath(2);
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',35,1)">35  </a>            subjectNumber =  splitPath(2);
+cFacePupilData
+Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
+{Unrecognized function or variable 'Edf2Mat'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
+            edf = Edf2Mat(edfFilePath);
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,1)">39  </a>            edf = Edf2Mat(edfFilePath);
+if system_dependent('IsDebugMode')==1, dbquit; end
+addpath(genpath('/Users/sarah/Projects/Toolboxes/edf-converter-master/@Edf2Mat'));
+savepath
+cFacePupilData
+Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
+{Unrecognized function or variable 'Edf2Mat'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
+            edf = Edf2Mat(edfFilePath);
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,1)">39  </a>            edf = Edf2Mat(edfFilePath);
+addpath(genpath('/Library/Frameworks/edfapi.framework/'));
+Edf2Mat
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 267)" style="font-weight:bold">Edf2Mat</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',267,0)">line 267</a>)
+                  || isfolder(filename) ...
+} 
+<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',267,1)">267 </a>                  || isfolder(filename) ...
+cFacePupilData
+Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
+{Invalid MEX-file '/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64':
+dlopen(/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64, 0x0006): tried:
+'/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64' (code signature in <50C77972-A2B9-3523-BF55-02F7079DD029>
+'/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64' not valid for use in process: library load disallowed by system policy),
+'/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64' (no such file),
+'/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64' (code signature in <50C77972-A2B9-3523-BF55-02F7079DD029>
+'/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64' not valid for use in process: library load disallowed by system policy)
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat>@(varargin)edfimporter(varargin{:})', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 357)" style="font-weight:bold">Edf2Mat>@(varargin)edfimporter(varargin{:})</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,0)">line 357</a>)
+            importer = @(varargin)edfimporter(varargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat/processFile', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 366)" style="font-weight:bold">Edf2Mat/processFile</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',366,0)">line 366</a>)
+                obj.RawEdf      = importer(obj.filename);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 315)" style="font-weight:bold">Edf2Mat</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',315,0)">line 315</a>)
+                obj.processFile();
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
+            edf = Edf2Mat(edfFilePath);
+} 
+<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,1)">357 </a>            importer = @(varargin)edfimporter(varargin{:});
+cFacePupilData
+{Attempt to add "options" to a static workspace.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 4)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',4,0)">line 4</a>)
+options.study.acronym = 'PCNS';
+
+<a href="matlab:helpview('matlab','error_err_static_workspace_violation')" style="font-weight:bold">Related documentation</a>
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',4,1)">4   </a>options.study.acronym = 'PCNS';
+cFacePupilData
+{<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',4,10)">File: cFacePupilData.m Line: 4 Column: 10</a>
+Incorrect use of '=' operator. Assign a value to a variable using '=' and compare values for equality using '=='.
+} 
+options.study.acronym = 'PCNS';
+cFacePupilData
+Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
+{Invalid MEX-file '/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64':
+dlopen(/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64, 0x0006): Library not loaded:
+/Library/Frameworks/edfapi.framework/Versions/A/edfapi
+  Referenced from: <50C77972-A2B9-3523-BF55-02F7079DD029> /Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64
+  Reason: tried: '/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (no such file),
+  '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (no such file),
+  '/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (no such file)
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat>@(varargin)edfimporter(varargin{:})', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 357)" style="font-weight:bold">Edf2Mat>@(varargin)edfimporter(varargin{:})</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,0)">line 357</a>)
+            importer = @(varargin)edfimporter(varargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat/processFile', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 366)" style="font-weight:bold">Edf2Mat/processFile</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',366,0)">line 366</a>)
+                obj.RawEdf      = importer(obj.filename);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 315)" style="font-weight:bold">Edf2Mat</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',315,0)">line 315</a>)
+                obj.processFile();
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
+            edf = Edf2Mat(edfFilePath);
+} 
+<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,1)">357 </a>            importer = @(varargin)edfimporter(varargin{:});
+if system_dependent('IsDebugMode')==1, dbquit; end
+Edf2Mat
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 267)" style="font-weight:bold">Edf2Mat</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',267,0)">line 267</a>)
+                  || isfolder(filename) ...
+} 
+<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',267,1)">267 </a>                  || isfolder(filename) ...
+if system_dependent('IsDebugMode')==1, dbquit; end
+cFacePupilData
+Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
+{Unrecognized function or variable 'Edf2Mat'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
+            edf = Edf2Mat(edfFilePath);
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,1)">39  </a>            edf = Edf2Mat(edfFilePath);
+Edf2Mat
+{Unrecognized function or variable 'Edf2Mat'.
+} 
+addpath(genpath('/Library/Frameworks/edfapi.framework/'));
+Edf2Mat
+{Unrecognized function or variable 'Edf2Mat'.
+} 
+if system_dependent('IsDebugMode')==1, dbquit; end
+addpath(genpath('/Library/Frameworks/edfapi.framework/'));
+Edf2Mat
+{Unrecognized function or variable 'Edf2Mat'.
+} 
+/Library/Frameworks/edfapi.framework
+ /Library/Frameworks/edfapi.framework
+ ↑
+{Invalid use of operator.
+} 
+dir(/Library/Frameworks/edfapi.framework/)
+ dir(/Library/Frameworks/edfapi.framework/)
+     ↑
+{Invalid use of operator.
+} 
+cFacePupilData
+Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
+{Unrecognized function or variable 'Edf2Mat'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
+            edf = Edf2Mat(edfFilePath);
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,1)">39  </a>            edf = Edf2Mat(edfFilePath);
+if system_dependent('IsDebugMode')==1, dbquit; end
+addpath(genpath('/Library/Frameworks/edfapi.framework/'));
+cFacePupilData
+Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
+{Invalid MEX-file '/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64':
+dlopen(/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64, 0x0006): Library not loaded:
+/Library/Frameworks/edfapi.framework/Versions/A/edfapi
+  Referenced from: <50C77972-A2B9-3523-BF55-02F7079DD029> /Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64
+  Reason: tried: '/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (fat file, but missing compatible architecture (have 'i386,x86_64,unknown,unknown', need
+  'arm64')), '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (no such file),
+  '/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (fat file, but missing compatible architecture (have 'i386,x86_64,unknown,unknown', need 'arm64'))
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat>@(varargin)edfimporter(varargin{:})', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 357)" style="font-weight:bold">Edf2Mat>@(varargin)edfimporter(varargin{:})</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,0)">line 357</a>)
+            importer = @(varargin)edfimporter(varargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat/processFile', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 366)" style="font-weight:bold">Edf2Mat/processFile</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',366,0)">line 366</a>)
+                obj.RawEdf      = importer(obj.filename);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 315)" style="font-weight:bold">Edf2Mat</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',315,0)">line 315</a>)
+                obj.processFile();
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
+            edf = Edf2Mat(edfFilePath);
+} 
+<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,1)">357 </a>            importer = @(varargin)edfimporter(varargin{:});
+if system_dependent('IsDebugMode')==1, dbquit; end
+cFacePupilData
+Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
+{Invalid MEX-file '/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64':
+dlopen(/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64, 0x0006): Library not loaded:
+/Library/Frameworks/edfapi.framework/Versions/A/edfapi
+  Referenced from: <50C77972-A2B9-3523-BF55-02F7079DD029> /Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64
+  Reason: tried: '/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (fat file, but missing compatible architecture (have 'i386,x86_64,unknown,unknown', need
+  'arm64')), '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (no such file),
+  '/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (fat file, but missing compatible architecture (have 'i386,x86_64,unknown,unknown', need 'arm64'))
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat>@(varargin)edfimporter(varargin{:})', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 357)" style="font-weight:bold">Edf2Mat>@(varargin)edfimporter(varargin{:})</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,0)">line 357</a>)
+            importer = @(varargin)edfimporter(varargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat/processFile', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 366)" style="font-weight:bold">Edf2Mat/processFile</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',366,0)">line 366</a>)
+                obj.RawEdf      = importer(obj.filename);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 315)" style="font-weight:bold">Edf2Mat</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',315,0)">line 315</a>)
+                obj.processFile();
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
+            edf = Edf2Mat(edfFilePath);
+} 
+<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,1)">357 </a>            importer = @(varargin)edfimporter(varargin{:});
