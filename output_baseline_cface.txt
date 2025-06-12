@@ -1,0 +1,355 @@
+
+% Loop over Participant folders
+    % Find participant folder name and path
+    
+    folderName = participantFolders.name;
+    folderPath = fullfile(options.paths.data, folderName);
+folderName
+
+folderName =
+
+    '.'
+
+participantFolders
+
+participantFolders = 
+
+  5×1 <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> array with fields:
+
+    name
+    folder
+    date
+    bytes
+    isdir
+    datenum
+
+participantFolders.nae
+{Unrecognized field name "nae".
+} 
+participantFolders.name
+
+ans =
+
+    '.'
+
+
+ans =
+
+    '..'
+
+
+ans =
+
+    '.DS_Store'
+
+
+ans =
+
+    '003'
+
+
+ans =
+
+    '004'
+
+folderName = participantFolders.name;
+folderName
+
+folderName =
+
+    '.'
+
+participantFolders.name
+
+ans =
+
+    '.'
+
+
+ans =
+
+    '..'
+
+
+ans =
+
+    '.DS_Store'
+
+
+ans =
+
+    '003'
+
+
+ans =
+
+    '004'
+
+folderName = [participantFolders.name];
+folderName
+
+folderName =
+
+    '....DS_Store003004'
+
+folderName = {participantFolders.name};
+folderName
+
+folderName =
+
+  1×5 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'.'}    {'..'}    {'.DS_Store'}    {'003'}    {'004'}
+
+cFaceBaseline(3)
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',21,1)">21  </a>disp(matchingFolders);
+matchingFolders
+
+matchingFolders =
+
+  1×1 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'003'}
+
+dir(matchingFolders)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dir')" style="font-weight:bold">dir</a>
+Name must be a text scalar.
+} 
+if system_dependent('IsDebugMode')==1, dbquit; end
+cFaceBaseline
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceBaseline', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m', 6)" style="font-weight:bold">cFaceBaseline</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',6,0)">line 6</a>)
+IDstring = sprintf('%03d', participantID);
+} 
+if system_dependent('IsDebugMode')==1, dbquit; end
+cFaceBaseline(3)
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',22,1)">22  </a>folderPath = fullfile(options.paths.data, folderName);
+folderPath
+{Unrecognized function or variable 'folderPath'.
+} 
+if system_dependent('IsDebugMode')==1, dbquit; end
+help fullfile
+ <strong>fullfile</strong> Build full file name from parts.
+    F = fullfile(FOLDERNAME1, FOLDERNAME2, ..., FILENAME) builds a full
+    file specification F from the folders and file name specified. Input
+    arguments FOLDERNAME1, FOLDERNAME2, etc. and FILENAME can be strings,
+    character vectors, or cell arrays of character vectors. Non-scalar
+    strings and cell arrays of character vectors must all be the same size.
+ 
+    If any input is a string array, F is a string array. Otherwise, if any
+    input is a cell array, F is a cell array.  Otherwise, F is a character
+    array.
+ 
+    The output of <strong>fullfile</strong> is conceptually equivalent to character vector
+    horzcat operation:
+ 
+       F = [FOLDERNAME1 filesep FOLDERNAME2 filesep ... filesep FILENAME]
+ 
+    except that care is taken to handle the cases when the folders begin or
+    end with a file separator.
+ 
+    <strong>fullfile</strong> collapses inner repeated file separators unless they appear at 
+    the beginning of the full file specification. <strong>fullfile</strong> also collapses 
+    relative folders indicated by the dot symbol, unless they appear at 
+    the end of the full file specification. Relative folders indicated 
+    by the double-dot symbol are not collapsed.
+ 
+    To split a full file name into folder parts, use split(f, filesep).
+ 
+    Examples
+      % To build platform dependent paths to files:
+         fullfile(matlabroot,'toolbox','matlab','general','Contents.m')
+ 
+      % To build platform dependent paths to a folder:
+         fullfile(matlabroot,'toolbox','matlab',filesep)
+ 
+      % To build a collection of platform dependent paths to files:
+         fullfile(toolboxdir('matlab'),'iofun',{'filesep.m';'fullfile.m'})
+ 
+    See also <a href="matlab:help filesep -displayBanner">filesep</a>, <a href="matlab:help pathsep -displayBanner">pathsep</a>, <a href="matlab:help fileparts -displayBanner">fileparts</a>, <a href="matlab:help genpath -displayBanner">genpath</a>, <a href="matlab:help path -displayBanner">path</a>, <a href="matlab:help split -displayBanner">split</a>.
+
+    <a href="matlab:doc fullfile">Documentation for fullfile</a>
+
+options.paths.data
+
+ans =
+
+    '/Users/yamaan/Projects/PCNS/Data/TestData/'
+
+matchingFolders
+{Unrecognized function or variable 'matchingFolders'.
+} 
+folderPath = fullfile(options.paths.data, matchingFolder);
+{Unrecognized function or variable 'matchingFolder'.
+} 
+cFaceBaseline(3)
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',22,1)">22  </a>folderPath = fullfile(options.paths.data, matchingFolder);
+cFaceBaseline(3)
+    {'003'}
+
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',23,1)">23  </a>folderPath = fullfile(options.paths.data, matchingFolder);
+cFaceBaseline(3)
+    {'003'}
+
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',23,1)">23  </a>folderPath = fullfile(options.paths.data, matchingFolder{1});
+folderPath
+{Unrecognized function or variable 'folderPath'.
+} 
+cFaceBaseline(3)
+    {'003'}
+
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',24,1)">24  </a>disp(folderPath)
+cFaceBaseline(3)
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',32,1)">32  </a>disp(folderPath)
+cFaceBaseline(3)
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+003
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',33,1)">33  </a>disp(folderPath)
+class(matchingFolder{1})
+
+ans =
+
+    'char'
+
+matchingFolder
+
+matchingFolder =
+
+  1×1 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'003'}
+
+fullfile(options.paths.data, matchingFolder{1})
+
+ans =
+
+    '/Users/yamaan/Projects/PCNS/Data/TestData/003'
+
+cFaceBaseline(3)
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+003
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',33,1)">33  </a>disp(folderPath)
+if system_dependent('IsDebugMode')==1, dbquit; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+cFaceBaseline(3)
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+003
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',33,1)">33  </a>disp(folderPath)
+if system_dependent('IsDebugMode')==1, dbquit; end
+cFaceBaseline(3)
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+003
+/Users/yamaan/Projects/PCNS/Data/TestData/003
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+003
+/Users/yamaan/Projects/PCNS/Data/TestData/003
+{Unrecognized property 'SelectedVariableName' for class 'matlab.io.text.DelimitedTextImportOptions'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceBaseline', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m', 51)" style="font-weight:bold">cFaceBaseline</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',51,0)">line 51</a>)
+    opts.SelectedVariableName = 'instruct_onset';
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',51,1)">51  </a>    opts.SelectedVariableName = 'instruct_onset';
+cFaceBaseline(3)
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+003
+/Users/yamaan/Projects/PCNS/Data/TestData/003
+{Unrecognized function or variable 'segmentsTable'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceBaseline', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m', 54)" style="font-weight:bold">cFaceBaseline</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',54,0)">line 54</a>)
+    baselineTiming.trialNo = (1:height(segmentsTable))';
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',54,1)">54  </a>    baselineTiming.trialNo = (1:height(segmentsTable))';
+cFaceBaseline(3)
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+003
+/Users/yamaan/Projects/PCNS/Data/TestData/003
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('tabular/parenReference')" style="font-weight:bold"> () </a>
+Subscripting into a table using one subscript (as in t(i)) is not supported. Specify a row subscript and a variable subscript, as in t(rows,vars). To select variables,
+use t(:,i) or for one variable t.(i). To select rows, use t(i,:).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceBaseline', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m', 55)" style="font-weight:bold">cFaceBaseline</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',55,0)">line 55</a>)
+    baselineTimingEnd = baselineTiming(baselineTiming(1), :)
+} 
+<a href="matlab: opentoline('/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/tabular/@tabular/parenReference.m',132,1)">132 </a>    throw(ME);
+if system_dependent('IsDebugMode')==1, dbquit all; end
+cFaceBaseline(3)
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+003
+/Users/yamaan/Projects/PCNS/Data/TestData/003
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('tabular/dotReference')" style="font-weight:bold"> . </a>
+Unrecognized table variable name 'cong'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceBaseline', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m', 55)" style="font-weight:bold">cFaceBaseline</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',55,0)">line 55</a>)
+            segmentsTableIncongruent = segmentsTable(segmentsTable.cong == 0, :)
+} 
+<a href="matlab: opentoline('/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/tabular/@tabular/dotReference.m',229,1)">229 </a>    throw(ME);
+cFaceBaseline(3)
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+003
+/Users/yamaan/Projects/PCNS/Data/TestData/003
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('tabular/parenReference')" style="font-weight:bold"> () </a>
+Subscripting into a table using one subscript (as in t(i)) is not supported. Specify a row subscript and a variable subscript, as in t(rows,vars). To select variables,
+use t(:,i) or for one variable t.(i). To select rows, use t(i,:).
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceBaseline', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m', 55)" style="font-weight:bold">cFaceBaseline</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',55,0)">line 55</a>)
+            segmentsTableIncongruent = segmentsTable(1)
+} 
+<a href="matlab: opentoline('/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/tabular/@tabular/parenReference.m',132,1)">132 </a>    throw(ME);
+cFaceBaseline(3)
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+003
+/Users/yamaan/Projects/PCNS/Data/TestData/003
+    {'003'}
+
+/Users/yamaan/Projects/PCNS/Data/TestData/
+003
+/Users/yamaan/Projects/PCNS/Data/TestData/003
+Using folder: 003
+Using folder: 003
+Using folder: 003
+[Warning: No PPG data before baseline timing for participant 003.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceBaseline', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m', 70)" style="font-weight:bold">cFaceBaseline</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceBaseline.m',70,0)">line 70</a>)] 
+Baseline timing for 003: 0.000 seconds
+Mean PPG before baseline: NaN
+Using folder: 003
+Baseline timing for 003: 17.225 seconds
+Mean PPG before baseline: 399.123
+Using folder: 003
+Baseline timing for 003: 17.225 seconds
+Mean PPG before baseline: 399.123
+Using folder: 003
+Baseline timing for 003: 17.225 seconds
+Mean PPG before baseline: 399.123
+Using folder: 003
+Baseline timing for 003: 17.225 seconds
+Mean PPG before baseline: 399.123
+Using folder: 003
+Baseline timing for 003: 17.225 seconds
+Mean PPG before baseline: 399.123
+Using folder: 003
+Baseline timing for 003: 17.225 seconds
+Mean PPG before baseline: 399.123

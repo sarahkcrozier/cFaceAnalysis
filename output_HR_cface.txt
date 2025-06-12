@@ -1,0 +1,88 @@
+Using folder: 028
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR')" style="font-weight:bold">cFaceHR</a>
+No matching file found for participant 028 in folder /Users/yamaan/Projects/PCNS/Data/TestData/028
+} 
+cFaceHR(31)
+Using folder: 031
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR')" style="font-weight:bold">cFaceHR</a>
+No matching file found for participant 031 in folder /Users/yamaan/Projects/PCNS/Data/TestData/031
+} 
+cFaceHR(3)
+Using folder: 003
+Baseline timing for 003: 17.225 seconds
+Mean PPG before baseline: 399.123
+    {'.DS_Store'}    {'003'}    {'004'}    {'024'}    {'026'}    {'028'}    {'031'}
+
+Using folder: 031
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR')" style="font-weight:bold">cFaceHR</a>
+No matching file found for participant 031 in folder /Users/yamaan/Projects/PCNS/Data/TestData/031
+} 
+cFaceHR(31)
+    {'.DS_Store'}    {'003'}    {'004'}    {'024'}    {'026'}    {'028'}    {'031'}
+
+   0   0   0   0   0   0   1
+
+Using folder: 031
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR')" style="font-weight:bold">cFaceHR</a>
+No matching file found for participant 031 in folder /Users/yamaan/Projects/PCNS/Data/TestData/031
+} 
+cFaceHR(31)
+    {'.DS_Store'}    {'003'}    {'004'}    {'024'}    {'026'}    {'028'}    {'031'}
+
+   0   0   0   0   0   0   1
+
+   1
+
+Using folder: 031
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR')" style="font-weight:bold">cFaceHR</a>
+No matching file found for participant 031 in folder /Users/yamaan/Projects/PCNS/Data/TestData/031
+} 
+cFaceHR(31)
+    {'.DS_Store'}    {'003'}    {'004'}    {'024'}    {'026'}    {'028'}    {'031'}
+
+   0   0   0   0   0   0   1
+
+   1
+
+Using folder: 031
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR')" style="font-weight:bold">cFaceHR</a>
+No matching file found for participant 031 in folder /Users/yamaan/Projects/PCNS/Data/TestData/031
+} 
+folderNames = {'abc', 'def', '003', 'ghi'};
+IDstring = '003';
+matchIdx = contains(folderNames, IDstring);
+disp(matchIdx)
+   0   0   1   0
+
+
+if ~any(matchIdx)
+    error('No matching folder found for participant ID %s', IDstring);
+else
+    disp('Match found!');
+end
+Match found!
+cFaceHR(31)
+    {'.DS_Store'}    {'003'}    {'004'}    {'024'}    {'026'}    {'028'}    {'031'}
+
+Using folder: 031
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR')" style="font-weight:bold">cFaceHR</a>
+No matching file found for participant 031 in folder /Users/yamaan/Projects/PCNS/Data/TestData/031
+} 
+cFaceHR(31)
+Using folder: 031
+/Users/yamaan/Projects/PCNS/Data/TestData/031/beh/cface*MHE*/*out.csv
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR')" style="font-weight:bold">cFaceHR</a>
+No matching file found for participant 031 in folder /Users/yamaan/Projects/PCNS/Data/TestData/031
+} 
+cFaceHR(31)
+Using folder: 031
+Baseline timing for 031: 19.583 seconds
+Mean PPG before baseline: 429.842
+Using folder: 031
+[Warning: No PPG data before baseline timing for participant 031.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m', 73)" style="font-weight:bold">cFaceHR</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',73,0)">line 73</a>)] 
+Baseline timing for 031: 0.000 seconds
+Mean PPG before baseline: NaN
+Using folder: 024
+Baseline timing for 024: 19.587 seconds
+Mean PPG before baseline: 431.324

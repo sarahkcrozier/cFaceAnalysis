@@ -6,7 +6,7 @@ options.study.tasks = {'cFace','FF1','HBD'};
 
 options.paths.workingDir = pwd;
 options.paths.analysis   = ['/Users/yamaan/Projects/',options.study.acronym,filesep,options.study.tasks{1},'Analysis',filesep];
-options.paths.data       = [options.paths.analysis,'TestData',filesep]; %temp local data path for testing
+options.paths.data       = ['/Users/yamaan/Projects/',options.study.acronym,filesep,'Data/TestData',filesep]; %temp local data path for testing
 
 %% get files
 participantFolders = dir(options.paths.data);
@@ -35,7 +35,7 @@ for i = 1:length(participantFolders)
             subjectNumber =  splitPath(1); % note modified from splitpath(2) to splitpath(1)
             %% extract EDF into .mat  with Edf2Mat
     
-            disp(strcat('Coverting: ',edfFilePath))
+            disp(strcat('Converting: ',edfFilePath))
             edf = Edf2Mat(edfFilePath);
     
             % check if pupil diameter was used

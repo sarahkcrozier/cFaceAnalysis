@@ -1,216 +1,195 @@
-{Index exceeds the number of array elements. Index must not exceed 1.
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are saved in the
+VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 35)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',35,0)">line 35</a>)
-            subjectNumber =  splitPath(2);
-} 
-<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',35,1)">35  </a>            subjectNumber =  splitPath(2);
-edfFilePath
+segmentsTableIncongruent =
 
-edfFilePath =
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
 
-    '/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF'
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
 
-splitPath
+          3              19.758            21.275         0      {'HA'}       2   
+          3              29.758            31.275         0      {'AN'}       3   
+          3              34.158            35.675         0      {'HA'}       4   
+          3              40.558            42.075         0      {'HA'}       5   
+          3              46.158            47.675         0      {'AN'}       6   
 
-splitPath =
+          :                :                 :            :        :          :   
 
-  1×1 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+          3              429.35            430.87         0      {'HA'}      65   
+          3              445.75            447.27         0      {'HA'}      68   
+          3              474.15            475.67         0      {'AN'}      72   
+          3              490.15            491.67         0      {'AN'}      75   
+          3              497.35            498.87         0      {'AN'}      76   
 
-    {'003'}
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
 
-cFacePupilData
-Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
-{Unrecognized function or variable 'Edf2Mat'.
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
-            edf = Edf2Mat(edfFilePath);
-} 
-<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,1)">39  </a>            edf = Edf2Mat(edfFilePath);
-splitPath = split(splitPath{end},'_')
+segmentsTableIncongruent =
 
-splitPath =
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
 
-  1×1 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
 
-    {'003'}
+          3              19.758            21.275         0      {'HA'}       2   
+          3              29.758            31.275         0      {'AN'}       3   
+          3              34.158            35.675         0      {'HA'}       4   
+          3              40.558            42.075         0      {'HA'}       5   
+          3              46.158            47.675         0      {'AN'}       6   
 
-Edf2Mat
-{Unrecognized function or variable 'Edf2Mat'.
-} 
-addpath(genpath('/Users/sarah/Projects/Toolboxes/edf-converter-master'));
-savepath
-cFacePupilData
-{Index exceeds the number of array elements. Index must not exceed 1.
+          :                :                 :            :        :          :   
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 35)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',35,0)">line 35</a>)
-            subjectNumber =  splitPath(2);
-} 
-<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',35,1)">35  </a>            subjectNumber =  splitPath(2);
-cFacePupilData
-Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
-{Unrecognized function or variable 'Edf2Mat'.
+          3              429.35            430.87         0      {'HA'}      65   
+          3              445.75            447.27         0      {'HA'}      68   
+          3              474.15            475.67         0      {'AN'}      72   
+          3              490.15            491.67         0      {'AN'}      75   
+          3              497.35            498.87         0      {'AN'}      76   
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
-            edf = Edf2Mat(edfFilePath);
-} 
-<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,1)">39  </a>            edf = Edf2Mat(edfFilePath);
-if system_dependent('IsDebugMode')==1, dbquit; end
-addpath(genpath('/Users/sarah/Projects/Toolboxes/edf-converter-master/@Edf2Mat'));
-savepath
-cFacePupilData
-Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
-{Unrecognized function or variable 'Edf2Mat'.
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
-            edf = Edf2Mat(edfFilePath);
-} 
-<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,1)">39  </a>            edf = Edf2Mat(edfFilePath);
-addpath(genpath('/Library/Frameworks/edfapi.framework/'));
-Edf2Mat
-{Not enough input arguments.
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 267)" style="font-weight:bold">Edf2Mat</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',267,0)">line 267</a>)
-                  || isfolder(filename) ...
-} 
-<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',267,1)">267 </a>                  || isfolder(filename) ...
-cFacePupilData
-Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+          3              19.758            21.275         0      {'HA'}       2   
+          3              29.758            31.275         0      {'AN'}       3   
+          3              34.158            35.675         0      {'HA'}       4   
+          3              40.558            42.075         0      {'HA'}       5   
+          3              46.158            47.675         0      {'AN'}       6   
+
+          :                :                 :            :        :          :   
+
+          3              429.35            430.87         0      {'HA'}      65   
+          3              445.75            447.27         0      {'HA'}      68   
+          3              474.15            475.67         0      {'AN'}      72   
+          3              490.15            491.67         0      {'AN'}      75   
+          3              497.35            498.87         0      {'AN'}      76   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+          3              19.758            21.275         0      {'HA'}       2   
+          3              29.758            31.275         0      {'AN'}       3   
+          3              34.158            35.675         0      {'HA'}       4   
+          3              40.558            42.075         0      {'HA'}       5   
+          3              46.158            47.675         0      {'AN'}       6   
+
+          :                :                 :            :        :          :   
+
+          3              429.35            430.87         0      {'HA'}      65   
+          3              445.75            447.27         0      {'HA'}      68   
+          3              474.15            475.67         0      {'AN'}      72   
+          3              490.15            491.67         0      {'AN'}      75   
+          3              497.35            498.87         0      {'AN'}      76   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+          3              19.758            21.275         0      {'HA'}       2   
+          3              29.758            31.275         0      {'AN'}       3   
+          3              34.158            35.675         0      {'HA'}       4   
+          3              40.558            42.075         0      {'HA'}       5   
+          3              46.158            47.675         0      {'AN'}       6   
+
+          :                :                 :            :        :          :   
+
+          3              429.35            430.87         0      {'HA'}      65   
+          3              445.75            447.27         0      {'HA'}      68   
+          3              474.15            475.67         0      {'AN'}      72   
+          3              490.15            491.67         0      {'AN'}      75   
+          3              497.35            498.87         0      {'AN'}      76   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+          3              19.758            21.275         0      {'HA'}       2   
+          3              29.758            31.275         0      {'AN'}       3   
+          3              34.158            35.675         0      {'HA'}       4   
+          3              40.558            42.075         0      {'HA'}       5   
+          3              46.158            47.675         0      {'AN'}       6   
+
+          :                :                 :            :        :          :   
+
+          3              429.35            430.87         0      {'HA'}      65   
+          3              445.75            447.27         0      {'HA'}      68   
+          3              474.15            475.67         0      {'AN'}      72   
+          3              490.15            491.67         0      {'AN'}      75   
+          3              497.35            498.87         0      {'AN'}      76   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+          3              19.758            21.275         0      {'HA'}       2   
+          3              29.758            31.275         0      {'AN'}       3   
+          3              34.158            35.675         0      {'HA'}       4   
+          3              40.558            42.075         0      {'HA'}       5   
+          3              46.158            47.675         0      {'AN'}       6   
+
+          :                :                 :            :        :          :   
+
+          3              429.35            430.87         0      {'HA'}      65   
+          3              445.75            447.27         0      {'HA'}      68   
+          3              474.15            475.67         0      {'AN'}      72   
+          3              490.15            491.67         0      {'AN'}      75   
+          3              497.35            498.87         0      {'AN'}      76   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+Coverting:/Users/yamaan/Projects/PCNS/Data/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
 {Invalid MEX-file '/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64':
-dlopen(/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64, 0x0006): tried:
-'/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64' (code signature in <50C77972-A2B9-3523-BF55-02F7079DD029>
-'/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64' not valid for use in process: library load disallowed by system policy),
-'/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64' (no such file),
-'/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64' (code signature in <50C77972-A2B9-3523-BF55-02F7079DD029>
-'/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64' not valid for use in process: library load disallowed by system policy)
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat>@(varargin)edfimporter(varargin{:})', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 357)" style="font-weight:bold">Edf2Mat>@(varargin)edfimporter(varargin{:})</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,0)">line 357</a>)
-            importer = @(varargin)edfimporter(varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat/processFile', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 366)" style="font-weight:bold">Edf2Mat/processFile</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',366,0)">line 366</a>)
-                obj.RawEdf      = importer(obj.filename);
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 315)" style="font-weight:bold">Edf2Mat</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',315,0)">line 315</a>)
-                obj.processFile();
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
-            edf = Edf2Mat(edfFilePath);
-} 
-<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,1)">357 </a>            importer = @(varargin)edfimporter(varargin{:});
-cFacePupilData
-{Attempt to add "options" to a static workspace.
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 4)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',4,0)">line 4</a>)
-options.study.acronym = 'PCNS';
-
-<a href="matlab:helpview('matlab','error_err_static_workspace_violation')" style="font-weight:bold">Related documentation</a>
-} 
-<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',4,1)">4   </a>options.study.acronym = 'PCNS';
-cFacePupilData
-{<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',4,10)">File: cFacePupilData.m Line: 4 Column: 10</a>
-Incorrect use of '=' operator. Assign a value to a variable using '=' and compare values for equality using '=='.
-} 
-options.study.acronym = 'PCNS';
-cFacePupilData
-Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
-{Invalid MEX-file '/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64':
-dlopen(/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64, 0x0006): Library not loaded:
-/Library/Frameworks/edfapi.framework/Versions/A/edfapi
-  Referenced from: <50C77972-A2B9-3523-BF55-02F7079DD029> /Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64
-  Reason: tried: '/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (no such file),
-  '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (no such file),
-  '/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (no such file)
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat>@(varargin)edfimporter(varargin{:})', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 357)" style="font-weight:bold">Edf2Mat>@(varargin)edfimporter(varargin{:})</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,0)">line 357</a>)
-            importer = @(varargin)edfimporter(varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat/processFile', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 366)" style="font-weight:bold">Edf2Mat/processFile</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',366,0)">line 366</a>)
-                obj.RawEdf      = importer(obj.filename);
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 315)" style="font-weight:bold">Edf2Mat</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',315,0)">line 315</a>)
-                obj.processFile();
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
-            edf = Edf2Mat(edfFilePath);
-} 
-<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,1)">357 </a>            importer = @(varargin)edfimporter(varargin{:});
-if system_dependent('IsDebugMode')==1, dbquit; end
-Edf2Mat
-{Not enough input arguments.
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 267)" style="font-weight:bold">Edf2Mat</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',267,0)">line 267</a>)
-                  || isfolder(filename) ...
-} 
-<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',267,1)">267 </a>                  || isfolder(filename) ...
-if system_dependent('IsDebugMode')==1, dbquit; end
-cFacePupilData
-Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
-{Unrecognized function or variable 'Edf2Mat'.
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
-            edf = Edf2Mat(edfFilePath);
-} 
-<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,1)">39  </a>            edf = Edf2Mat(edfFilePath);
-Edf2Mat
-{Unrecognized function or variable 'Edf2Mat'.
-} 
-addpath(genpath('/Library/Frameworks/edfapi.framework/'));
-Edf2Mat
-{Unrecognized function or variable 'Edf2Mat'.
-} 
-if system_dependent('IsDebugMode')==1, dbquit; end
-addpath(genpath('/Library/Frameworks/edfapi.framework/'));
-Edf2Mat
-{Unrecognized function or variable 'Edf2Mat'.
-} 
-/Library/Frameworks/edfapi.framework
- /Library/Frameworks/edfapi.framework
- ↑
-{Invalid use of operator.
-} 
-dir(/Library/Frameworks/edfapi.framework/)
- dir(/Library/Frameworks/edfapi.framework/)
-     ↑
-{Invalid use of operator.
-} 
-cFacePupilData
-Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
-{Unrecognized function or variable 'Edf2Mat'.
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
-            edf = Edf2Mat(edfFilePath);
-} 
-<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,1)">39  </a>            edf = Edf2Mat(edfFilePath);
-if system_dependent('IsDebugMode')==1, dbquit; end
-addpath(genpath('/Library/Frameworks/edfapi.framework/'));
-cFacePupilData
-Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
-{Invalid MEX-file '/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64':
-dlopen(/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64, 0x0006): Library not loaded:
-/Library/Frameworks/edfapi.framework/Versions/A/edfapi
-  Referenced from: <50C77972-A2B9-3523-BF55-02F7079DD029> /Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64
-  Reason: tried: '/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (fat file, but missing compatible architecture (have 'i386,x86_64,unknown,unknown', need
-  'arm64')), '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (no such file),
-  '/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (fat file, but missing compatible architecture (have 'i386,x86_64,unknown,unknown', need 'arm64'))
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat>@(varargin)edfimporter(varargin{:})', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 357)" style="font-weight:bold">Edf2Mat>@(varargin)edfimporter(varargin{:})</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,0)">line 357</a>)
-            importer = @(varargin)edfimporter(varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat/processFile', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 366)" style="font-weight:bold">Edf2Mat/processFile</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',366,0)">line 366</a>)
-                obj.RawEdf      = importer(obj.filename);
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Edf2Mat', '/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m', 315)" style="font-weight:bold">Edf2Mat</a> (<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',315,0)">line 315</a>)
-                obj.processFile();
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFacePupilData', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m', 39)" style="font-weight:bold">cFacePupilData</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFacePupilData.m',39,0)">line 39</a>)
-            edf = Edf2Mat(edfFilePath);
-} 
-<a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,1)">357 </a>            importer = @(varargin)edfimporter(varargin{:});
-if system_dependent('IsDebugMode')==1, dbquit; end
-cFacePupilData
-Coverting:/Users/yamaan/Projects/PCNS/cFaceAnalysis/TestData/003/beh/cface1_003_Ta_MHEbR_IndHA_2022_Feb_17_1202/003.EDF
-{Invalid MEX-file '/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64':
-dlopen(/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64, 0x0006): Library not loaded:
-/Library/Frameworks/edfapi.framework/Versions/A/edfapi
+dlopen(/Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64, 0x0006): Library not loaded: /Library/Frameworks/edfapi.framework/Versions/A/edfapi
   Referenced from: <50C77972-A2B9-3523-BF55-02F7079DD029> /Library/Frameworks/edfapi.framework/@Edf2Mat/private/edfimporter.mexmaca64
   Reason: tried: '/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (fat file, but missing compatible architecture (have 'i386,x86_64,unknown,unknown', need
   'arm64')), '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/edfapi.framework/Versions/A/edfapi' (no such file),
@@ -229,3 +208,409 @@ Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback
             edf = Edf2Mat(edfFilePath);
 } 
 <a href="matlab: opentoline('/Library/Frameworks/edfapi.framework/@Edf2Mat/Edf2Mat.m',357,1)">357 </a>            importer = @(varargin)edfimporter(varargin{:});
+if system_dependent('IsDebugMode')==1, dbquit; end
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+          3              19.758            21.275         0      {'HA'}       2   
+          3              29.758            31.275         0      {'AN'}       3   
+          3              34.158            35.675         0      {'HA'}       4   
+          3              40.558            42.075         0      {'HA'}       5   
+          3              46.158            47.675         0      {'AN'}       6   
+
+          :                :                 :            :        :          :   
+
+          3              429.35            430.87         0      {'HA'}      65   
+          3              445.75            447.27         0      {'HA'}      68   
+          3              474.15            475.67         0      {'AN'}      72   
+          3              490.15            491.67         0      {'AN'}      75   
+          3              497.35            498.87         0      {'AN'}      76   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+         24              16.869             18.57         0      {'HA'}       1   
+         24              28.768            30.487         0      {'AN'}       3   
+         24              39.068            40.786         0      {'HA'}       5   
+         24              44.218            45.936         0      {'AN'}       6   
+         24              49.368            51.087         0      {'HA'}       7   
+
+          :                :                 :            :        :          :   
+
+         24              420.76            422.48         0      {'HA'}      67   
+         24              434.66            436.38         0      {'AN'}      69   
+         24              451.31            453.03         0      {'AN'}      72   
+         24              493.81            495.53         0      {'AN'}      78   
+         24              515.31            517.03         0      {'HA'}      80   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+         26               18.07            18.578         0      {'HA'}       1   
+         26               28.76            30.478         0      {'AN'}       3   
+         26               39.06            40.777         0      {'HA'}       5   
+         26               44.21            45.927         0      {'AN'}       6   
+         26               49.36            51.077         0      {'HA'}       7   
+
+          :                :                 :            :        :          :   
+
+         26              420.75            422.47         0      {'HA'}      67   
+         26              434.65            436.37         0      {'AN'}      69   
+         26               451.3            453.02         0      {'AN'}      72   
+         26               493.8            495.52         0      {'AN'}      78   
+         26               515.3            517.02         0      {'HA'}      80   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+          3              19.758            21.275         0      {'HA'}       2   
+          3              29.758            31.275         0      {'AN'}       3   
+          3              34.158            35.675         0      {'HA'}       4   
+          3              40.558            42.075         0      {'HA'}       5   
+          3              46.158            47.675         0      {'AN'}       6   
+
+          :                :                 :            :        :          :   
+
+          3              429.35            430.87         0      {'HA'}      65   
+          3              445.75            447.27         0      {'HA'}      68   
+          3              474.15            475.67         0      {'AN'}      72   
+          3              490.15            491.67         0      {'AN'}      75   
+          3              497.35            498.87         0      {'AN'}      76   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+         24              16.869             18.57         0      {'HA'}       1   
+         24              28.768            30.487         0      {'AN'}       3   
+         24              39.068            40.786         0      {'HA'}       5   
+         24              44.218            45.936         0      {'AN'}       6   
+         24              49.368            51.087         0      {'HA'}       7   
+
+          :                :                 :            :        :          :   
+
+         24              420.76            422.48         0      {'HA'}      67   
+         24              434.66            436.38         0      {'AN'}      69   
+         24              451.31            453.03         0      {'AN'}      72   
+         24              493.81            495.53         0      {'AN'}      78   
+         24              515.31            517.03         0      {'HA'}      80   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+         26               18.07            18.578         0      {'HA'}       1   
+         26               28.76            30.478         0      {'AN'}       3   
+         26               39.06            40.777         0      {'HA'}       5   
+         26               44.21            45.927         0      {'AN'}       6   
+         26               49.36            51.077         0      {'HA'}       7   
+
+          :                :                 :            :        :          :   
+
+         26              420.75            422.47         0      {'HA'}      67   
+         26              434.65            436.37         0      {'AN'}      69   
+         26               451.3            453.02         0      {'AN'}      72   
+         26               493.8            495.52         0      {'AN'}      78   
+         26               515.3            517.02         0      {'HA'}      80   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+         31              16.865            18.582         0      {'HA'}       1   
+         31              28.765            30.483         0      {'AN'}       3   
+         31              39.065            40.783         0      {'HA'}       5   
+         31              44.215            45.932         0      {'AN'}       6   
+         31              49.365            51.082         0      {'HA'}       7   
+
+          :                :                 :            :        :          :   
+
+         31              420.76            422.48         0      {'HA'}      67   
+         31              434.66            436.38         0      {'AN'}      69   
+         31              451.31            453.03         0      {'AN'}      72   
+         31              493.81            495.53         0      {'AN'}      78   
+         31              515.31            517.02         0      {'HA'}      80   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+          3              19.758            21.275         0      {'HA'}       2   
+          3              29.758            31.275         0      {'AN'}       3   
+          3              34.158            35.675         0      {'HA'}       4   
+          3              40.558            42.075         0      {'HA'}       5   
+          3              46.158            47.675         0      {'AN'}       6   
+
+          :                :                 :            :        :          :   
+
+          3              429.35            430.87         0      {'HA'}      65   
+          3              445.75            447.27         0      {'HA'}      68   
+          3              474.15            475.67         0      {'AN'}      72   
+          3              490.15            491.67         0      {'AN'}      75   
+          3              497.35            498.87         0      {'AN'}      76   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+         24              16.869             18.57         0      {'HA'}       1   
+         24              28.768            30.487         0      {'AN'}       3   
+         24              39.068            40.786         0      {'HA'}       5   
+         24              44.218            45.936         0      {'AN'}       6   
+         24              49.368            51.087         0      {'HA'}       7   
+
+          :                :                 :            :        :          :   
+
+         24              420.76            422.48         0      {'HA'}      67   
+         24              434.66            436.38         0      {'AN'}      69   
+         24              451.31            453.03         0      {'AN'}      72   
+         24              493.81            495.53         0      {'AN'}      78   
+         24              515.31            517.03         0      {'HA'}      80   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+         26               18.07            18.578         0      {'HA'}       1   
+         26               28.76            30.478         0      {'AN'}       3   
+         26               39.06            40.777         0      {'HA'}       5   
+         26               44.21            45.927         0      {'AN'}       6   
+         26               49.36            51.077         0      {'HA'}       7   
+
+          :                :                 :            :        :          :   
+
+         26              420.75            422.47         0      {'HA'}      67   
+         26              434.65            436.37         0      {'AN'}      69   
+         26               451.3            453.02         0      {'AN'}      72   
+         26               493.8            495.52         0      {'AN'}      78   
+         26               515.3            517.02         0      {'HA'}      80   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+         31              16.865            18.582         0      {'HA'}       1   
+         31              28.765            30.483         0      {'AN'}       3   
+         31              39.065            40.783         0      {'HA'}       5   
+         31              44.215            45.932         0      {'AN'}       6   
+         31              49.365            51.082         0      {'HA'}       7   
+
+          :                :                 :            :        :          :   
+
+         31              420.76            422.48         0      {'HA'}      67   
+         31              434.66            436.38         0      {'AN'}      69   
+         31              451.31            453.03         0      {'AN'}      72   
+         31              493.81            495.53         0      {'AN'}      78   
+         31              515.31            517.02         0      {'HA'}      80   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+          3              19.758            21.275         0      {'HA'}       2   
+          3              29.758            31.275         0      {'AN'}       3   
+          3              34.158            35.675         0      {'HA'}       4   
+          3              40.558            42.075         0      {'HA'}       5   
+          3              46.158            47.675         0      {'AN'}       6   
+
+          :                :                 :            :        :          :   
+
+          3              429.35            430.87         0      {'HA'}      65   
+          3              445.75            447.27         0      {'HA'}      68   
+          3              474.15            475.67         0      {'AN'}      72   
+          3              490.15            491.67         0      {'AN'}      75   
+          3              497.35            498.87         0      {'AN'}      76   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+         24              16.869             18.57         0      {'HA'}       1   
+         24              28.768            30.487         0      {'AN'}       3   
+         24              39.068            40.786         0      {'HA'}       5   
+         24              44.218            45.936         0      {'AN'}       6   
+         24              49.368            51.087         0      {'HA'}       7   
+
+          :                :                 :            :        :          :   
+
+         24              420.76            422.48         0      {'HA'}      67   
+         24              434.66            436.38         0      {'AN'}      69   
+         24              451.31            453.03         0      {'AN'}      72   
+         24              493.81            495.53         0      {'AN'}      78   
+         24              515.31            517.03         0      {'HA'}      80   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+         26               18.07            18.578         0      {'HA'}       1   
+         26               28.76            30.478         0      {'AN'}       3   
+         26               39.06            40.777         0      {'HA'}       5   
+         26               44.21            45.927         0      {'AN'}       6   
+         26               49.36            51.077         0      {'HA'}       7   
+
+          :                :                 :            :        :          :   
+
+         26              420.75            422.47         0      {'HA'}      67   
+         26              434.65            436.37         0      {'AN'}      69   
+         26               451.3            453.02         0      {'AN'}      72   
+         26               493.8            495.52         0      {'AN'}      78   
+         26               515.3            517.02         0      {'HA'}      80   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The original column headers are
+saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+
+segmentsTableIncongruent =
+
+  40×6 <a href="matlab:helpPopup table" style="font-weight:bold">table</a>
+
+    <strong>ParticipantID</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>cong</strong>    <strong>ptemot</strong>    <strong>trialNo</strong>
+    <strong>_____________</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>____</strong>    <strong>______</strong>    <strong>_______</strong>
+
+         31              16.865            18.582         0      {'HA'}       1   
+         31              28.765            30.483         0      {'AN'}       3   
+         31              39.065            40.783         0      {'HA'}       5   
+         31              44.215            45.932         0      {'AN'}       6   
+         31              49.365            51.082         0      {'HA'}       7   
+
+          :                :                 :            :        :          :   
+
+         31              420.76            422.48         0      {'HA'}      67   
+         31              434.66            436.38         0      {'AN'}      69   
+         31              451.31            453.03         0      {'AN'}      72   
+         31              493.81            495.53         0      {'AN'}      78   
+         31              515.31            517.02         0      {'HA'}      80   
+
+	<a href="matlab:if exist('segmentsTableIncongruent','var') && istabular(segmentsTableIncongruent),displayWholeObj(segmentsTableIncongruent,'segmentsTableIncongruent'),else,fprintf('Unable to display table variable ''segmentsTableIncongruent'' because it no longer exists.\n');end">Display all 40 rows.</a>
+
