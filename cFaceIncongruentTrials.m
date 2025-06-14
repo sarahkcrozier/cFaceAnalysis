@@ -4,12 +4,7 @@ function segmentsTableIncongruent = cFaceIncongruentTrials(participantID)
 %% see segmentsTableIncongruent
 %% needs to be merged with cFacePupilData.m
 
-options.study.acronym = 'PCNS';
-options.study.tasks = {'cFace','FF1','HBD'};
-
-options.paths.workingDir = pwd;
-options.paths.analysis   = ['/Users/yamaan/Projects/',options.study.acronym,filesep,options.study.tasks{1},'Analysis',filesep];
-options.paths.data       = ['/Users/yamaan/Projects/',options.study.acronym,filesep,'Data/TestData',filesep]; %temp local data path for testing
+options = specifyOptions;
 
 %% get files
 participantFolders = dir(options.paths.data);
@@ -29,6 +24,7 @@ for i = 1:length(participantFolders)
     else
         f = fullfile(folderPath, 'beh','cface*MHE*','*out.csv');
         summaryFile = dir(f);
+           disp(summaryFile)
         if isempty(summaryFile)
             continue
         else
@@ -36,7 +32,7 @@ for i = 1:length(participantFolders)
             splitPath = split(folderPath,'/');
             splitPath = split(splitPath{end},'_');
             subjectNumber =  splitPath(1); % note modified from splitpath(2) to splitpath(1)
-    
+         
             
             %% get info about trial segments
            
@@ -45,12 +41,21 @@ for i = 1:length(participantFolders)
             % Specify the variable names to import - timestamps,
             % congruentTrials (incongruent==0), participantEmotion
             opts.SelectedVariableNames = {'ParticipantID', 'stimMove_onset', 'fixation_onset', ... 
-                'cong', 'ptemot'};
+                'cong', 'ptemot', 'trigger_onset'};
             % Read the table
             segmentsTable = readtable(strcat(summaryFile.folder,'/',summaryFile.name), opts);
             segmentsTable.trialNo = (1:height(segmentsTable))';
+
+            % Initialise 'time to next trigger' column with NaNs
+            segmentsTable.timeToNextTrigger = NaN(height(segmentsTable),1);
+            
+            % Calculate time difference between stimMove_onset of trial i and trigger_onset of trial i+1
+            for i = 1:height(segmentsTable)-1
+                segmentsTable.timeToNextTrigger(i) = ...
+                    segmentsTable.trigger_onset(i+1) - segmentsTable.stimMove_onset(i);
+            end
+
             segmentsTableIncongruent = segmentsTable(segmentsTable.cong == 0, :)
-       
 
 %{    
            

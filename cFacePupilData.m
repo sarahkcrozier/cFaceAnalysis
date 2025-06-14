@@ -36,7 +36,7 @@ for i = 1:length(participantFolders)
             %% extract EDF into .mat  with Edf2Mat
     
             disp(strcat('Converting: ',edfFilePath))
-            edf = Edf2Mat(edfFilePath);
+            edf = edfread(edfFilePath);
     
             % check if pupil diameter was used
             if edf.PUPIL.DIAMETER == 1 

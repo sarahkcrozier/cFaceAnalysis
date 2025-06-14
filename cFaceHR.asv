@@ -83,15 +83,12 @@ else
         ppgWindow = ppgData;
         ppgWindow(~validRows,:) = [];
         % get peaks , i.e. maximum value within 60 points on x-axis
-        [peaks,locations,~,~] = findpeaks(ppgWindow,'MinPeakDistance',56);
+        [peaks,locations,~,~] = findpeaks(ppgWindow,'MinPeakDistance',60);
         
-        fig = figure;  % create a new figure window
-        findpeaks(ppgWindow, 'MinPeakDistance', 56);  % plot with peaks
-        % Define the filename and path
-        filename = sprintf('ppgBaselinePeaksPlot_%s.fig', IDstring);
-        savePath = fullfile(options.paths.plots, filename);
-        saveas(fig, savePath);
-        close all;
+        fig = figure;
+        
+        findpeaks(ppgWindow,'MinPeakDistance',60)
+        options.paths.plots
 
         peakCount = numel(peaks);
         HR.baseline = (peakCount/baselineTiming)*60;
@@ -113,7 +110,6 @@ segmentsTableIncongruent = cFaceIncongruentTrials(participantID);
 % Calculate mean PPG in windows after each incongruent trial onset
 onsets = segmentsTableIncongruent.stimMove_onset;
 windows = segmentsTableIncongruent.timeToNextTrigger;
-trialNo = segmentsTableIncongruent.trialNo;
 minWindow = 4;
 % allIncongruentHR = NaN(height(segmentsTableIncongruent), 1); % not sure
 % what this was needed for
@@ -125,24 +121,8 @@ for i = 1:length(onsets)
     timeWindowIdx = (ppgTable.time > onsetTime) & (ppgTable.time <= onsetTime + window);
     if any(timeWindowIdx)
         %ppgMeans(i) = mean(ppgData(timeWindowIdx), 'omitnan');
-        [peaks,locations,~,~] = findpeaks(ppgData(timeWindowIdx),'MinPeakDistance',56);
-        
-        %% save plot of each response window
-       % fig = figure;  % create a new figure window
-       % findpeaks(ppgData(timeWindowIdx),'MinPeakDistance',56);  % plot with peaks
-       % % Define the filename and path
-       % filename = sprintf('ppgIncongruentPeaksPlot_%s__%d.fig', IDstring, trialNo(i));
-       % savePath = fullfile(options.paths.plots, filename);
-       % saveas(fig, savePath);
-       % close all;
-
+        [peaks,locations,~,~] = findpeaks(ppgData(timeWindowIdx),'MinPeakDistance',60);
         ppgMeans(i) = (numel(peaks)/window)*60;
-        
-        %% print the HRs for each incongruent window
-        % rate = (numel(peaks)/window)*60;
-        % outputStr = sprintf('Trial %d: Rate = %.2f', trialNo(i), rate);
-        % disp(outputStr);
-
     else
         warning('No PPG data found for ', window, 'second window after incongruent trial %d (onset = %.3f)', i, onsetTime);
     end
@@ -157,7 +137,7 @@ end
 % Report result
 fprintf('Baseline timing for %s: %.3f seconds\n', IDstring, baselineTiming);
 fprintf('Mean PPG before baseline: %.3f\n', HR.baseline);
-fprintf('Mean PPG in post-incongruent windows: %.3f\n', HR.incongruentAverage);
+fprintf('Mean PPG in 5s post-incongruent windows: %.3f\n', HR.incongruentAverage);
 
 diary off
 
