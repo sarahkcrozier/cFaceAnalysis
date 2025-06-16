@@ -50,13 +50,21 @@ summaryFilePath = fullfile(summaryFile.folder, summaryFile.name);
 
 % Read instruct_onset from CSV
 opts = detectImportOptions(summaryFilePath);
-opts.SelectedVariableNames = 'instruct_onset';
+opts.SelectedVariableNames = {'instruct_onset', 'instruct_duration', 'postinstruct_onset'};
 segmentsTable = readtable(summaryFilePath, opts);
 
-baselineTiming = segmentsTable.instruct_onset(1);  % return first onset NOTE THIS IS RETURNING 0 for 003. Check are the same
-baselineTiming = max(baselineTiming, 10); % if the baselineTiming is 0, then use 10secs as baseline timing
+if segmentsTable.instruct_onset(1) == 0 %some initial onset timings are incorrectly set to 0
+    if segmentsTable.postinstruct_onset(1) == 0
+        baselineTiming = 10
+    else
+        baselineTiming = (segmentsTable.postinstruct_onset(1) - segmentsTable.instruct_duration(1))
+    end
+else
+    baselineTiming = segmentsTable.instruct_onset(1);  % return first onset 
+end
 
-%% ---- STEP 2: Locate PPG file, smooth ----
+
+%% ---- STEP 2: Locate PPG file, smooth, extract baseline ----
 
 
 ppgFilePattern = fullfile(folderPath, 'beh', 'cface*MH*', '*ppg.csv');
@@ -74,21 +82,26 @@ else
 
     % smooth data using Savitzy-Golay Filter
     ppgData = smoothdata(ppgTable.PPG,'sgolay');
+
+%% ---- Extract baseline ----
     
     % Find all rows where time <= baselineTiming
-    validRows = ppgTable.time <= baselineTiming;
+    baselineRows = ppgTable.time <= baselineTiming;
     
-    if any(validRows)
+    if any(baselineRows)
         % extract only the ppg from the given window
         ppgWindow = ppgData;
-        ppgWindow(~validRows,:) = [];
+        ppgWindow(~baselineRows,:) = [];
         % get peaks , i.e. maximum value within 60 points on x-axis
-        [peaks,locations,~,~] = findpeaks(ppgWindow,'MinPeakDistance',60);
+        [peaks,locations,~,~] = findpeaks(ppgWindow,'MinPeakDistance',56);
         
-        fig = figure;
-        
-        findpeaks(ppgWindow,'MinPeakDistance',60)
-        options.paths.plots
+        fig = figure;  % create a new figure window
+        findpeaks(ppgWindow, 'MinPeakDistance', 56);  % plot with peaks
+        % Define the filename and path
+        filename = sprintf('ppgBaselinePeaksPlot_%s.fig', IDstring);
+        savePath = fullfile(options.paths.plots, filename);
+        saveas(fig, savePath);
+        close all;
 
         peakCount = numel(peaks);
         HR.baseline = (peakCount/baselineTiming)*60;
@@ -107,37 +120,107 @@ else
 %% ---- STEP 3: Compute mean PPG for the window following stimMove_onset on all incongruent trials ----
 segmentsTableIncongruent = cFaceIncongruentTrials(participantID);
 
-% Calculate mean PPG in windows after each incongruent trial onset
+if length(ppgTable.time) ~= length(ppgData)
+    error('Mismatch: time and PPG data must have the same length');
+end
+
+% create a matrix with ppg.Time and smoothed ppgData
+ppgMatrix = [ppgTable.time, ppgData];
+
+% remove duplicate time values, if any
+[~, uniqueIdx] = unique(ppgMatrix(:,1), 'stable');
+ppgMatrix = ppgMatrix(uniqueIdx, :);
+
+%find peaks
+[peaks,locations,~,~] = findpeaks(ppgMatrix(:,2),'MinPeakDistance',56);
+
+% and check the inf and 0 calcs - note that from 12-14.5 secs in ID 22 ppgData there is a
+% flat line, data error. However, it does not appear in findpeaks
+% plot(ppgMatrix(:,1), ppgMatrix(:,2))
+
+% Time column of the peaks (in seconds)
+peakTimes = ppgMatrix(locations, 1);
+IBIs = diff(peakTimes);
+IBIs = [NaN; IBIs];  % Add NaN at the start to align with peakTimes
+
+% Calculate instantaneous HR (in bpm)
+HR_inst = 60 ./ IBIs;                 % HR = 60 / IBI (beats per minute)
+
+% rolling average. note that as this is a centred mean, HR for peaks under
+% 2.5 seconds are NaN
+HR_rolling = movmean(HR_inst, 5, 'SamplePoints', peakTimes);  
+
+%Interpolate HR onto full time base (to plot later)
+HR_interp = interp1(peakTimes, HR_rolling, ppgTable.time, 'linear', NaN);
+
+HRTable = table(peakTimes, IBIs, HR_inst, HR_rolling, ...
+    'VariableNames', {'PeakTime', 'IBI_sec', 'HR_bpm', 'HR_rolling'});
+
+%% Now get average over incongruent windows
+% Calculate mean HR in windows after each incongruent trial onset
+
+% Extract onset times and durations from the segment table
 onsets = segmentsTableIncongruent.stimMove_onset;
 windows = segmentsTableIncongruent.timeToNextTrigger;
-minWindow = 4;
-% allIncongruentHR = NaN(height(segmentsTableIncongruent), 1); % not sure
-% what this was needed for
+trialNo = segmentsTableIncongruent.trialNo;
 
-for i = 1:length(onsets)
-    onsetTime = onsets(i);
-    %if window is < 4secs, then use 4 secs
-    window = max(windows(i), minWindow);
-    timeWindowIdx = (ppgTable.time > onsetTime) & (ppgTable.time <= onsetTime + window);
-    if any(timeWindowIdx)
-        %ppgMeans(i) = mean(ppgData(timeWindowIdx), 'omitnan');
-        [peaks,locations,~,~] = findpeaks(ppgData(timeWindowIdx),'MinPeakDistance',60);
-        ppgMeans(i) = (numel(peaks)/window)*60;
+% % Set minimum window length
+% Don't need this as I'm using a rolling HR window
+% minWindow = 4;
+
+% Preallocate results
+numTrials = height(segmentsTableIncongruent);
+meanHRs = NaN(numTrials, 1);
+
+% Loop through trials
+for i = 1:numTrials
+    onset = onsets(i);
+    window = windows(i);  
+    
+    startTime = onset;
+    endTime = onset + window;
+
+     % Get rolling HR values in this time window
+    inWindow = HRTable.PeakTime >= startTime & HRTable.PeakTime <= endTime;
+
+    if any(inWindow)
+        meanHRs(i) = mean(HRTable.HR_rolling(inWindow), 'omitnan');
     else
-        warning('No PPG data found for ', window, 'second window after incongruent trial %d (onset = %.3f)', i, onsetTime);
+        warning('No HR data found in window for Trial %d (%.2f–%.2f s)', ...
+            trialNo(i), startTime, endTime);
     end
-end
-
-% Final result: mean PPG across all incongruent windows
-HR.incongruentAverage = mean(ppgMeans, 'omitnan');
-
 
 end
+
+ %% plot task block HR, with incongruent trial windows marked
+    fig = figure;
+    plot(ppgTable.time, HR_interp, 'b');
+    xlabel('Time (s)');
+    ylabel('Rolling HR (bpm)');
+    title('5-Second Rolling HR Aligned to Full PPG Timeline');
+    hold on;
+    for i = 1:length(onsets)
+        x = [onsets(i), onsets(i) + windows(i)];
+        y = ylim;  % use current y-axis limits
+        fill([x(1), x(2), x(2), x(1)], [y(1), y(1), y(2), y(2)], ...
+             'r', 'FaceAlpha', 0.1, 'EdgeColor', 'none');
+    end
+    % Define the filename and path
+    filename = sprintf('cFacePlot_%s.fig', IDstring);
+    savePath = fullfile(options.paths.plots, filename);
+    
+    saveas(fig, savePath);  
+    close(fig);             
+
+% % Final result: mean rolling HR across all incongruent windows
+overallMeanRollingHR = mean(meanHRs, 'omitnan');
+
+HR.incongruentAverage = overallMeanRollingHR;
 
 % Report result
 fprintf('Baseline timing for %s: %.3f seconds\n', IDstring, baselineTiming);
-fprintf('Mean PPG before baseline: %.3f\n', HR.baseline);
-fprintf('Mean PPG in 5s post-incongruent windows: %.3f\n', HR.incongruentAverage);
+fprintf('Mean HR baseline: %.3f\n', HR.baseline);
+fprintf('Mean HR in post-incongruent windows: %.3f\n', HR.incongruentAverage);
 
 diary off
 

@@ -13,6 +13,7 @@ record_id   = NaN(IDspan,1);
 group       = NaN(IDspan,1);
 sex         = NaN(IDspan,1);
 age_years   = NaN(IDspan,1);
+FSIQ   = NaN(IDspan,1);
 edu_cat   = NaN(IDspan,1);
 meds_chlor   = NaN(IDspan,1);
 valid_cfacei   = NaN(IDspan,1);
@@ -21,6 +22,7 @@ panssPositive = NaN(IDspan,1);
 panssNegative = NaN(IDspan,1);
 baselineHR = NaN(IDspan,1);
 incongruentHRaverage = NaN(IDspan,1);
+congruentHRaverage = NaN(IDspan,1);
 
 %% EXTRACT data
 
@@ -57,17 +59,28 @@ for n = 1:max(data.record_id)
         if data.valid_any(demogr_row) ~= 1
             continue;
         end
+        if data.valid_cfacei(demogr_row) ~= 1
+            continue;
+        end
+        if data.fsiq2(demogr_row) < 80
+            continue;
+        end
+        if data.pilotorreal(demogr_row) ~=2
+            continue;
+        end
         if rowIdx == 1
             record_id(rowIdx,:) = data.record_id(details_row);
             age_years(rowIdx,:) = data.age_years(details_row);
             group(rowIdx,:)    = data.group(demogr_row);
             sex(rowIdx,:)      = data.sex(demogr_row);
             edu_cat(rowIdx,:)  = data.edu_cat(demogr_row);
+            FSIQ(rowIdx,:)  = data.fsiq2(demogr_row);
             meds_chlor(rowIdx,:)  = data.meds_chlor(demogr_row);
             valid_cfacei(rowIdx,:)  = data.valid_cfacei(demogr_row);
             HR = cFaceHR(record_id(rowIdx));
             baselineHR(rowIdx,:) = HR.baseline;
             incongruentHRaverage(rowIdx,:) = HR.incongruentAverage;
+            congruentHRaverage(rowIdx,:) = HR.congruentAverage;
 
             %% GET and ORGANIZE PANSS data from REDCap export
             if ~isempty(clinical_row)
@@ -100,11 +113,13 @@ for n = 1:max(data.record_id)
             group(rowIdx,:)    = data.group(demogr_row);
             sex(rowIdx,:)      = data.sex(demogr_row);
             edu_cat(rowIdx,:)  = data.edu_cat(demogr_row);
+            FSIQ(rowIdx,:)  = data.fsiq2(demogr_row);
             meds_chlor(rowIdx,:)  = data.meds_chlor(demogr_row);
             valid_cfacei(rowIdx,:)  = data.valid_cfacei(demogr_row);
             HR = cFaceHR(record_id(rowIdx));
             baselineHR(rowIdx,:) = HR.baseline;
             incongruentHRaverage(rowIdx,:) = HR.incongruentAverage;
+            congruentHRaverage(rowIdx,:) = HR.congruentAverage;
             %% GET and ORGANIZE PANSS data from REDCap export
             if ~isempty(clinical_row)
                 sum_panssPositive = 0;
@@ -131,8 +146,8 @@ for n = 1:max(data.record_id)
     end
 end
 
-pcnsDataTable = table(record_id, group, age_years, sex, edu_cat, meds_chlor, valid_cfacei, baselineHR, incongruentHRaverage, panss, panssPositive, panssNegative, 'VariableNames',...
-    {'ID','group', 'age','sex','education','Chlorpromazine equivalents (mg)','CFace?', 'baselineHR', 'incongruentHRaverage', 'panss','panssPositive','panssNegative'});
+pcnsDataTable = table(record_id, group, age_years, sex, edu_cat, FSIQ, meds_chlor, baselineHR, incongruentHRaverage, congruentHRaverage, panss, panssPositive, panssNegative, 'VariableNames',...
+    {'ID','group', 'age','sex','education', 'FSIQ','Chlorpromazine equivalents (mg)', 'baselineHR', 'incongruentHRaverage', 'congruentHRaverage', 'panss','panssPositive','panssNegative'});
 
 deleteIds = find(isnan(pcnsDataTable.ID));
 pcnsDataTable(deleteIds,:) = [];

@@ -215267,3 +215267,1925 @@ Using folder: PCNS_024_BL
 Using folder: PCNS_025_BL
 Using folder: PCNS_026_BL
 Using folder: PCNS_028_BL
+cFaceHR(22)
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_024_BL
+Using folder: PCNS_025_BL
+Using folder: PCNS_026_BL
+Using folder: PCNS_028_BL
+cFaceHR(22)
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_028_BL
+Using folder: PCNS_028_BL
+Using folder: PCNS_028_BL
+Using folder: PCNS_028_BL
+Using folder: PCNS_028_BL
+Using folder: PCNS_028_BL
+Using folder: PCNS_028_BL
+Using folder: PCNS_022_BL
+Using folder: PCNS_022_BL
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',39,1)">39  </a>summaryFile = dir(filePattern);
+if system_dependent('IsDebugMode')==1, dbstep; end
+summaryFile
+
+summaryFile = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+       name: 'cface1_022_Ta_MHEbL_IndHA_2022_Jun_20_1124_out.csv'
+     folder: '/Users/yamaan/Projects/PCNS/Data/RawData/PCNS_022_BL/beh/cface1_022_Ta_MHEbL_IndHA_2022_Jun_20_1124'
+       date: '20-Jun-2022 11:36:36'
+      bytes: 21685
+      isdir: 0
+    datenum: 7.3869e+05
+
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+cFaceHR(28)
+Using folder: PCNS_028_BL
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',39,1)">39  </a>summaryFile = dir(filePattern);
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+baselineTiming =
+
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+   10.3277
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+cFaceHR(28)
+Using folder: PCNS_028_BL
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',52,1)">52  </a>opts = detectImportOptions(summaryFilePath);
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+baselineTiming =
+
+   10.3277
+
+if system_dependent('IsDebugMode')==1, dbstep; end
+cFaceHR(28)
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',71,1)">71  </a>else
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+plot(ppgData)
+plot(ppgTable.PPG)
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+cFaceHR(28)
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',71,1)">71  </a>else
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Unrecognized function or variable 'validRows'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m', 85)" style="font-weight:bold">cFaceHR</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',85,0)">line 85</a>)
+    if any(validRows)
+} 
+cFaceHR(28)
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',101,1)">101 </a>        HR.baseline = (peakCount/baselineTiming)*60;
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',101,1)">101 </a>        HR.baseline = (peakCount/baselineTiming)*60;
+if system_dependent('IsDebugMode')==1, dbcont; end
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+   -0.5000
+
+[Warning: No PPG data before baseline timing for participant 022.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m', 110)" style="font-weight:bold">cFaceHR</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',110,0)">line 110</a>)] 
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+   -0.5000
+
+[Warning: No PPG data before baseline timing for participant 022.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m', 112)" style="font-weight:bold">cFaceHR</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',112,0)">line 112</a>)] 
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+   -0.5000
+
+[Warning: No PPG data before baseline timing for participant 022.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m', 112)" style="font-weight:bold">cFaceHR</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',112,0)">line 112</a>)] 
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+   -0.5000
+
+[Warning: No PPG data before baseline timing for participant 022.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m', 112)" style="font-weight:bold">cFaceHR</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',112,0)">line 112</a>)] 
+Using folder: PCNS_022_BL
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',56,1)">56  </a>if segmentsTable.instruct_onset(1) == 0 %some initial onset timings are incorrectly set to 0
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+baselineTiming =
+
+   -0.5000
+
+segmentsTable.postinstruct_onset(1)
+
+ans =
+
+     0
+
+segmentsTable.postinstruct_onset(2)
+
+ans =
+
+   20.0735
+
+segmentsTable.postinstruct_onset(3)
+
+ans =
+
+   27.2234
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+clear
+cFaceHR(22)
+Using folder: PCNS_022_BL
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',56,1)">56  </a>if segmentsTable.instruct_onset(1) == 0 %some initial onset timings are incorrectly set to 0
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+baselineTiming =
+
+   -0.5000
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+clear all
+cFaceHR(22)
+Using folder: PCNS_022_BL
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',56,1)">56  </a>if segmentsTable.instruct_onset(1) == 0 %some initial onset timings are incorrectly set to 0
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+baselineTiming =
+
+   -0.5000
+
+summaryFilePath
+
+summaryFilePath =
+
+    '/Users/yamaan/Projects/PCNS/Data/RawData/PCNS_022_BL/beh/cface1_022_Ta_MHEbL_IndHA_2022_Jun_20_1124/cface1_022_Ta_MHEbL_IndHA_2022_Jun_20_1124_out.csv'
+
+type(summaryFilePath)
+
+trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,instruct_onset,instruct_duration,postinstruct_onset,postinstruct_duration,trigger_onset,trigger_duration,postTrigger_onset,postTrigger_duration,stimMove_onset,stimMove_duration,fixation_onset,fixation_duration,key_onset,key_duration,stim_id,cond,cong,ptemot_instruct,ptemot,finalemot,type,response,Participant ID,Configuration,pc,Face,Heart,fMRI,Eye,Button,CounterbalanceOption,Name,date,
+0,-1,-1,0,0,0.5,0,5.2021000000000095,0,0.4,16.62427749997005,0.75,16.85739290015772,1.75,18.57358240010217,1.0,0,0,F26,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,19.57477830001153,0.5,20.073467300040647,2.8,22.8735760001,0.4,23.273633799981326,0.75,24.00708070001565,1.75,25.72428600001149,1.0,0,0,F01,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,26.723368300125003,0.5,27.223392700077966,0.39999999999999897,27.623747000005096,0.4,28.02333340002224,0.75,28.756996500073,1.75,30.474392500007525,1.0,0,0,F26,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,31.473305799998343,0.5,31.973244100110605,0.4,32.373463900061324,0.4,32.77350400015712,0.75,33.50709500000812,1.75,35.22368000005372,1.0,0,0,F01,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,36.22452980000526,0.5,36.72327439999208,1.2,37.92345040012151,0.4,38.32322100014426,0.75,39.056734200101346,1.75,40.77406159997918,1.0,0,0,M10,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,41.77311690011993,0.5,42.27298580016941,0.800000000000002,43.07332620001398,0.4,43.47352720005438,0.75,44.206741500180215,1.75,45.92416510009207,1.0,0,0,F26,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,46.92311510001309,0.5,47.423285300144926,0.7999999999999949,48.223259899998084,0.4,48.62286590016447,0.75,49.35657020006329,1.75,51.074213300133124,1.0,0,0,F26,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,52.07287860009819,0.5,52.57300890004262,0.40000000000000396,52.97301260009408,0.4,53.37277750018984,0.75,54.10652979998849,1.75,55.823893800145015,1.0,0,0,M10,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,56.823109900113195,0.5,57.32309000007808,1.2,58.522835000185296,0.4,58.92289150017314,0.75,59.65632589999586,1.75,61.373710200190544,1.0,0,0,M10,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,62.37320170016028,0.5,62.873048400040716,1.19999999999999,64.07320930017158,0.4,64.47276720008813,0.75,65.20654650009237,1.75,66.92363020009361,1.0,0,0,F01,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,67.92274760012515,0.5,68.42306090006605,1.6,70.02267080009915,0.4,70.42250390001573,0.75,71.15634210011922,1.75,72.87344500003383,1.0,0,0,F01,0.8,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,73.87374750012532,0.5,74.37272470002063,0.800000000000002,75.17306610010564,0.4,75.57245520013385,0.75,76.30594100011513,1.75,78.02374630002305,1.0,0,0,M25,0.8,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,79.02243050001562,0.5,79.52236990001984,3.1999999999999904,82.72251380002126,0.4,83.12233340018429,0.75,83.85629700007848,1.75,85.573320500087,1.0,0,0,F26,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,86.57230660016648,0.5,87.07217910001054,0.40000000000001096,87.47248430014588,0.4,87.87224730011076,0.75,88.60575210000388,1.75,90.3234069000464,1.0,0,0,M25,0.8,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,91.32239770004526,0.5,91.82209620019421,0.399999999999997,92.22238040016964,0.4,92.62226420012303,0.75,93.3557715001516,1.75,95.07409220002592,1.0,0,0,M25,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,96.07212170003913,0.5,96.57198810018599,1.19999999999999,97.77242660010234,0.4,98.17196900001727,0.75,98.90563960000873,1.75,100.62314060004428,1.0,0,0,M25,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,101.62198780011386,0.5,102.12189309997484,3.6001,105.72225980018266,0.4,106.1221057001967,0.75,106.85535960015841,1.75,108.57302969996817,1.0,0,0,F26,0.2,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,109.57204870018177,0.5,110.0722023001872,2.4,112.4721394001972,0.4,112.8721781000495,0.75,113.60543210012838,1.75,115.323151800083,1.0,0,0,M10,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,116.32168870000169,0.5,116.82164920005016,2.00000000000001,118.82242870004848,0.4,119.22155710007064,0.75,119.95546480012126,1.75,121.67262850003317,1.0,0,0,F26,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,122.6718541001901,0.5,123.1716736999806,0.399999999999997,123.57192949997261,0.4,123.97152430005372,0.75,124.70507919997908,1.75,126.42242730013095,1.0,0,0,M10,0.2,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,127.42144080018625,0.5,127.92144470009953,0.800000000000002,128.72175170015544,0.4,129.12179160001688,0.75,129.85514910006896,1.75,131.5731340001803,1.0,0,0,M25,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,132.5713011000771,0.5,133.071356800152,2.8,135.87146729999222,0.4,136.2711993001867,0.75,137.00493800011463,1.75,138.7222685001325,1.0,0,0,M10,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,139.72125800000504,0.5,140.22112290002406,2.8,143.0221504000947,0.4,143.42150250007398,0.75,144.15483330003917,1.75,145.87253749999218,1.0,0,0,M10,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,146.8713401001878,0.5,147.37100450019352,1.99999999999998,149.37269520014524,0.4,149.7710397001356,0.75,150.5045138001442,1.75,152.22197329998016,1.0,0,0,F26,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,153.2211715001613,0.5,153.72094660019502,1.19990000000002,154.92131600016728,0.4,155.3212541001849,0.75,156.05445360019803,1.75,157.77179080015048,1.0,0,0,F01,0.8,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,158.77087240014225,0.5,159.27079550013877,11.5999,170.87106880010106,0.4,171.2707446999848,0.75,172.00431200000457,1.75,173.72133740014397,1.0,0,0,F26,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,174.72117620008066,0.5,175.22068940009922,1.19989999999999,176.42058230005205,0.4,176.82061789999716,0.75,177.5541305001825,1.75,179.2715783000458,1.0,0,0,M25,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,180.27125420002267,0.5,180.7712138001807,0.8000000000000171,181.5707684000954,0.4,181.97069500014186,0.75,182.7047346001491,1.75,184.42155900015496,1.0,0,0,M10,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,185.42033310001716,0.5,185.920295300195,2.39999999999998,188.32050510006957,0.4,188.72044900013134,0.75,189.45397460018285,1.75,191.17123170010746,1.0,0,0,M25,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,192.1706056999974,0.5,192.6713084001094,0.8000000000000171,193.47121940017678,0.4,193.87007920001633,0.75,194.60449350019917,1.75,196.32124530011788,1.0,0,0,M10,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,197.3200803999789,0.5,197.820481200004,1.9999,199.82021920010448,0.4,200.22024090006016,0.75,200.9545669001527,1.75,202.67101819999516,1.0,0,0,F26,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,203.67003270005807,0.5,204.1700377999805,5.5999,209.76994949998334,0.4,210.16988300019875,0.75,210.9033991000615,1.75,212.62213780009188,1.0,0,0,F26,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,213.61982330004685,0.5,214.11978340009227,0.3999999999999829,214.51994260004722,0.4,214.9197359001264,0.75,215.65356200002134,1.75,217.37137120007537,1.0,0,0,F26,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,218.37115090014413,0.5,218.86977650015615,0.40000000000001096,219.26988090015948,0.4,219.66978100012057,0.75,220.4043875001371,1.75,222.1207448001951,1.0,0,0,M10,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,223.1202467000112,0.5,223.6205758000724,0.3999999999999829,224.02053209999576,0.4,224.41965380008332,0.75,225.15361120016314,1.75,226.87062040017918,1.0,0,0,M25,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,227.870055800071,0.5,228.36958679999225,5.599900000000019,233.96945259999484,0.4,234.36949630011804,0.75,235.10329950018786,1.75,236.821482000174,1.0,0,0,M10,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,237.81943730008788,0.5,238.31936800014228,0.3999999999999829,238.71964989998378,0.4,239.1191960000433,0.75,239.85285939997993,1.75,241.57051990018226,1.0,0,0,F01,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,242.57031310000457,0.5,243.06931140017696,0.8000000000000171,243.86940099997446,0.4,244.269196000183,0.75,245.00279950001277,1.75,246.72076360019855,1.0,0,0,F26,0.2,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,247.71973280003294,0.5,248.22039460018277,0.799899999999985,249.0203174999915,0.4,249.41910700011067,0.75,250.15385350002907,1.75,251.8707114001736,1.0,0,0,F26,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,252.86915470007807,0.5,253.36910020001233,0.8000000000000171,254.16969590005465,0.4,254.57054139999673,0.75,255.3025184001308,1.75,257.0200396999717,1.0,0,0,M25,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,258.01892140018754,0.5,258.5190117000602,1.19999999999999,259.71927920007147,0.4,260.11947410018183,0.75,260.85250340006314,1.75,262.57014339999296,1.0,0,0,F26,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,263.56897110003047,0.5,264.06880660005845,1.6,265.6690250001848,0.4,266.06883230013773,0.75,266.80227290000767,1.75,268.52133470005356,1.0,0,0,M25,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,269.518791400129,0.5,270.01868310011923,3.1999000000000204,273.22038169996813,0.4,273.62047760002315,0.75,274.3526417000685,1.75,276.0697029000148,1.0,0,0,F01,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,277.0685529001057,0.5,277.5685949001927,1.6,279.1697059001308,0.4,279.56955430004746,0.75,280.30204610014334,1.75,282.0194628001191,1.0,0,0,M10,0.2,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,283.0185055001639,0.5,283.5185479000211,0.39999999999995395,283.9187592000235,0.4,284.3184615999926,0.75,285.05197150004096,1.75,286.7693988000974,1.0,0,0,M10,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,287.76852990011685,0.5,288.2684027000796,0.800000000000045,289.0685042999685,0.4,289.46853800001554,0.75,290.20201650005765,1.75,291.92065780004486,1.0,0,0,M25,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,292.91838080016896,0.5,293.4183557999786,1.19989999999999,294.61846780008636,0.4,295.01813250011764,0.75,295.75206009997055,1.75,297.4701945001725,1.0,0,0,F01,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,298.4696162000764,0.5,298.9683110001497,1.19999999999997,300.16840349999256,0.4,300.5680613000877,0.75,301.30174880009145,1.75,303.01917750015855,1.0,0,0,M25,0.8,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,304.0197523001116,0.5,304.5199782999698,3.6,308.13654350000434,0.4,308.5180726000108,0.75,309.25191370001994,1.75,310.970402300125,1.0,0,0,F26,0.2,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,311.96809280011803,0.5,312.4678398000542,4.79990000000001,317.2846474000253,0.4,317.667943400098,0.75,318.402698200196,1.75,320.13572100014426,1.0,0,0,F01,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,321.1356203001924,0.5,321.6342573000584,0.40000000000001096,322.03455640003085,0.4,322.4343195001129,0.75,323.16977640008554,1.75,324.86909890011884,1.0,0,0,F01,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,325.88470220007,0.5,326.38556470000185,0.7999999999999879,327.18641840014607,0.4,327.58422750001773,0.75,328.31875229999423,1.75,330.02033350011334,1.0,0,0,F26,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,331.0178998999763,0.5,331.5176548999734,3.1998999999999906,334.7342570000328,0.4,335.13395670009777,0.75,335.86760270013474,1.75,337.5683071000967,1.0,0,0,M25,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,338.58455660007894,0.5,339.08556280005723,3.9999,343.06788270012476,0.4,343.4673482000362,0.75,344.20289260009304,1.75,345.9364698000718,1.0,0,0,F01,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,346.93398820003495,0.5,347.4340843001846,2.00000000000003,349.41730740014464,0.4,349.8172085999977,0.75,350.5526016000658,1.75,352.2863606000319,1.0,0,0,F01,0.8,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,353.28372279996984,0.5,353.7837747000158,1.6,355.36754940007813,0.4,355.7668715000618,0.75,356.5026655001566,1.75,358.2366061001085,1.0,0,0,M25,0.8,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,359.23363779997453,0.5,359.73359980015084,0.39999999999995395,360.1339281999972,0.4,360.53407800011337,0.75,361.2517995000817,1.75,362.96791740017943,1.0,0,0,M25,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,363.985676900018,0.5,364.4853690001182,0.7999000000000129,365.28363399999216,0.4,365.6837865000125,0.75,366.4192213001661,1.75,368.117986000143,1.0,0,0,M10,0.2,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,369.13355810008943,0.5,369.6348552000709,0.7999999999999879,370.4355664001778,0.4,370.8354203000199,0.75,371.5680935999844,1.75,373.2844215000514,1.0,0,0,F26,0.2,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,374.26691930019297,0.5,374.76676640007645,2.80000000000005,377.5834592001047,0.4,377.98324760003015,0.75,378.71875060000457,1.75,380.4177338001318,1.0,0,0,M25,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,381.4338686000556,0.5,381.93456179997884,3.99989999999995,385.9332251001615,0.4,386.3165355999954,0.75,387.05177650018595,1.75,388.785420200089,1.0,0,0,M10,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,389.78533600014634,0.5,390.2829247000627,0.40000000000001096,390.6832662001252,0.4,391.08325310004875,0.75,391.81883220002055,1.75,393.51731520006433,1.0,0,0,F01,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,394.5346276999917,0.5,395.0345777000766,2.00000000000003,397.0332391001284,0.4,397.4331374000758,0.75,398.1668311001267,1.75,399.8675458000507,1.0,0,0,M10,0.2,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,400.88472019997425,0.5,401.3847320000641,0.399899999999979,401.78471090015955,0.4,402.18270980007946,0.75,402.91792699997313,1.75,404.63372310018167,1.0,0,0,M10,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,405.6160962001886,0.5,406.11599409999326,3.6,409.7329569000285,0.4,410.1327145001851,0.75,410.8510420001112,1.75,412.583573800046,1.0,0,0,M25,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,413.58467510016635,0.5,414.0845083000604,0.7999999999999879,414.8827329999767,0.4,415.2824552000966,0.75,416.0181732000783,1.75,417.7168420001399,1.0,0,0,F26,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,418.71573700010777,0.5,419.23348230007105,0.399900000000036,419.63478179997765,0.4,420.0347374000121,0.75,420.76713310019113,1.75,422.48367220000364,1.0,0,0,M10,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,423.48239949997514,0.5,423.96572279999964,1.6,425.5838872001041,0.4,425.98455190006644,0.75,426.7161571001634,1.75,428.4333203001879,1.0,0,0,F01,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,429.4321519001387,0.5,429.9155449999962,3.6,433.53235990018584,0.4,433.93216049997136,0.75,434.66818370018154,1.75,436.3664888001513,1.0,0,0,M10,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,437.3826509001665,0.5,437.88353940006346,0.7998999999999571,438.6845462000929,0.4,439.0844618000556,0.75,439.81688350019976,1.75,441.5332560001407,1.0,0,0,F01,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,442.5321496000979,0.5,443.01534310006537,2.00000000000003,445.0345040000975,0.4,445.43447980005294,0.75,446.16704339999706,1.75,447.88294540019706,1.0,0,0,F01,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,448.86516800010577,0.5,449.3652072001714,0.7999999999999879,450.1837728000246,0.4,450.583655500086,0.75,451.31550610018894,1.75,453.03294660011306,1.0,0,0,F01,0.8,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,454.0317349000834,0.5,454.51518720015883,1.6,456.1327846001368,0.4,456.533548100153,0.75,457.2655619001016,1.75,458.9824922999833,1.0,0,0,F01,0.8,1,HA,HA,HA,HAHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,459.9818382000085,0.5,460.4817445999943,0.399899999999979,460.8651646000799,0.4,461.2652910000179,0.75,462.0017540000845,1.75,463.7346506000031,1.0,0,0,M25,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,464.73192519997247,0.5,465.2315676000435,3.6,468.83294570003636,0.4,469.233786100056,0.75,469.96513290004805,1.75,471.6824990999885,1.0,0,0,M25,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,472.6816096000839,0.5,473.1814512000419,3.1998999999999906,476.38145039998926,0.4,476.78129930002615,0.75,477.5168985000346,1.75,479.23228780017234,1.0,0,0,F01,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,480.2145364000462,0.5,480.71475490019657,4.00000000000003,484.7313628999982,0.4,485.1310788001865,0.75,485.8507876000367,1.75,487.5826636001002,1.0,0,0,F01,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,488.58362930011936,0.5,489.0811286000535,3.59989999999997,492.6816520001739,0.4,493.06436190009117,0.75,493.814612200018,1.75,495.5345732001588,1.0,0,0,F26,0.2,0,AN,AN,HA,ANHA,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,496.5309290001169,0.5,497.03112390008755,8.39990000000004,505.4319840001408,0.4,505.83273080014624,0.75,506.56439479999244,1.75,508.28471160004847,1.0,0,0,M25,0.8,1,AN,AN,AN,ANAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+0,-1,-1,0,509.2810216001235,0.5,509.7808360999916,4.39989999999998,514.1808323999867,0.4,514.5808221001644,0.75,515.3169074000325,1.75,517.0148633001372,1.0,0,0,M10,0.2,0,HA,HA,AN,HAAN,too late,022,Task,showy,N,Y,Y,Y,L,1. Index finger happy,cface1,2022_Jun_20_1124,
+summaryFilePath
+
+summaryFilePath =
+
+    '/Users/yamaan/Projects/PCNS/Data/RawData/PCNS_022_BL/beh/cface1_022_Ta_MHEbL_IndHA_2022_Jun_20_1124/cface1_022_Ta_MHEbL_IndHA_2022_Jun_20_1124_out.csv'
+
+cFaceHR(22)
+Using folder: PCNS_022_BL
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',56,1)">56  </a>if segmentsTable.instruct_onset(1) == 0 %some initial onset timings are incorrectly set to 0
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+baselineTiming =
+
+   -0.5000
+
+if system_dependent('IsDebugMode')==1, dbstep; end
+cFaceHR(22)
+{<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',57,44)">File: cFaceHR.m Line: 57 Column: 44</a>
+Incorrect use of '=' operator. Assign a value to a variable using '=' and compare values for equality using '=='.
+} 
+cFaceHR(22)
+Using folder: PCNS_022_BL
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',56,1)">56  </a>if segmentsTable.instruct_onset(1) == 0 %some initial onset timings are incorrectly set to 0
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+baselineTiming =
+
+    10
+
+if system_dependent('IsDebugMode')==1, dbcont; end
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',106,1)">106 </a>        peakCount = numel(peaks);
+if system_dependent('IsDebugMode')==1, dbcont; end
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',91,1)">91  </a>    if any(baselineRows)
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+
+baselineTiming =
+
+   14.5494
+
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('closereq')" style="font-weight:bold">closereq</a>
+} 
+Error using close
+Interrupt while evaluating DestroyedObject CloseRequestFcn.
+
+Using folder: PCNS_019_BL
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+
+baselineTiming =
+
+   14.5494
+
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+
+baselineTiming =
+
+   14.5494
+
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_024_BL
+Using folder: PCNS_025_BL
+
+baselineTiming =
+
+   14.2254
+
+Using folder: PCNS_026_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+cFaceHR(22)
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+
+baselineTiming =
+
+   14.5494
+
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_024_BL
+Using folder: PCNS_025_BL
+
+baselineTiming =
+
+   14.2254
+
+Using folder: PCNS_026_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+cFaceHR(26)
+Using folder: PCNS_026_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_026_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+
+baselineTiming =
+
+   14.5494
+
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_024_BL
+Using folder: PCNS_025_BL
+
+baselineTiming =
+
+   14.2254
+
+Using folder: PCNS_026_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('table')" style="font-weight:bold">table</a>
+All table variables must have the same number of rows.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcnsDataExtract', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m', 136)" style="font-weight:bold">pcnsDataExtract</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m',136,0)">line 136</a>)
+pcnsDataTable = table(record_id, group, age_years, sex, edu_cat, FSIQ, meds_chlor, valid_cfacei, baselineHR, incongruentHRaverage, panss, panssPositive, panssNegative, 'VariableNames',...
+} 
+<a href="matlab: opentoline('/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/tabular/@table/table.m',253,1)">253 </a>                [numVars,numRows,nvpairs] = tabular.countVarInputs(varargin,'MATLAB:table:StringParamNameNotSupported',numNamedArguments);
+if system_dependent('IsDebugMode')==1, dbquit all; end
+pcnsDataExtract
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+
+baselineTiming =
+
+   14.5494
+
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_024_BL
+Using folder: PCNS_025_BL
+
+baselineTiming =
+
+   14.2254
+
+Using folder: PCNS_026_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+pcnsDataExtract
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('tabular/dotParenReference')" style="font-weight:bold">tabular/dotParenReference</a>
+Unrecognized table variable name 'pilotreal'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcnsDataExtract', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m', 67)" style="font-weight:bold">pcnsDataExtract</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m',67,0)">line 67</a>)
+        if data.pilotreal(demogr_row) ~=2
+} 
+<a href="matlab: opentoline('/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/tabular/@tabular/dotParenReference.m',77,1)">77  </a>                    error(message('MATLAB:table:UnrecognizedVarName',varName));
+if system_dependent('IsDebugMode')==1, dbcont; end
+pcnsDataExtract
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('tabular/dotParenReference')" style="font-weight:bold">tabular/dotParenReference</a>
+Unrecognized table variable name 'pilotreal'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcnsDataExtract', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m', 67)" style="font-weight:bold">pcnsDataExtract</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m',67,0)">line 67</a>)
+        if data.pilotreal(demogr_row) ~=2
+} 
+<a href="matlab: opentoline('/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/tabular/@tabular/dotParenReference.m',77,1)">77  </a>                    error(message('MATLAB:table:UnrecognizedVarName',varName));
+if system_dependent('IsDebugMode')==1, dbquit; end
+pcnsDataExtract
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('tabular/dotParenReference')" style="font-weight:bold">tabular/dotParenReference</a>
+Unrecognized table variable name 'pilotreal'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcnsDataExtract', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m', 67)" style="font-weight:bold">pcnsDataExtract</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m',67,0)">line 67</a>)
+        if data.pilotreal(demogr_row) ~=2
+} 
+<a href="matlab: opentoline('/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/tabular/@tabular/dotParenReference.m',77,1)">77  </a>                    error(message('MATLAB:table:UnrecognizedVarName',varName));
+if system_dependent('IsDebugMode')==1, dbquit; end
+opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m',67,0)
+pcnsDataExtract
+data.pilotreal(demogr_row)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('tabular/dotParenReference')" style="font-weight:bold">tabular/dotParenReference</a>
+Unrecognized table variable name 'pilotreal'.
+} 
+<a href="matlab: opentoline('/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/tabular/@tabular/dotParenReference.m',77,1)">77  </a>                    error(message('MATLAB:table:UnrecognizedVarName',varName));
+if system_dependent('IsDebugMode')==1, dbquit; end
+pcnsDataExtract
+if system_dependent('IsDebugMode')==1, dbquit; end
+pcnsDataExtract
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m',67,1)">67  </a>        if data.pilotorreal(demogr_row) ~=2
+if system_dependent('IsDebugMode')==1, dbcont; end
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+
+baselineTiming =
+
+   14.5494
+
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_024_BL
+Using folder: PCNS_025_BL
+
+baselineTiming =
+
+   14.2254
+
+Using folder: PCNS_026_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+pcnsDataExtract
+pcnsDataExtract
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/specifyOptions.m',13,1)">13  </a>options.paths.data     = ['smb://macuncle.newcastle.edu.au/entities/research/NEWYSNG/PCNS/Data/Data_raw/together'];
+if system_dependent('IsDebugMode')==1, dbstep; end
+options.paths.data
+
+ans =
+
+    'smb://macuncle.newcastle.edu.au/entities/research/NEWYSNG/PCNS/Data/Data_raw/together'
+
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+options.paths.data
+{Unable to resolve the name 'options.paths.data'.
+} 
+pcnsDataExtract
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',22,1)">22  </a>if ~any(matchIdx)
+folderNames
+
+folderNames =
+
+  0×0 empty <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+participantFolders
+
+participantFolders = 
+
+  0×1 empty <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> array with fields:
+
+    name
+    folder
+    date
+    bytes
+    isdir
+    datenum
+
+dir(smb://macuncle.newcastle.edu.au/entities/research/NEWYSNG/PCNS/Data/Data_raw/together)
+ dir(smb://macuncle.newcastle.edu.au/entities/research/NEWYSNG/PCNS/Data/Data_raw/together)
+         ↑
+{Invalid use of operator.
+} 
+if system_dependent('IsDebugMode')==1, dbquit; end
+dir('/Volumes/PCNS/')
+
+.              ..             .DS_Store      Code           Data           Documentation  Ethics         
+
+pcnsDataExtract
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',22,1)">22  </a>if ~any(matchIdx)
+if system_dependent('IsDebugMode')==1, dbcont; end
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+
+baselineTiming =
+
+   14.5494
+
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_024_BL
+Using folder: PCNS_025_BL
+
+baselineTiming =
+
+   14.2254
+
+Using folder: PCNS_026_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+Using folder: PCNS_029_BL
+
+baselineTiming =
+
+   14.0964
+
+Using folder: PCNS_030_BL
+Using folder: PCNS_031_BL
+
+baselineTiming =
+
+   13.7154
+
+Using folder: PCNS_032_BL
+
+baselineTiming =
+
+   14.9460
+
+Using folder: PCNS_033_BL
+
+baselineTiming =
+
+   15.2074
+
+Using folder: PCNS_034_BL
+Using folder: PCNS_035_BL
+
+baselineTiming =
+
+   11.4870
+
+Using folder: PCNS_040_BL
+Using folder: PCNS_042_BL
+Using folder: PCNS_046_BL
+
+baselineTiming =
+
+   11.0246
+
+Using folder: PCNS_047_BL
+
+baselineTiming =
+
+   13.5170
+
+Using folder: PCNS_048_BL
+Using folder: PCNS_019_BL
+{Error: <a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceIncongruentTrials.m',29,13)">File: cFaceIncongruentTrials.m Line: 29 Column: 13</a>
+A CONTINUE may only be used within a FOR or WHILE loop.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m', 121)" style="font-weight:bold">cFaceHR</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',121,0)">line 121</a>)
+segmentsTableIncongruent = cFaceIncongruentTrials(participantID);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcnsDataExtract', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m', 79)" style="font-weight:bold">pcnsDataExtract</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m',79,0)">line 79</a>)
+            HR = cFaceHR(record_id(rowIdx));
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',121,1)">121 </a>segmentsTableIncongruent = cFaceIncongruentTrials(participantID);
+if system_dependent('IsDebugMode')==1, dbquit; end
+pcnsDataExtract
+Using folder: PCNS_019_BL
+Using folder: PCNS_019_BL
+Using folder: PCNS_019_BL
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+
+baselineTiming =
+
+   14.5494
+
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_024_BL
+Using folder: PCNS_025_BL
+
+baselineTiming =
+
+   14.2254
+
+Using folder: PCNS_026_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+Using folder: PCNS_029_BL
+
+baselineTiming =
+
+   14.0964
+
+Using folder: PCNS_030_BL
+Using folder: PCNS_031_BL
+
+baselineTiming =
+
+   13.7154
+
+Using folder: PCNS_032_BL
+
+baselineTiming =
+
+   14.9460
+
+Using folder: PCNS_033_BL
+
+baselineTiming =
+
+   15.2074
+
+Using folder: PCNS_034_BL
+Using folder: PCNS_035_BL
+
+baselineTiming =
+
+   11.4870
+
+Using folder: PCNS_040_BL
+Using folder: PCNS_042_BL
+Using folder: PCNS_046_BL
+
+baselineTiming =
+
+   11.0246
+
+Using folder: PCNS_047_BL
+
+baselineTiming =
+
+   13.5170
+
+Using folder: PCNS_048_BL
+Using folder: PCNS_051_BL
+
+baselineTiming =
+
+   14.6527
+
+Using folder: PCNS_052_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_054_BL
+
+baselineTiming =
+
+   10.1872
+
+Using folder: PCNS_055_BL
+Using folder: PCNS_056_BL
+Using folder: PCNS_057_BL
+
+baselineTiming =
+
+   10.2620
+
+Using folder: PCNS_058_BL
+
+baselineTiming =
+
+   11.2256
+
+Using folder: PCNS_060_BL
+
+baselineTiming =
+
+   14.1284
+
+Using folder: PCNS_064_BL
+Using folder: PCNS_065_BL
+Using folder: PCNS_066_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_067_BL
+
+baselineTiming =
+
+   10.4039
+
+Using folder: PCNS_069_BL
+
+baselineTiming =
+
+   10.1765
+
+Using folder: PCNS_070_BL
+Using folder: PCNS_071_BL
+
+baselineTiming =
+
+   13.5767
+
+Using folder: PCNS_072_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_073_BL
+
+baselineTiming =
+
+   10.0619
+
+Using folder: PCNS_075_BL
+
+baselineTiming =
+
+   10.3513
+
+Using folder: PCNS_076_BL
+
+baselineTiming =
+
+   13.8785
+
+Using folder: PCNS_078_BL
+
+baselineTiming =
+
+   10.3229
+
+Using folder: PCNS_079_BL
+
+baselineTiming =
+
+   14.4236
+
+Using folder: PCNS_080_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_082_BL
+Using folder: PCNS_083_BL
+
+baselineTiming =
+
+   10.3251
+
+Using folder: PCNS_084_BL
+
+baselineTiming =
+
+   10.1602
+
+Using folder: PCNS_085_BL
+Using folder: PCNS_086_BL
+Using folder: PCNS_087_BL
+
+baselineTiming =
+
+   14.8775
+
+Using folder: PCNS_092_BL
+
+baselineTiming =
+
+   10.3995
+
+Using folder: PCNS_093_BL
+
+baselineTiming =
+
+   10.0309
+
+Using folder: PCNS_094_BL
+Using folder: PCNS_095_BL
+
+baselineTiming =
+
+   10.0794
+
+Using folder: PCNS_096_BL
+
+baselineTiming =
+
+   10.2215
+
+Using folder: PCNS_099_BL
+
+baselineTiming =
+
+   13.9908
+
+Using folder: PCNS_100_BL
+
+baselineTiming =
+
+   10.3817
+
+Using folder: PCNS_103_BL
+Using folder: PCNS_104_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_105_BL
+Using folder: PCNS_107_BL
+Using folder: PCNS_108_BL
+
+baselineTiming =
+
+   12.2920
+
+Using folder: PCNS_109_BL
+
+baselineTiming =
+
+   10.2057
+
+Using folder: PCNS_112_BL
+Using folder: PCNS_113_BL
+
+baselineTiming =
+
+   10.4655
+
+Using folder: PCNS_115_BL
+Using folder: PCNS_116_BL
+
+baselineTiming =
+
+   13.9032
+
+Using folder: PCNS_117_BL
+
+baselineTiming =
+
+   10.2733
+
+Using folder: PCNS_118_BL
+
+baselineTiming =
+
+   10.1096
+
+Using folder: PCNS_119_BL
+
+baselineTiming =
+
+   10.2191
+
+Using folder: PCNS_120_BL
+
+baselineTiming =
+
+   10.0836
+
+Using folder: PCNS_121_BL
+Using folder: PCNS_122_BL
+
+baselineTiming =
+
+   10.4759
+
+Using folder: PCNS_124_BL
+Using folder: PCNS_127_BL
+
+baselineTiming =
+
+   10.3151
+
+Using folder: PCNS_128_BL
+Using folder: PCNS_130_BL
+
+baselineTiming =
+
+   10.3078
+
+Using folder: PCNS_131_BL
+
+baselineTiming =
+
+   10.1008
+
+Using folder: PCNS_132_BL
+
+baselineTiming =
+
+   10.0932
+
+Using folder: PCNS_133_BL
+Using folder: PCNS_134_BL
+Using folder: PCNS_019_BL
+{Unrecognized function or variable 'cFaceIncongruentTrials'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cFaceHR', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m', 121)" style="font-weight:bold">cFaceHR</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',121,0)">line 121</a>)
+segmentsTableIncongruent = cFaceIncongruentTrials(participantID);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcnsDataExtract', '/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m', 79)" style="font-weight:bold">pcnsDataExtract</a> (<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/pcnsDataExtract.m',79,0)">line 79</a>)
+            HR = cFaceHR(record_id(rowIdx));
+} 
+<a href="matlab: opentoline('/Users/yamaan/Projects/PCNS/cFaceAnalysis/cFaceHR.m',121,1)">121 </a>segmentsTableIncongruent = cFaceIncongruentTrials(participantID);
+if system_dependent('IsDebugMode')==1, dbquit; end
+pcnsDataExtract
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+
+baselineTiming =
+
+   14.5494
+
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_024_BL
+Using folder: PCNS_025_BL
+
+baselineTiming =
+
+   14.2254
+
+Using folder: PCNS_026_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+Using folder: PCNS_029_BL
+
+baselineTiming =
+
+   14.0964
+
+Using folder: PCNS_030_BL
+Using folder: PCNS_031_BL
+
+baselineTiming =
+
+   13.7154
+
+Using folder: PCNS_032_BL
+
+baselineTiming =
+
+   14.9460
+
+Using folder: PCNS_033_BL
+
+baselineTiming =
+
+   15.2074
+
+Using folder: PCNS_034_BL
+Using folder: PCNS_035_BL
+
+baselineTiming =
+
+   11.4870
+
+Using folder: PCNS_040_BL
+Using folder: PCNS_042_BL
+Using folder: PCNS_046_BL
+
+baselineTiming =
+
+   11.0246
+
+Using folder: PCNS_047_BL
+
+baselineTiming =
+
+   13.5170
+
+Using folder: PCNS_048_BL
+Using folder: PCNS_051_BL
+
+baselineTiming =
+
+   14.6527
+
+Using folder: PCNS_052_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_054_BL
+
+baselineTiming =
+
+   10.1872
+
+Using folder: PCNS_055_BL
+Using folder: PCNS_056_BL
+Using folder: PCNS_057_BL
+
+baselineTiming =
+
+   10.2620
+
+Using folder: PCNS_058_BL
+
+baselineTiming =
+
+   11.2256
+
+Using folder: PCNS_060_BL
+
+baselineTiming =
+
+   14.1284
+
+Using folder: PCNS_064_BL
+Using folder: PCNS_065_BL
+Using folder: PCNS_066_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_067_BL
+
+baselineTiming =
+
+   10.4039
+
+Using folder: PCNS_069_BL
+
+baselineTiming =
+
+   10.1765
+
+Using folder: PCNS_070_BL
+Using folder: PCNS_071_BL
+
+baselineTiming =
+
+   13.5767
+
+Using folder: PCNS_072_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_073_BL
+
+baselineTiming =
+
+   10.0619
+
+Using folder: PCNS_075_BL
+
+baselineTiming =
+
+   10.3513
+
+Using folder: PCNS_076_BL
+
+baselineTiming =
+
+   13.8785
+
+Using folder: PCNS_078_BL
+
+baselineTiming =
+
+   10.3229
+
+Using folder: PCNS_079_BL
+
+baselineTiming =
+
+   14.4236
+
+Using folder: PCNS_080_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_082_BL
+Using folder: PCNS_083_BL
+
+baselineTiming =
+
+   10.3251
+
+Using folder: PCNS_084_BL
+
+baselineTiming =
+
+   10.1602
+
+Using folder: PCNS_085_BL
+Using folder: PCNS_086_BL
+Using folder: PCNS_087_BL
+
+baselineTiming =
+
+   14.8775
+
+Using folder: PCNS_092_BL
+
+baselineTiming =
+
+   10.3995
+
+Using folder: PCNS_093_BL
+
+baselineTiming =
+
+   10.0309
+
+Using folder: PCNS_094_BL
+Using folder: PCNS_095_BL
+
+baselineTiming =
+
+   10.0794
+
+Using folder: PCNS_096_BL
+
+baselineTiming =
+
+   10.2215
+
+Using folder: PCNS_099_BL
+
+baselineTiming =
+
+   13.9908
+
+Using folder: PCNS_100_BL
+
+baselineTiming =
+
+   10.3817
+
+Using folder: PCNS_103_BL
+Using folder: PCNS_104_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_105_BL
+Using folder: PCNS_107_BL
+Using folder: PCNS_108_BL
+
+baselineTiming =
+
+   12.2920
+
+Using folder: PCNS_109_BL
+
+baselineTiming =
+
+   10.2057
+
+Using folder: PCNS_112_BL
+Using folder: PCNS_113_BL
+
+baselineTiming =
+
+   10.4655
+
+Using folder: PCNS_115_BL
+Using folder: PCNS_116_BL
+
+baselineTiming =
+
+   13.9032
+
+Using folder: PCNS_117_BL
+
+baselineTiming =
+
+   10.2733
+
+Using folder: PCNS_118_BL
+
+baselineTiming =
+
+   10.1096
+
+Using folder: PCNS_119_BL
+
+baselineTiming =
+
+   10.2191
+
+Using folder: PCNS_120_BL
+
+baselineTiming =
+
+   10.0836
+
+Using folder: PCNS_121_BL
+Using folder: PCNS_122_BL
+
+baselineTiming =
+
+   10.4759
+
+Using folder: PCNS_124_BL
+Using folder: PCNS_127_BL
+
+baselineTiming =
+
+   10.3151
+
+Using folder: PCNS_128_BL
+Using folder: PCNS_130_BL
+
+baselineTiming =
+
+   10.3078
+
+Using folder: PCNS_131_BL
+
+baselineTiming =
+
+   10.1008
+
+Using folder: PCNS_132_BL
+
+baselineTiming =
+
+   10.0932
+
+Using folder: PCNS_133_BL
+Using folder: PCNS_134_BL
+Using folder: PCNS_019_BL
+Using folder: PCNS_020_BL
+
+baselineTiming =
+
+   14.5494
+
+Using folder: PCNS_022_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_024_BL
+Using folder: PCNS_025_BL
+
+baselineTiming =
+
+   14.2254
+
+Using folder: PCNS_026_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_028_BL
+
+baselineTiming =
+
+   10.3277
+
+Using folder: PCNS_029_BL
+
+baselineTiming =
+
+   14.0964
+
+Using folder: PCNS_030_BL
+Using folder: PCNS_031_BL
+
+baselineTiming =
+
+   13.7154
+
+Using folder: PCNS_032_BL
+
+baselineTiming =
+
+   14.9460
+
+Using folder: PCNS_033_BL
+
+baselineTiming =
+
+   15.2074
+
+Using folder: PCNS_034_BL
+Using folder: PCNS_035_BL
+
+baselineTiming =
+
+   11.4870
+
+Using folder: PCNS_040_BL
+Using folder: PCNS_042_BL
+Using folder: PCNS_046_BL
+
+baselineTiming =
+
+   11.0246
+
+Using folder: PCNS_047_BL
+
+baselineTiming =
+
+   13.5170
+
+Using folder: PCNS_048_BL
+Using folder: PCNS_051_BL
+
+baselineTiming =
+
+   14.6527
+
+Using folder: PCNS_052_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_054_BL
+
+baselineTiming =
+
+   10.1872
+
+Using folder: PCNS_055_BL
+Using folder: PCNS_056_BL
+Using folder: PCNS_057_BL
+
+baselineTiming =
+
+   10.2620
+
+Using folder: PCNS_058_BL
+
+baselineTiming =
+
+   11.2256
+
+Using folder: PCNS_060_BL
+
+baselineTiming =
+
+   14.1284
+
+Using folder: PCNS_064_BL
+Using folder: PCNS_065_BL
+Using folder: PCNS_066_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_067_BL
+
+baselineTiming =
+
+   10.4039
+
+Using folder: PCNS_069_BL
+
+baselineTiming =
+
+   10.1765
+
+Using folder: PCNS_070_BL
+Using folder: PCNS_071_BL
+
+baselineTiming =
+
+   13.5767
+
+Using folder: PCNS_072_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_073_BL
+
+baselineTiming =
+
+   10.0619
+
+Using folder: PCNS_075_BL
+
+baselineTiming =
+
+   10.3513
+
+Using folder: PCNS_076_BL
+
+baselineTiming =
+
+   13.8785
+
+Using folder: PCNS_078_BL
+
+baselineTiming =
+
+   10.3229
+
+Using folder: PCNS_079_BL
+
+baselineTiming =
+
+   14.4236
+
+Using folder: PCNS_080_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_082_BL
+Using folder: PCNS_083_BL
+
+baselineTiming =
+
+   10.3251
+
+Using folder: PCNS_084_BL
+
+baselineTiming =
+
+   10.1602
+
+Using folder: PCNS_085_BL
+Using folder: PCNS_086_BL
+Using folder: PCNS_087_BL
+
+baselineTiming =
+
+   14.8775
+
+Using folder: PCNS_092_BL
+
+baselineTiming =
+
+   10.3995
+
+Using folder: PCNS_093_BL
+
+baselineTiming =
+
+   10.0309
+
+Using folder: PCNS_094_BL
+Using folder: PCNS_095_BL
+
+baselineTiming =
+
+   10.0794
+
+Using folder: PCNS_096_BL
+
+baselineTiming =
+
+   10.2215
+
+Using folder: PCNS_099_BL
+
+baselineTiming =
+
+   13.9908
+
+Using folder: PCNS_100_BL
+
+baselineTiming =
+
+   10.3817
+
+Using folder: PCNS_103_BL
+Using folder: PCNS_104_BL
+
+baselineTiming =
+
+    10
+
+Using folder: PCNS_105_BL
+Using folder: PCNS_107_BL
+Using folder: PCNS_108_BL
+
+baselineTiming =
+
+   12.2920
+
+Using folder: PCNS_109_BL
+
+baselineTiming =
+
+   10.2057
+
+Using folder: PCNS_112_BL
+Using folder: PCNS_113_BL
+
+baselineTiming =
+
+   10.4655
+
+Using folder: PCNS_115_BL
+Using folder: PCNS_116_BL
+
+baselineTiming =
+
+   13.9032
+
+Using folder: PCNS_117_BL
+
+baselineTiming =
+
+   10.2733
+
+Using folder: PCNS_118_BL
+
+baselineTiming =
+
+   10.1096
+
+Using folder: PCNS_119_BL
+
+baselineTiming =
+
+   10.2191
+
+Using folder: PCNS_120_BL
+
+baselineTiming =
+
+   10.0836
+
+Using folder: PCNS_121_BL
+Using folder: PCNS_122_BL
+
+baselineTiming =
+
+   10.4759
+
+Using folder: PCNS_124_BL
+Using folder: PCNS_127_BL
+
+baselineTiming =
+
+   10.3151
+
+Using folder: PCNS_128_BL
+Using folder: PCNS_130_BL
+
+baselineTiming =
+
+   10.3078
+
+Using folder: PCNS_131_BL
+
+baselineTiming =
+
+   10.1008
+
+Using folder: PCNS_132_BL
+
+baselineTiming =
+
+   10.0932
+
+Using folder: PCNS_133_BL
+Using folder: PCNS_134_BL
