@@ -161,8 +161,8 @@ for i = 1:height(segmentsTableIncongruent)
 
     % NEW: mean of rolling 5 s HR within the trial window (bpm)
     idx = (time >= t0) & (time <= t1);
-    %% try max HR for each trial window
-    incongruentHRs(i) = max(HRrolling5(idx), [], 'omitnan');   % per-trial maximum HR
+    %% try max HR for each 
+    incongruentHRs(i) = max(HRrolling5(idx), 'omitnan');            % trial-level HR (bpm) for that incongruent trial.
     % incongruentHRs(i) = mean(HRrolling5(idx), 'omitnan');            % trial-level HR (bpm) for that incongruent trial.
 
     % PPG amplitude (unchanged)
@@ -180,9 +180,7 @@ for i = 1:height(segmentsTableCongruent)
 
     % NEW: mean of rolling 5 s HR within the trial window (bpm)
     idx = (time >= t0) & (time <= t1);
-    %% try max HR for each trial window
-    congruentHRs(i) = max(HRrolling5(idx), [], 'omitnan');   % per-trial maximum HR
-    % congruentHRs(i) = mean(HRrolling5(idx), 'omitnan');              % trial-level HR (bpm) for that congruent trial.
+    congruentHRs(i) = mean(HRrolling5(idx), 'omitnan');              % trial-level HR (bpm) for that congruent trial.
 
     % PPG amplitude (unchanged)
     if any(idx)
@@ -191,7 +189,7 @@ for i = 1:height(segmentsTableCongruent)
 end
 
 %% FINAL CONDITION SUMMARIES: (unchanged field names)
-kme = mean(incongruentHRs, 'omitnan');    % bpm, from rolling-5s HR
+HR.incongruentAverage = mean(incongruentHRs, 'omitnan');    % bpm, from rolling-5s HR
 HR.congruentAverage   = mean(congruentHRs,   'omitnan');    % bpm, from rolling-5s HR
 HR.incongruentHighpassedPeakPPG = mean(incongruentMaxPPG, 'omitnan'); % a.u.
 HR.congruentHighpassedPeakPPG   = mean(congruentMaxPPG,   'omitnan'); % a.u.
