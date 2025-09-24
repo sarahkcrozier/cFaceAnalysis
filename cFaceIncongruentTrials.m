@@ -33,21 +33,17 @@ summaryFilePath = fullfile(summaryFile.folder, summaryFile.name);
 
 % Import relevant columns
 opts = detectImportOptions(summaryFilePath);
-opts.SelectedVariableNames = {'ParticipantID', 'stimMove_onset', 'fixation_onset', ...
-    'cong', 'ptemot', 'trigger_onset'};
+opts.SelectedVariableNames = {'ParticipantID', 'stimMove_onset', 'fixation_onset', 'fixation_duration', ...
+    'cong', 'ptemot'};
 segmentsTable = readtable(summaryFilePath, opts);
 segmentsTable.trialNo = (1:height(segmentsTable))';
 
-% Add timeToNextTrigger
-segmentsTable.timeToNextTrigger = NaN(height(segmentsTable), 1);
-for i = 1:height(segmentsTable)-1
-    segmentsTable.timeToNextTrigger(i) = ...
-        segmentsTable.trigger_onset(i+1) - segmentsTable.stimMove_onset(i);
-end
-segmentsTable.timeToNextTrigger(end) = 4;
+% Add responseWindow
+segmentsTable.responseWindow = ...
+    (segmentsTable.fixation_onset + segmentsTable.fixation_duration) - segmentsTable.stimMove_onset;
 
-% Return only incongruent trials
-segmentsTableIncongruent = segmentsTable(segmentsTable.cong == 0, :);
+segmentsTableIncongruent = segmentsTable(segmentsTable.cong==0, ...
+    {'trialNo','stimMove_onset','fixation_onset','fixation_duration','responseWindow','cong','ptemot'});
 
 diary off
 
