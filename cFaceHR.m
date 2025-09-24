@@ -191,7 +191,7 @@ for i = 1:height(segmentsTableCongruent)
 end
 
 %% FINAL CONDITION SUMMARIES: (unchanged field names)
-kme = mean(incongruentHRs, 'omitnan');    % bpm, from rolling-5s HR
+HR.incongruentAverage = mean(incongruentHRs, 'omitnan');    % bpm, from rolling-5s HR
 HR.congruentAverage   = mean(congruentHRs,   'omitnan');    % bpm, from rolling-5s HR
 HR.incongruentHighpassedPeakPPG = mean(incongruentMaxPPG, 'omitnan'); % a.u.
 HR.congruentHighpassedPeakPPG   = mean(congruentMaxPPG,   'omitnan'); % a.u.
