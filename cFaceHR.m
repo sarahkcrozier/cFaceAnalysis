@@ -161,9 +161,9 @@ for i = 1:height(segmentsTableIncongruent)
 
     % NEW: mean of rolling 5 s HR within the trial window (bpm)
     idx = (time >= t0) & (time <= t1);
-    %% try max HR for each trial window
-    incongruentHRs(i) = max(HRrolling5(idx), [], 'omitnan');   % per-trial maximum HR
-    % incongruentHRs(i) = mean(HRrolling5(idx), 'omitnan');            % trial-level HR (bpm) for that incongruent trial.
+    %% try max HR for each trial window, replace with line below: 
+    % incongruentHRs(i) = max(HRrolling5(idx), [], 'omitnan');   % per-trial maximum HR
+    incongruentHRs(i) = mean(HRrolling5(idx), 'omitnan');            % trial-level HR (bpm) for that incongruent trial.
 
     % PPG amplitude (unchanged)
     if any(idx)
@@ -180,9 +180,9 @@ for i = 1:height(segmentsTableCongruent)
 
     % NEW: mean of rolling 5 s HR within the trial window (bpm)
     idx = (time >= t0) & (time <= t1);
-    %% try max HR for each trial window
-    congruentHRs(i) = max(HRrolling5(idx), [], 'omitnan');   % per-trial maximum HR
-    % congruentHRs(i) = mean(HRrolling5(idx), 'omitnan');              % trial-level HR (bpm) for that congruent trial.
+    %% try max HR for each trial window, replace with line below: 
+    % congruentHRs(i) = max(HRrolling5(idx), [], 'omitnan');   % per-trial maximum HR
+    congruentHRs(i) = mean(HRrolling5(idx), 'omitnan');              % trial-level HR (bpm) for that congruent trial.
 
     % PPG amplitude (unchanged)
     if any(idx)
