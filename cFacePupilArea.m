@@ -4,7 +4,7 @@ function [eyeDataTbl, cFacePupil] = cFacePupilArea(participantID)
 % - raw pupil area
 % - interpolated pupil area (blink-masked ±200 ms, PCHIP)
 % - filtered (LP, zero-phase) on the interpolated signal
-% - per-trial baseline-corrected (relative to trial start, -0.5..0 s) \
+% - per-trial baseline-corrected (relative to trial start, -0.1..0 s) \
 % CHECK THIS - HAVE ADDED FURTHER OUTPUTS
 %
 % Columns: eyeLinkTime, X, Y, pupilArea, convertedTime_s, trial, participantID,
@@ -167,42 +167,32 @@ msgVec(sfixMask) = "SFIX";
 
 
 % =======================================================================
-% BLOCK A: Blink mask ±200 ms and PCHIP interpolation
-% -----------------------------------------------------------------------
-% 1) Build blink mask from raw pupil (==0) and expand it by ±200 ms.
-% 2) Interpolate across masked samples using 'pchip'.
+% BLOCK A (SIMPLE): Blink mask ±150 ms, set to NaN (no speed/range masks)
 % =======================================================================
-padSec = 0.200;                           % ±200 ms padding
-padN   = max(1, round(padSec * Fs));      % samples to pad on each side
+padSec = 0.150;                           % use ±150 ms padding (common default)
+padN   = max(1, round(padSec * Fs));
 
-blinkMaskRaw = (pupilVec == 0);           % EyeLink zeros during blinks
-% Expand (dilate) mask by convolution with a ones window of length (2*padN+1)
+% Blink mask from EyeLink zeros, then pad
+blinkMaskRaw = (pupilVec == 0);
 kernel       = ones(2*padN + 1, 1);
 blinkMask    = conv(double(blinkMaskRaw), kernel, 'same') > 0;
 
-% Update message to "SBLINK" for the whole padded span
+% Label padded region for reference
 msgVec(blinkMask) = "SBLINK";
 
-% Interpolate across masked samples
+% Set artifacts to NaN **once** (blink-only)
 interpPupil = pupilVec;
 interpPupil(blinkMask) = NaN;
-% If NaNs at edges, forward/backward fill small edges before PCHIP
-if isnan(interpPupil(1))
-    firstValid = find(~isnan(interpPupil), 1, 'first');
-    if ~isempty(firstValid), interpPupil(1:firstValid-1) = interpPupil(firstValid); end
-end
-if isnan(interpPupil(end))
-    lastValid = find(~isnan(interpPupil), 1, 'last');
-    if ~isempty(lastValid), interpPupil(lastValid+1:end) = interpPupil(lastValid); end
-end
-% Final shape-preserving interpolation
-interpPupil = fillmissing(interpPupil, 'pchip');
+
 
 % =======================================================================
 % BLOCK B: Zero-phase LOW-PASS filtering on interpolated signal
 % -----------------------------------------------------------------------
 % Use Butterworth with filtfilt to avoid phase delay.
 % Default LP = 4 Hz (safe for 60–1000 Hz sampling).
+
+% This version interpolates internal gaps but leaves NaNs at edges,
+% then filters only the valid segment to avoid edge bias.
 % =======================================================================
 
 LP = 4.00;                 % low-pass cutoff frequency in Hz
@@ -212,8 +202,29 @@ LPn = min(LP/nyq, 0.999);  % normalized cutoff (guard upper bound)
 % 3rd-order low-pass Butterworth filter
 [b,a] = butter(3, LPn, 'low');
 
-% Apply zero-phase filtering
-filtPup = filtfilt(b, a, double(interpPupil));
+% SIMPLE FILTER: Apply zero-phase filtering
+% filtPup = filtfilt(b, a, double(interpPupil));
+
+% Amended filter: 
+% Interpolate internal gaps only; keep edge NaNs (no extrapolation)
+interpPupil = fillmissing(interpPupil, 'pchip', 'EndValues', 'none');
+
+% Filter only the contiguous valid portion
+filtPup  = interpPupil;
+validIdx = find(~isnan(interpPupil));
+if ~isempty(validIdx)
+    firstValid = validIdx(1); lastValid = validIdx(end);
+    seg = double(interpPupil(firstValid:lastValid));
+
+    minLen = 3 * max(length(a), length(b));   % filtfilt safety
+    if numel(seg) >= minLen && all(isfinite(seg))
+        segFilt = filtfilt(b, a, seg);
+        filtPup(firstValid:lastValid) = segFilt;
+    else
+        filtPup(firstValid:lastValid) = seg;   % too short: skip filtering
+    end
+end
+
 
 
 % =======================================================================
@@ -244,15 +255,15 @@ if dsFactor > 1
 end
 
 % =======================================================================
-% BLOCK D: Per-trial baseline correction using segmentsTable trial timings
-% (trail_s)
+% BLOCK D: Per-trial baseline correction using segmentsTable strimulus
+% response timings
+% (stimResponse)
 % -----------------------------------------------------------------------
 % trial_s: vector (seconds) of trial start times, consecutive (1..N).
 % For each trial n:
-%   - Trial window: [trial_s(n), trial_s(n+1)) ; last trial goes to end.
-%   - Baseline: mean(filtPup) in [trial_s(n)+baselineWin(1), trial_s(n)+baselineWin(2)].
+%   - Baseline window 10.1 to 0 prior to stimulus onset
 % Outputs:
-%   perTrialBC      : filtPup minus per-trial baseline within each trial window
+%   perTrialBC      : filtPup minus per-stimulus reposne baseline 
 %   meanBaselineVec : baseline mean replicated across all samples in that trial window
 % =======================================================================
 
@@ -260,12 +271,14 @@ baselineWin = [-0.1, 0.0];            % seconds relative to trial start
 perTrialBC      = NaN(nSamples,1);
 meanBaselineVec = NaN(nSamples,1);
 
-% Ensure trial_s is a clean, ascending column vector in seconds
+% Ensure trial_s and stimStim are clean, ascending column vector in seconds
 trial_s = trial_s(:);
+stimStim = stimResponse(:);     
 
 N = numel(trial_s);
+N = min(numel(trial_s), numel(stimStim));                    % guard against length mismatch
 if N == 0
-    warning('trial_s is empty after cleaning; skipping baseline correction.');
+    warning('stimResponse or trial_s is empty; skipping baseline correction.');
 else
     % Sample times (s) on same reference as trial_s
     t_sample_s = (timeVec - syncPulse) / 1000;
@@ -280,13 +293,13 @@ else
 
         % Samples in this trial window
         inTrial = (t_sample_s >= tStart) & (t_sample_s < tEnd);
-        if ~any(inTrial)
+        if ~any(inTrial) || isnan(stimStim(n)) % skip if missing stim onset
             continue;
         end
 
-        % Baseline window relative to trial start for this trial
-        t0 = tStart + baselineWin(1);
-        t1 = tStart + baselineWin(2);
+        % Baseline window relative to stimulus response onset for this trial
+        t0 = stimStim(n) + baselineWin(1);                     % -0.10 s relative to stimMove_onset
+        t1 = stimStim(n) + baselineWin(2);                     %  0.00 s relative to stimMove_onset
         idxBase = (t_sample_s >= t0) & (t_sample_s <= t1);
 
         if ~any(idxBase)
@@ -462,7 +475,7 @@ if ~isempty(trial_s)
     idxBaseline = (convertedTime_s >= baselineStart) & (convertedTime_s < baselineEnd);
 
     if any(idxBaseline)
-        cFacePupilBaseline = mode(filtPup(idxBaseline), 'omitnan');
+        cFacePupilBaseline = median(filtPup(idxBaseline), 'omitnan');
     else
         cFacePupilBaseline = NaN;  % no samples available
     end
@@ -475,7 +488,7 @@ end
 % Build cFacePupil struct (trial-wise + averages)
 % -----------------------------------------------------------------------
 
-% Compute per-trial peak pupil (NaN if trial has no data)
+% Compute per-trial peak pupil (max sample) (NaN if trial has no data)
 allTrialPeaks = NaN(1, nTrials);
 for t = 1:nTrials
     colData = winMat(:, t);
