@@ -271,12 +271,12 @@ baselineWin = [-0.1, 0.0];            % seconds relative to trial start
 perTrialBC      = NaN(nSamples,1);
 meanBaselineVec = NaN(nSamples,1);
 
-% Ensure trial_s and stimStim are clean, ascending column vector in seconds
+% Ensure trial_s and stimResponseTimings are clean, ascending column vector in seconds
 trial_s = trial_s(:);
-stimStim = stimResponse(:);     
+stimResponseTimings = stimResponse(:);     
 
 N = numel(trial_s);
-N = min(numel(trial_s), numel(stimStim));                    % guard against length mismatch
+N = min(numel(trial_s), numel(stimResponseTimings));                    % guard against length mismatch
 if N == 0
     warning('stimResponse or trial_s is empty; skipping baseline correction.');
 else
@@ -293,13 +293,13 @@ else
 
         % Samples in this trial window
         inTrial = (t_sample_s >= tStart) & (t_sample_s < tEnd);
-        if ~any(inTrial) || isnan(stimStim(n)) % skip if missing stim onset
+        if ~any(inTrial) || isnan(stimResponseTimings(n)) % skip if missing stim onset
             continue;
         end
 
         % Baseline window relative to stimulus response onset for this trial
-        t0 = stimStim(n) + baselineWin(1);                     % -0.10 s relative to stimMove_onset
-        t1 = stimStim(n) + baselineWin(2);                     %  0.00 s relative to stimMove_onset
+        t0 = stimResponseTimings(n) + baselineWin(1);                     % -0.10 s relative to stimMove_onset
+        t1 = stimResponseTimings(n) + baselineWin(2);                     %  0.00 s relative to stimMove_onset
         idxBase = (t_sample_s >= t0) & (t_sample_s <= t1);
 
         if ~any(idxBase)
