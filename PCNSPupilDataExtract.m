@@ -7,53 +7,113 @@ options = specifyOptions();  % must return .paths.DBExport and any others you us
 shared = getSharedPCNSData_(options);    % table with ID and shared columns
 N = height(shared);
 
-% ----- Preallocate pupil vars
-baselinePupil           = NaN(N,1);
-averagePupil            = NaN(N,1);
-incongruentPupilAverage = NaN(N,1);
-congruentPupilAverage   = NaN(N,1);
-eyeSide_cell            = repmat({''}, N, 1);   % store as 1-char strings ("R"/"L")
+% ----- Preallocate pupil vars (LONG: 4 rows per participant)
+nRows = 4 * N;
 
-% ----- Fill pupil metrics
+baselinePupil           = NaN(nRows,1);
+averagePupil            = NaN(nRows,1);
+condition               = strings(nRows,1);
+conditionPupil          = NaN(nRows,1);
+incongruentPupilAverage = NaN(nRows,1);
+congruentPupilAverage   = NaN(nRows,1);
+eyeSide_cell            = repmat({''}, nRows, 1);   % 1-char strings ("R"/"L")
+
+
+% ----- Fill pupil metrics (LONG: 4 rows per participant)
+condList = {'HAHA','HAAN','ANHA','ANAN'};  % fixed order
+
 for i = 1:N
     currentID = shared.ID(i);
     try
-        % [~, cFacePupil] per your convention
         [~, cFacePupil] = cFacePupilArea(currentID);
 
-        if isfield(cFacePupil,'baseline'),             baselinePupil(i)            = cFacePupil.baseline;            end
-        if isfield(cFacePupil,'peakAverage'),          averagePupil(i)             = cFacePupil.peakAverage;         end
-        if isfield(cFacePupil,'incongruentAverage'),   incongruentPupilAverage(i)  = cFacePupil.incongruentAverage;  end
-        if isfield(cFacePupil,'congruentAverage'),     congruentPupilAverage(i)    = cFacePupil.congruentAverage;    end
+        % Common per-participant values
+        baseVal   = NaN; if isfield(cFacePupil,'baseline'),    baseVal   = cFacePupil.baseline;      end
+        peakAvg   = NaN; if isfield(cFacePupil,'peakAverage'), peakAvg   = cFacePupil.peakAverage;   end
+        congAvg   = NaN; if isfield(cFacePupil,'congruentAverage'),   congAvg   = cFacePupil.congruentAverage;   end
+        incongAvg = NaN; if isfield(cFacePupil,'incongruentAverage'), incongAvg = cFacePupil.incongruentAverage; end
+
+        eyeVal = '';
         if isfield(cFacePupil,'eyeSide')
-            % coerce to 1-char string cell
             val = cFacePupil.eyeSide;
             if ischar(val) && ~isempty(val)
-                eyeSide_cell{i} = val(1);
+                eyeVal = val(1);
             elseif isstring(val) && strlength(val)>=1
-                eyeSide_cell{i} = char(val(1));
+                eyeVal = char(val(1));
             end
         end
+
+        % 4 long-format rows per participant
+        for k = 1:4
+            row = (i-1)*4 + k;
+
+            condition(row)    = string(condList{k});
+
+            % Pull condition-specific pupil from struct fields
+            switch condList{k}
+                case 'HAHA'
+                    condVal = NaN; if isfield(cFacePupil,'HAHA'), condVal = cFacePupil.HAHA; end
+                case 'HAAN'
+                    condVal = NaN; if isfield(cFacePupil,'HAAN'), condVal = cFacePupil.HAAN; end
+                case 'ANHA'
+                    condVal = NaN; if isfield(cFacePupil,'ANHA'), condVal = cFacePupil.ANHA; end
+                case 'ANAN'
+                    condVal = NaN; if isfield(cFacePupil,'ANAN'), condVal = cFacePupil.ANAN; end
+            end
+            conditionPupil(row) = condVal;
+
+            % Repeat per-participant constants
+            baselinePupil(row) = baseVal;
+            averagePupil(row)  = peakAvg;
+            eyeSide_cell{row}  = eyeVal;
+
+            % Gate averages per your rules:
+            % congruentAverage only for HAHA, ANAN
+            if any(strcmp(condList{k}, {'HAHA','ANAN'}))
+                congruentPupilAverage(row) = congAvg;
+            else
+                congruentPupilAverage(row) = NaN;
+            end
+
+            % incongruentAverage only for HAAN, ANHA
+            if any(strcmp(condList{k}, {'HAAN','ANHA'}))
+                incongruentPupilAverage(row) = incongAvg;
+            else
+                incongruentPupilAverage(row) = NaN;
+            end
+        end
+
     catch ME
         warning('cFacePupilArea failed for ID %d: %s', currentID, ME.message);
+
+        % Still write 4 NaN rows with condition labels so shapes stay consistent
+        for k = 1:4
+            row = (i-1)*4 + k;
+            condition(row) = string(condList{k});
+        end
     end
 end
 
-% ----- Assemble pupil table (shared + pupil)
-pupilTbl = shared;
-pupilTbl.baselinePupil           = baselinePupil;
-pupilTbl.eyeSide                 = eyeSide_cell;         % 1-char strings
-pupilTbl.averagePupil            = averagePupil;
-pupilTbl.incongruentPupilAverage = incongruentPupilAverage;
-pupilTbl.congruentPupilAverage   = congruentPupilAverage;
+% ----- Assemble LONG pupil table (shared expanded 4×)
+idxLong  = repelem((1:N)', 4, 1);
+sharedLong = shared(idxLong, :);
 
-% Optional: drop rows with missing ID (shouldn’t happen after shared filter)
-pupilTbl = pupilTbl(~isnan(pupilTbl.ID), :);
+pupilTblLong = sharedLong;
+pupilTblLong.condition               = categorical(condition);   % tidy factor
+pupilTblLong.conditionPupil          = conditionPupil;
+pupilTblLong.baselinePupil           = baselinePupil;
+pupilTblLong.eyeSide                 = eyeSide_cell;             % 1-char strings
+pupilTblLong.averagePupil            = averagePupil;
+pupilTblLong.incongruentPupilAverage = incongruentPupilAverage;
+pupilTblLong.congruentPupilAverage   = congruentPupilAverage;
 
-% ----- Write CSV
-outPath = fullfile(options.paths.DBExport, 'PCNS_PupilData.csv');
-writetable(pupilTbl, outPath);
-fprintf('Wrote pupil data: %s (%d rows)\n', outPath, height(pupilTbl));
+% Optional: keep only filled IDs
+pupilTblLong = pupilTblLong(~isnan(pupilTblLong.ID), :);
+
+% ----- Write LONG-FORMAT CSV
+outPath = fullfile(options.paths.DBExport, 'cface_eyeData_longFormat.csv');
+writetable(pupilTblLong, outPath);
+fprintf('Wrote long-format pupil data: %s (%d rows)\n', outPath, height(pupilTblLong));
 end
 
 function shared = getSharedPCNSData_(options)
