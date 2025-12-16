@@ -23,7 +23,7 @@ eyePlots = options.paths.eyeDataPlots;
 segmentsTable = cFaceTrialSegments(participantID)
 trial_s = segmentsTable.instruct_onset % an array of all the trial start times for a given participant
 stimResponse = segmentsTable.stimMove_onset % an array of all the start times for the stimulus response windows
-partEmotion = segmentsTable.ptemot % an array of the emoted emotions [AN/HA] per trial
+partEmotion = segmentsTable.ptemot % an array of the participant emoted emotions [AN/HA] per trial
 condition = segmentsTable.condition % an array of the condition [congruent/incongruent] for each trial
 
 % -----------------------------
@@ -414,8 +414,8 @@ congIdx   = find(strcmpi(condition(1:nTrials),   "congruent"));
 incongIdx = find(strcmpi(condition(1:nTrials),   "incongruent"));
 
 % Emotion-based subsets
-HAIdx = find(strcmpi(partEmotion(1:nTrials), "HA"));
-ANIdx = find(strcmpi(partEmotion(1:nTrials), "AN"));
+HAIdx = find(strcmpi(partEmotion(1:nTrials), "HA")); % all the trials where participant instructed emotion is HA
+ANIdx = find(strcmpi(partEmotion(1:nTrials), "AN")); % all the trials where participant instructed emotion is AN
 
 % Combined subsets
 HAcongIdx   = intersect(HAIdx, congIdx);
@@ -506,6 +506,10 @@ cFacePupil.congruentAverage  = mean(allTrialPeaks(congIdx),   'omitnan');
 cFacePupil.incongruentAverage= mean(allTrialPeaks(incongIdx), 'omitnan');
 cFacePupil.baseline          = cFacePupilBaseline;
 cFacePupil.eyeSide           = eyeSide(1);
+cFacePupil.HAHA              = mean(allTrialPeaks(HAcongIdx), 'omitnan');
+cFacePupil.ANHA              = mean(allTrialPeaks(HAincongIdx), 'omitnan');
+cFacePupil.ANAN              = mean(allTrialPeaks(ANcongIdx), 'omitnan');
+cFacePupil.HAAN              = mean(allTrialPeaks(ANincongIdx), 'omitnan');
 
 % Print to MATLAB command window
 fprintf('Peak pupil summary for participant %s:\n', participantID_str);

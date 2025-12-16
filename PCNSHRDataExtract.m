@@ -29,6 +29,9 @@ AllTrialsPercentageDiffPPI    = NaN(N,1);   % %
 IncongruentMaxChangePPI       = NaN(N,1);   % s
 CongruentMaxChangePPI         = NaN(N,1);   % s
 AllTrialsMaxChangePPI         = NaN(N,1);   % s
+baselinePPI                   = NaN(N,1);   % s
+incongruentBaselinePPI        = NaN(N,1);   % s
+incongruentResponsePPI        = NaN(N,1);   % s
 
 % ----- Fill metrics per participant
 for i = 1:N
@@ -66,6 +69,24 @@ for i = 1:N
         if isfield(HR,'CongruentMaxChangePPI'),        CongruentMaxChangePPI(i)        = HR.CongruentMaxChangePPI;        end
         if isfield(HR,'AllTrialsMaxChangePPI'),        AllTrialsMaxChangePPI(i)        = HR.AllTrialsMaxChangePPI;        end
 
+       
+        % ---- Baseline/response PPI exports (seconds) ----
+        % baselinePPI (mean PPI during baseline beats)
+        if isfield(HR,'baselinePPI'), baselinePPI(i) = HR.baselinePPI; end
+
+        % incongruent baseline/response PPI
+        % (handle both spellings of the response field to be safe)
+        if isfield(HR,'incongruentBaselinePPI')
+            incongruentBaselinePPI(i) = HR.incongruentBaselinePPI;
+        end
+        if isfield(HR,'incongruentResponsePPI')
+            incongruentResponsePPI(i) = HR.incongruentResponsePPI;
+        elseif isfield(HR,'incongruentrespontPPI')  % fallback if earlier code used this name
+            incongruentResponsePPI(i) = HR.incongruentrespontPPI;
+        end
+
+
+        
         % Optional concise per-participant print (no rounding enforced)
         fprintf(['ID %d | base=%.6f bpm, post=%.6f bpm | incHR=%.6f, congHR=%.6f | ' ...
                  'PeakPPG: base=%.6f, inc=%.6f, cong=%.6f | ' ...
@@ -106,6 +127,10 @@ hrTbl.AllTrialsPercentageDiffPPI    = AllTrialsPercentageDiffPPI;    % percent
 hrTbl.IncongruentMaxChangePPI       = IncongruentMaxChangePPI;       % seconds
 hrTbl.CongruentMaxChangePPI         = CongruentMaxChangePPI;         % seconds
 hrTbl.AllTrialsMaxChangePPI         = AllTrialsMaxChangePPI;         % seconds
+
+hrTbl.baselinePPI            = baselinePPI;
+hrTbl.incongruentBaselinePPI = incongruentBaselinePPI;
+hrTbl.incongruentResponsePPI = incongruentResponsePPI;
 
 % Optional: drop rows with missing ID (shouldn’t happen after shared filter)
 hrTbl = hrTbl(~isnan(hrTbl.ID), :);

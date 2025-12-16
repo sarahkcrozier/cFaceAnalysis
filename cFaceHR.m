@@ -14,6 +14,9 @@ HR.congruentAverage     = NaN;
 HR.baselineHighpassedPeakPPG      = NaN;
 HR.incongruentHighpassedPeakPPG   = NaN;
 HR.congruentHighpassedPeakPPG     = NaN;
+HR.baselinePPI         = NaN
+HR.incongruentBaselinePPI = NaN;   % mean of all incongruent pre3_meanPPI_s (s)
+HR.incongruentrespontPPI  = NaN;   % mean of all incongruent post3_meanPPI_s (s)
 % -----------------------------------------------------
 
 logPath = fullfile(options.paths.analysis, 'output_HR_cface.txt');
@@ -123,6 +126,11 @@ HRrolling5 = buildHRLine(peakTimes, time, rollingWindowSec);  % bpm, time-aligne
 inBaseline = peakTimes <= baselineTiming;   % Select peaks that occur before the baseline cutoff
 if nnz(inBaseline) >= 2                     % Require at least 2 beats
     tb = peakTimes(inBaseline);
+
+% mean inter-beat interval (seconds) over the same baseline beats
+    baselinePPIs = diff(tb);                                % seconds
+    HR.baselinePPI = mean(baselinePPIs, 'omitnan');         % 
+
     baselineDuration = tb(end) - tb(1);
     if baselineDuration > 0
         HR.baseline = ((numel(tb)-1) / baselineDuration) * 60;  % Compute baseline HR from beat INTERVALS (ie numel(tb)-1) and convert beats per second to bpm
@@ -226,6 +234,10 @@ for i = 1:nI
     nPostIntervals_inc(i)    = npost;
     onset_inc(i)             = t0;
 end
+
+% ---- Incongruent baseline/response PPI summaries (seconds) ----
+HR.incongruentBaselinePPI = mean(pre3_meanPPI_s_inc,  'omitnan');  % average pre-stimulus PPI
+HR.incongruentrespontPPI  = mean(post3_meanPPI_s_inc, 'omitnan');  % average post-stimulus PPI
 
 % Congruent
 pre3_meanPPI_s_con      = NaN(nC,1);
@@ -444,11 +456,11 @@ function [cleanPeakTimes, PPI, keepMask] = cleanPPI(peakTimes)
 end
 
 function HRline = buildHRLine(peakTimes, time, smoothingWindow)
-% Make a smooth HR (bpm) line from cleaned peaks for plotting only.
+% Make a smooth HR (bpm) line from cleaned peaks 
 % smoothingWindow (sec) controls moving-average length (default 1.0).
     if nargin < 3 || isempty(smoothingWindow), smoothingWindow = 1.0; end
     if numel(peakTimes) < 3
-        HRline = nan(size(time)); return
+            HRline = nan(size(time)); return
     end
 
     PPI    = diff(peakTimes);
@@ -521,7 +533,8 @@ function [pre3, post3, dPPI_ms, pct_dPPI, maxChange_ms, nPre, nPost] = deltaPPI3
         nPost   = numel(take);
     end
 
-    % ΔPPI and %ΔPPI
+    % ΔPPI and %ΔPPI - calc by subtracting post stimulus response from pre
+    % (intertrial baseline)
     if isfinite(pre3) && isfinite(post3)
         dPPI_ms  = (post3 - pre3) * 1000.0;
         if pre3 ~= 0
