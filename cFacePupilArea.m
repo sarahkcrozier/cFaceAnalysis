@@ -167,22 +167,26 @@ msgVec(sfixMask) = "SFIX";
 
 
 % =======================================================================
-% BLOCK A (SIMPLE): Blink mask ±150 ms, set to NaN (no speed/range masks)
+% NEW BLOCK A: Filtering using filterRawData.m
 % =======================================================================
-padSec = 0.150;                           % use ±150 ms padding (common default)
-padN   = max(1, round(padSec * Fs));
+% 1. Get default settings from the Kret & Sjak-Shie (2018) library
+filtSettings = filterRawData(); 
 
-% Blink mask from EyeLink zeros, then pad
-blinkMaskRaw = (pupilVec == 0);
-kernel       = ones(2*padN + 1, 1);
-blinkMask    = conv(double(blinkMaskRaw), kernel, 'same') > 0;
+% 2. Customize padding to match your current ±150ms requirement
+filtSettings.gapPadding_backward = 150; 
+filtSettings.gapPadding_forward  = 150;
 
-% Label padded region for reference
-msgVec(blinkMask) = "SBLINK";
+% 3. Run the filter (uses speed, deviation, and island filters)
+% timeVec (ms) and pupilVec (raw area) are passed to the function
+[isValid, ~, ~] = filterRawData(timeVec, pupilVec, filtSettings);
 
-% Set artifacts to NaN **once** (blink-only)
+% 4. Create the cleaned signal for subsequent interpolation
+% Mark invalid samples as NaN based on the advanced logical output
 interpPupil = pupilVec;
-interpPupil(blinkMask) = NaN;
+interpPupil(~isValid) = NaN;
+
+% Update the message vector for consistency in your output table
+msgVec(~isValid) = "REJECTED_BY_FILTER";
 
 
 % =======================================================================
