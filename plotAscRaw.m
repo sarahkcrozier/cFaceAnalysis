@@ -5,7 +5,7 @@ function plotAscRaw(participantID)
 % Usage: plotAscRaw(133)
 
 options = specifyOptions;
-ascDir  = options.paths.ASCtoMAT;
+ascDir  = options.paths.EDFtoASC;
 
 if isnumeric(participantID), participantID = num2str(participantID); end
 

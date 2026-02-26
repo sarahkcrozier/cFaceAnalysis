@@ -1,5 +1,5 @@
 function [valOut,speedFiltData,devFiltData] ...
-    = filterRawData(t_ms,diaSamples,rawFiltSettings)
+    = rawDataFilter(t_ms,diaSamples,rawFiltSettings)
 % rawDataFilter Filter the raw data by identifying a subset as 'valid'.
 %
 %   [valOut,speedFiltData,devFiltData] = rawDataFilter(t_ms,diaSamples...
@@ -64,22 +64,21 @@ if nargin==2||nargin==0
     % Pupil range filter criteria:
     
     % The minimum and maximum allowable pupil size:
-    %rawFiltSettings.PupilDiameter_Min                   = 150;
-    %rawFiltSettings.PupilDiameter_Max                   = 600;
-    
+    rawFiltSettings.PupilDiameter_Min                   = 800; %KW chosen based on plot y axis
+    rawFiltSettings.PupilDiameter_Max                   = 1600;
     %----------------------------------------------------------------------
     % Isolated sample filter criteria:
     
     % 'Sample-islands' are clusters of samples that are temporally seperated
     % from other samples. The minimum distance used to consider
     % samples 'separated' is specified below:
-    rawFiltSettings.islandFilter_islandSeperation_ms    = 0.040;   %[s]
+    rawFiltSettings.islandFilter_islandSeperation_ms    = 40;   %[ms]
     
     % When clusters are seperated, they need to have the minimum size
     % specified below. Sample islands smaller than this temporal width and
     % separated from other samples by the distance mentioned above are
     % marked as invalid.
-    rawFiltSettings.islandFilter_minIslandWidth_ms      = 0.050;   %[s]
+    rawFiltSettings.islandFilter_minIslandWidth_ms      = 50;   %[ms]
     
     %----------------------------------------------------------------------
     % Dilation speed filter criteria:
@@ -90,7 +89,7 @@ if nargin==2||nargin==0
     
     % Only calculate the speed when the gap between samples is smaller than
     % the distance specified below:
-    rawFiltSettings.dilationSpeedFilter_maxGap_ms       = 0.200;  %[s]
+    rawFiltSettings.dilationSpeedFilter_maxGap_ms       = 200;  %[ms]
     
     %----------------------------------------------------------------------
     % Edge removal filter criteria:
@@ -101,15 +100,15 @@ if nargin==2||nargin==0
     % also need to be marked as invalid. The settings below indicate when a
     % section of missing data is classified as a gap (samples around these
     % gaps are in turn rejected).
-    rawFiltSettings.gapDetect_minWidth                   = 0.075;    %[s]
-    rawFiltSettings.gapDetect_maxWidth                   = 2;  %[s]
+    rawFiltSettings.gapDetect_minWidth                   = 75;    %[ms]
+    rawFiltSettings.gapDetect_maxWidth                   = 2000;  %[ms]
      
     % The settings below indicate the section right before the start of a
     % gap (the backwards padding distance) and the section right after a
     % gap (the forward padding distance), in ms, within which samples are
     % to be rejected:
-    rawFiltSettings.gapPadding_backward                  = 0.05;    %[s]
-    rawFiltSettings.gapPadding_forward                   = 0.05;    %[s]
+    rawFiltSettings.gapPadding_backward                  = 50;    %[ms]
+    rawFiltSettings.gapPadding_forward                   = 50;    %[ms]
     
     %----------------------------------------------------------------------
     % Deviation filter criteria:
@@ -164,7 +163,7 @@ isValid       = ~isnan(diaSamples);
 %% Step 1: Remove Out-of-Bounds Samples:
 
 % Remove samples that are larger or smaller than the criteria:
-%isValid = removeOutOfBounds(t_ms,diaSamples,isValid,rawFiltSettings);
+isValid = removeOutOfBounds(t_ms,diaSamples,isValid,rawFiltSettings);
 
 
 %% Step 2: Blink Detection via Speed Filter:
@@ -559,6 +558,5 @@ if ~isnan(minGap) || ~isnan(maxGap)
 end
 
 end
-
 
 

@@ -9,8 +9,7 @@ options.study.acronym = 'PCNS';
 options.study.tasks = {'cFace','FF1','HBD'};
 
 options.paths.workingDir = pwd;
-options.paths.analysis   = ['/Users/yamaan/Projects/',options.study.acronym,filesep,options.study.tasks{1},'Analysis',filesep];
-options.paths.data     = ['/Volumes/PCNS/Data/Data_raw/together'];
+options.paths.analysis   = ['/Users/yamaan/Projects/',options.study.acronym,filesep,options.study.tasks{1},'Analysis',filesep]; options.paths.data     = ['/Volumes/PCNS/Data/Data_raw/together'];
 % options.paths.data       = ['/Users/yamaan/Projects/',options.study.acronym,filesep,'Data/RawData',filesep]; %temp local data path for testing
 options.paths.DBExport   = ['/Users/yamaan/Projects/',options.study.acronym,filesep,'Data/REDCapExport',filesep];
 % options.paths.DBExport   = ['/Users/yamaan/Projects/',options.study.acronym,filesep,'Data/REDCapExportTEST',filesep]; %temp DBExport file that only includes two participant, for testing

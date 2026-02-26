@@ -14,7 +14,7 @@ HR.congruentAverage     = NaN;
 HR.baselineHighpassedPeakPPG      = NaN;
 HR.incongruentHighpassedPeakPPG   = NaN;
 HR.congruentHighpassedPeakPPG     = NaN;
-HR.baselinePPI         = NaN
+HR.baselinePPI         = NaN;
 HR.incongruentBaselinePPI = NaN;   % mean of all incongruent pre3_meanPPI_s (s)
 HR.incongruentrespontPPI  = NaN;   % mean of all incongruent post3_meanPPI_s (s)
 % -----------------------------------------------------
@@ -76,8 +76,6 @@ try
     postTaskTimingStart = postTaskStart;
     postTaskTimingEnd   = postTaskEnd;
 
-
-
 %% ---- STEP 2 (inline): read PPG, high-pass, detect & clean beats ----
 ppgFilePattern = fullfile(folderPath, 'beh', 'cface*MH*', '*ppg.csv');
 ppgFile = dir(ppgFilePattern);
@@ -108,57 +106,55 @@ Wn = max(min(Wn, 0.99), 1e-6);      % guard against extreme Fs
 highpassedSignal = filtfilt(b, a, signal);
 
 % --- (3) fixed-distance peak detection (assumes upright systolic peaks)
-minPeakDistanceSamples = 56;        % hard-coded, as requested. Alternative: minPeakDistanceSamples = max(1, round(0.30 * Fs));  % instead of 56
+minPeakDistanceSamples = 56;        
 [~, peakIdx] = findpeaks(highpassedSignal, ...
     'MinPeakDistance', minPeakDistanceSamples);
 
-peakTimes = time(peakIdx);
+% Extract timestamps and immediately remove duplicates
+peakTimes = unique(time(peakIdx));
 
-% --- (4) artifact handling in interval domain (keeps only clean peaks)
-[peakTimes, ~, ~] = cleanPPI(peakTimes);  % cleaner is under subfuctions below
+% --- (4) artifact handling in interval domain 
+% Returns full peakTimes and a PPI vector with NaNs for bad intervals
+[peakTimes, PPI, ~] = cleanPPI(peakTimes); 
 
 % ---- Rolling HR for 5 s windows (for trial means) ----
-rollingWindowSec = 5.0;                           % <<< CHANGE ME if needed
-HRrolling5 = buildHRLine(peakTimes, time, rollingWindowSec);  % bpm, time-aligned
+rollingWindowSec = 5.0;                           
+% Updated: Pass the cleaned PPI vector so rolling HR ignores the gaps
+HRrolling5 = computeHRrolling(peakTimes, time, rollingWindowSec, PPI);  
 
 
 % ---- Baseline HR (from clean peaks) ----
-inBaseline = peakTimes <= baselineTiming;   % Select peaks that occur before the baseline cutoff
-if nnz(inBaseline) >= 2                     % Require at least 2 beats
-    tb = peakTimes(inBaseline);
+% Find intervals where the END of the interval is before the baseline timing
+% usues intervals for more accurate calcualtion
+inBaseline = (peakTimes(2:end) <= baselineTiming); 
+baselineIntervals = PPI(inBaseline); % This now contains NaNs for extreme/unlikely beats
 
-% mean inter-beat interval (seconds) over the same baseline beats
-    baselinePPIs = diff(tb);                                % seconds
-    HR.baselinePPI = mean(baselinePPIs, 'omitnan');         % 
-
-    baselineDuration = tb(end) - tb(1);
-    if baselineDuration > 0
-        HR.baseline = ((numel(tb)-1) / baselineDuration) * 60;  % Compute baseline HR from beat INTERVALS (ie numel(tb)-1) and convert beats per second to bpm
-        ib = (time >= tb(1)) & (time <= tb(end));
-        HR.baselineHighpassedPeakPPG = max(highpassedSignal(ib),[],'omitnan');    % PEAK PPG - baseline - Compute baseline PPG amplitude
-    end
+if any(~isnan(baselineIntervals))
+    % Calculate mean PPI (ignoring the NaNs we just created)
+    HR.baselinePPI = mean(baselineIntervals, 'omitnan');
+    % Convert mean PPI to BPM
+    HR.baseline = 60 / HR.baselinePPI;
+    
+    % Baseline amplitude (approximate, using time window)
+    ib = (time <= baselineTiming);
+    HR.baselineHighpassedPeakPPG = max(highpassedSignal(ib),[],'omitnan');
 else
     warning('No clean peaks before baseline for %s.', IDstring);
 end
 
+% ---- Post-task HR from clean peaks ----
+% Updated to use PPI vector (robust to noise) rather than counting peaks
+inPost = (peakTimes(2:end) >= postTaskTimingStart) & (peakTimes(2:end) <= postTaskTimingEnd);
+postTaskIntervals = PPI(inPost);
 
-    % ---- Post-task HR from clean peaks ----
-    inPost = (peakTimes >= postTaskTimingStart) & (peakTimes <= postTaskTimingEnd);
-    if nnz(inPost) >= 2
-        tp = peakTimes(inPost); % Select peaks that fall inside the window
-        postDuration = tp(end) - tp(1); % Compute the duration covered by those peaks
-        if postDuration > 0
-            HR.postTask = ((numel(tp)-1) / postDuration) * 60; % Count the number of INTERVALS inside the window (if beats only, change to numel(tp)) and convert beats per second to bpm
-        end
-    end
+if any(~isnan(postTaskIntervals))
+    meanPostPPI = mean(postTaskIntervals, 'omitnan');
+    HR.postTask = 60 / meanPostPPI; % BPM
+end
 
 %% ---- STEP 3: Trial-window HR in beat domain + per-trial max PPG ----
 segmentsTableIncongruent = cFaceIncongruentTrials(participantID);   % Get incongruent trial windows 
 segmentsTableCongruent   = cFaceCongruentTrials(participantID);     % Get congruent trial windows 
-
-% Helper: mean HR (bpm) from clean peaks in [t0, t1]
-% function found in SUBFUNCTIONS below
-meanHRinWindow = @(t0,t1) localMeanHRfromPeaks(peakTimes, t0, t1);   % (kept for future use)
 
 % Incongruent trials:
 incongruentHRs    = NaN(height(segmentsTableIncongruent),1);
@@ -169,13 +165,11 @@ for i = 1:height(segmentsTableIncongruent)
 
     % NEW: mean of rolling 5 s HR within the trial window (bpm)
     idx = (time >= t0) & (time <= t1);
-    %% try max HR for each trial window, replace with line below: 
-    % incongruentHRs(i) = max(HRrolling5(idx), [], 'omitnan');   % per-trial maximum HR
-    incongruentHRs(i) = mean(HRrolling5(idx), 'omitnan');            % trial-level HR (bpm) for that incongruent trial.
+    incongruentHRs(i) = mean(HRrolling5(idx), 'omitnan');            % trial-level HR (bpm) 
 
     % PPG amplitude (unchanged)
     if any(idx)
-        incongruentMaxPPG(i) = max(highpassedSignal(idx),[],'omitnan'); % the maximum filtered PPG amplitude within that trial's window
+        incongruentMaxPPG(i) = max(highpassedSignal(idx),[],'omitnan'); 
     end
 end
 
@@ -188,13 +182,11 @@ for i = 1:height(segmentsTableCongruent)
 
     % NEW: mean of rolling 5 s HR within the trial window (bpm)
     idx = (time >= t0) & (time <= t1);
-    %% try max HR for each trial window, replace with line below: 
-    % congruentHRs(i) = max(HRrolling5(idx), [], 'omitnan');   % per-trial maximum HR
-    congruentHRs(i) = mean(HRrolling5(idx), 'omitnan');              % trial-level HR (bpm) for that congruent trial.
+    congruentHRs(i) = mean(HRrolling5(idx), 'omitnan');              % trial-level HR (bpm) 
 
     % PPG amplitude (unchanged)
     if any(idx)
-        congruentMaxPPG(i) = max(highpassedSignal(idx),[],'omitnan'); % the maximum filtered PPG amplitude within that trial's window
+        congruentMaxPPG(i) = max(highpassedSignal(idx),[],'omitnan'); 
     end
 end
 
@@ -206,7 +198,7 @@ HR.congruentHighpassedPeakPPG   = mean(congruentMaxPPG,   'omitnan'); % a.u.
 
 
 %% ---- STEP 3b: 3-beat ΔPPI metrics per trial (all in seconds) ----
-% Uses cleaned peakTimes from earlier.
+% Uses cleaned PPI vector from earlier.
 
 % Preallocate per-trial containers
 nI = height(segmentsTableIncongruent);
@@ -224,15 +216,25 @@ onset_inc               = NaN(nI,1);
 
 for i = 1:nI
     t0 = segmentsTableIncongruent.stimMove_onset(i);
-    [pre3, post3, dPPI_s, pct, maxchg_s, npre, npost] = deltaPPI3beat_seconds(peakTimes, t0);
-    pre3_meanPPI_s_inc(i)    = pre3;
-    post3_meanPPI_s_inc(i)   = post3;
-    diffPPI_s_inc(i)         = dPPI_s;
-    percentageDiffPPI_inc(i) = pct;
-    maxChange_s_inc(i)       = maxchg_s;
-    nPreIntervals_inc(i)     = npre;
-    nPostIntervals_inc(i)    = npost;
-    onset_inc(i)             = t0;
+    % Updated: Use Robust function + pass cleaned PPI vector
+    [pre3, post3, dPPI_s, pct, maxchg_s, npre, npost] = ...
+        deltaPPI3beat_seconds_robust(peakTimes, PPI, t0);
+    
+    % --- SAFETY CHECK: Discard if >50% data missing ---
+    totalValid = npre + npost;
+    if totalValid < 3
+        % Leave as NaNs (already preallocated)
+        % Optional: fprintf('Trial %d discarded (Incongruent)\n', i);
+    else
+        pre3_meanPPI_s_inc(i)    = pre3;
+        post3_meanPPI_s_inc(i)   = post3;
+        diffPPI_s_inc(i)         = dPPI_s;
+        percentageDiffPPI_inc(i) = pct;
+        maxChange_s_inc(i)       = maxchg_s;
+        nPreIntervals_inc(i)     = npre;
+        nPostIntervals_inc(i)    = npost;
+    end
+    onset_inc(i) = t0;
 end
 
 % ---- Incongruent baseline/response PPI summaries (seconds) ----
@@ -251,15 +253,24 @@ onset_con               = NaN(nC,1);
 
 for i = 1:nC
     t0 = segmentsTableCongruent.stimMove_onset(i);
-    [pre3, post3, dPPI_s, pct, maxchg_s, npre, npost] = deltaPPI3beat_seconds(peakTimes, t0);
-    pre3_meanPPI_s_con(i)    = pre3;
-    post3_meanPPI_s_con(i)   = post3;
-    diffPPI_s_con(i)         = dPPI_s;
-    percentageDiffPPI_con(i) = pct;
-    maxChange_s_con(i)       = maxchg_s;
-    nPreIntervals_con(i)     = npre;
-    nPostIntervals_con(i)    = npost;
-    onset_con(i)             = t0;
+    % Updated: Use Robust function + pass cleaned PPI vector
+    [pre3, post3, dPPI_s, pct, maxchg_s, npre, npost] = ...
+        deltaPPI3beat_seconds_robust(peakTimes, PPI, t0);
+        
+    % --- SAFETY CHECK: Discard if >50% data missing ---
+    totalValid = npre + npost;
+    if totalValid < 3
+        % Leave as NaNs
+    else
+        pre3_meanPPI_s_con(i)    = pre3;
+        post3_meanPPI_s_con(i)   = post3;
+        diffPPI_s_con(i)         = dPPI_s;
+        percentageDiffPPI_con(i) = pct;
+        maxChange_s_con(i)       = maxchg_s;
+        nPreIntervals_con(i)     = npre;
+        nPostIntervals_con(i)    = npost;
+    end
+    onset_con(i) = t0;
 end
 
 % ---------- Build a single TRIAL-LEVEL table (no nested structs) ----------
@@ -347,7 +358,7 @@ writetable(ppiTrialsTbl, outFile);   % no rounding
 
     %% ---- Plot with shaded windows (HRline vs time) ----
     HRline = HRrolling5;                  % use the same 5-s rolling HR used for trial means
-plotWindowSec = rollingWindowSec;     % optional: carry the window value into the legend/title
+    plotWindowSec = rollingWindowSec;     % optional: carry the window value into the legend/title
 
     % make sure plot folder exists
     if ~exist(options.paths.plots, 'dir'), mkdir(options.paths.plots); end
@@ -426,208 +437,162 @@ end  % ===== end main function =====
 
 % ===================== SUBFUNCTIONS =====================
 
-function [cleanPeakTimes, PPI, keepMask] = cleanPPI(peakTimes)
-% Remove implausible/outlier pulse intervals (PPI).
-    if numel(peakTimes) < 3
-        cleanPeakTimes = peakTimes;
-        PPI = diff(peakTimes);
-        keepMask = true(size(peakTimes));
+function [peakTimes, PPI, intervalOK] = cleanPPI(peakTimes)
+    % cleanPPI - Identifies artifacts but returns FULL list of peaks
+    % and a PPI vector where artifacts are NaNs. This prevents "merging" gaps.
+    
+    if numel(peakTimes) < 2
+        PPI = [];
+        intervalOK = [];
         return
     end
 
-    PPIraw = diff(peakTimes);                         % seconds
-    physOK = (PPIraw >= 0.30) & (PPIraw <= 2.00);     % 30–200 bpm
+    % 1. Calculate raw intervals (seconds)
+    PPI = diff(peakTimes); 
 
-    ref = PPIraw(physOK);
+    % 2. Define physiological bounds (30–200 bpm)
+    physOK = (PPI >= 0.30) & (PPI <= 2.00);
+
+    % 3. Statistical outlier detection
+    ref = PPI(physOK);
     if isempty(ref) || all(~isfinite(ref))
-        keepMask = false(size(peakTimes)); keepMask(1) = true;
-        cleanPeakTimes = peakTimes(keepMask);
-        PPI = diff(cleanPeakTimes);
+        PPI(:) = NaN; % All NaN
+        intervalOK = false(size(PPI));
         return
     end
-
-    deviation = abs(PPIraw - median(ref,'omitnan')) / (1.4826*mad(ref,1));
+    
+    deviation = abs(PPI - median(ref,'omitnan')) / (1.4826*mad(ref,1));
     statOK = deviation <= 3.5;
 
-    intervalOK    = physOK & statOK;
-    keepMask      = [true; intervalOK];   % map interval mask to peaks
-    cleanPeakTimes = peakTimes(keepMask);
-    PPI = diff(cleanPeakTimes);
+    % 4. Combine checks
+    intervalOK = physOK & statOK;
+
+    % 5. REPLACE bad intervals with NaN (Do NOT remove peaks)
+    PPI(~intervalOK) = NaN; 
 end
 
-function HRline = buildHRLine(peakTimes, time, smoothingWindow)
-% Make a smooth HR (bpm) line from cleaned peaks 
-% smoothingWindow (sec) controls moving-average length (default 1.0).
-    if nargin < 3 || isempty(smoothingWindow), smoothingWindow = 1.0; end
-    if numel(peakTimes) < 3
-            HRline = nan(size(time)); return
+function HRrolling = computeHRrolling(peakTimes, time, windowSec, PPI)
+% computeHRrolling - Builds continuous HR line. 
+% Accepts PPI vector (with NaNs) to handle gaps correctly.
+
+    if nargin < 3 || isempty(windowSec)
+        windowSec = 5.0;
+    end
+    % Legacy fallback: if PPI not passed, calculate it (but this risks merging gaps!)
+    if nargin < 4
+        PPI = diff(peakTimes);
     end
 
-    PPI    = diff(peakTimes);
-    instHR = 60 ./ PPI;                 % bpm per interval
-    instHR = [instHR(1); instHR];       % align with peakTimes length
-
-    % Convert seconds to ~samples via beats/sec estimate
-    medianPPI = median(PPI,'omitnan'); % seconds per beat
-    if ~isfinite(medianPPI) || medianPPI <= 0, medianPPI = 1.0; end
-              
-    beatsPerSec = 1./medianPPI;                      % ~samples per second (in the beat domain)
-    winSamples  = max(1, round(smoothingWindow * beatsPerSec));
-    HRsmooth    = movmean(instHR, winSamples, 'SamplePoints', peakTimes);
-
-    HRline   = interp1(peakTimes, HRsmooth, time, 'pchip', 'extrap');
-end
-
-
-function v = localMeanHRfromPeaks(peakTimes, t0, t1)
-% Mean HR (bpm) from clean peaks in [t0, t1].
-    tt = peakTimes(peakTimes>=t0 & peakTimes<=t1);
-    if numel(tt) < 2
-        v = NaN;
-    else
-        v = ((numel(tt)-1) / (tt(end)-tt(1))) * 60;
-    end
-end
-
-function [pre3, post3, dPPI_ms, pct_dPPI, maxChange_ms, nPre, nPost] = deltaPPI3beat(peakTimes, t0)
-% deltaPPI3beat  Compute 3-beat pre/post PPI metrics around onset t0.
-% Inputs:
-%   peakTimes : cleaned beat times (s), ascending
-%   t0        : onset time (s)
-% Outputs:
-%   pre3, post3       : mean PPI (s) over last up to 3 pre intervals and first up to 3 post intervals
-%   dPPI_ms           : (post3 - pre3) in ms
-%   pct_dPPI          : 100 * (post3 - pre3)/pre3  (NaN if pre3 is NaN or 0)
-%   maxChange_ms      : max |PPI_post_i - pre3| within the first up to 3 post intervals, signed (ms)
-%   nPre, nPost       : how many PPIs contributed to pre3 and post3 (0..3)
-
-    if numel(peakTimes) < 2
-        pre3 = NaN; post3 = NaN; dPPI_ms = NaN; pct_dPPI = NaN; maxChange_ms = NaN;
-        nPre = 0; nPost = 0; return
+    if numel(peakTimes) < 2 || isempty(time)
+        HRrolling = nan(size(time));
+        return
     end
 
-    % Intervals and their start/end times
-    PPI      = diff(peakTimes);             % seconds
-    tStart   = peakTimes(1:end-1);          % interval start time (s)
-    tEnd     = peakTimes(2:end);            % interval end time (s)
+    peakTimes = peakTimes(:);
+    time      = time(:);
 
-    % PRE: intervals whose end time is <= t0 (completed before onset)
-    preMask  = (tEnd <= t0);
-    preIdx   = find(preMask);
-    if isempty(preIdx)
-        pre3 = NaN; nPre = 0;
-    else
-        take    = preIdx(max(1, numel(preIdx)-2) : numel(preIdx));   % last up to 3
-        pre3    = mean(PPI(take), 'omitnan');
-        nPre    = numel(take);
-    end
+    % 1. Calculate Instantaneous HR (Result will contain NaNs where gaps are)
+    instHR = 60 ./ PPI;            
 
-    % POST: intervals whose start time is >= t0 (start after onset)
-    postMask = (tStart >= t0);
-    postIdx  = find(postMask);
-    if isempty(postIdx)
-        post3 = NaN; nPost = 0; dPPI_ms = NaN; pct_dPPI = NaN; maxChange_ms = NaN; return
-    else
-        take    = postIdx(1 : min(3, numel(postIdx)));               % first up to 3
-        post3   = mean(PPI(take), 'omitnan');
-        nPost   = numel(take);
-    end
+    % 2. Assign time points to the END of the interval
+    hrTimes = peakTimes(2:end);    
 
-    % ΔPPI and %ΔPPI - calc by subtracting post stimulus response from pre
-    % (intertrial baseline)
-    if isfinite(pre3) && isfinite(post3)
-        dPPI_ms  = (post3 - pre3) * 1000.0;
-        if pre3 ~= 0
-            pct_dPPI = 100.0 * (post3 - pre3) / pre3;
+    % 3. Time-based moving average (Rolling Window)
+    % --- Centered time-based moving average ---
+    HRsmooth = nan(size(instHR));
+    halfWin = windowSec / 2; % For a 5s window, this is 2.5s
+
+    for i = 1:numel(hrTimes)
+        % Define the window: 2.5s before and 2.5s after the current beat
+        tMin = hrTimes(i) - halfWin;
+        tMax = hrTimes(i) + halfWin;
+        
+        % Find all beats that fall within this +/- 2.5s range
+        inWindowIdx = find(hrTimes >= tMin & hrTimes <= tMax);
+        
+        % Average the valid beats in this centered window
+        if ~isempty(inWindowIdx)
+            HRsmooth(i) = mean(instHR(inWindowIdx), 'omitnan');
         else
-            pct_dPPI = NaN;
+            HRsmooth(i) = NaN;
         end
-    else
-        dPPI_ms  = NaN;
-        pct_dPPI = NaN;
     end
 
-    % Max-change: pick the single post interval (among first up to 3) whose deviation from pre3 is largest in |.|, report signed ms
-    if isfinite(pre3) && ~isempty(postIdx)
-        candIdx = postIdx(1 : min(3, numel(postIdx)));
-        diffs   = (PPI(candIdx) - pre3) * 1000.0;   % ms, signed
-        [~, k]  = max(abs(diffs));
-        maxChange_ms = diffs(k);
+    % 4. Interpolate to continuous time axis
+    % We must remove NaNs from the source before interpolating, 
+    % otherwise interp1 returns all NaNs.
+    validIdx = find(~isnan(HRsmooth));
+    
+    if numel(validIdx) < 2
+        HRrolling = nan(size(time));
     else
-        maxChange_ms = NaN;
+        % Interpolate only using valid smooth points
+        HRrolling = interp1(hrTimes(validIdx), HRsmooth(validIdx), time, 'pchip', 'extrap');
+        
+        % Mask out times before the first beat to avoid weird extrapolation
+        HRrolling(time < hrTimes(1)) = NaN; 
     end
 end
 
+function [pre3_mean, post3_mean, dPPI, pct, maxChg, nPre, nPost] = deltaPPI3beat_seconds_robust(peakTimes, PPI, t0)
+    % Initialize all outputs to NaN/0 to prevent "not assigned" errors
+    [pre3_mean, post3_mean, dPPI, pct, maxChg] = deal(NaN);
+    [nPre, nPost] = deal(0);
 
-function [pre3_meanPPI_s, post3_meanPPI_s, diffPPI_s, percentageDiffPPI, maxChange_s, nPreIntervals, nPostIntervals] = deltaPPI3beat_seconds(peakTimes, t0)
-% deltaPPI3beat_seconds
-% Computes 3-beat pre/post PPI metrics around onset t0, all in seconds.
-% PRE = last up to 3 intervals whose END time ≤ t0
-% POST = first up to 3 intervals whose START time ≥ t0
-
-    if numel(peakTimes) < 2
-        pre3_meanPPI_s = NaN; post3_meanPPI_s = NaN;
-        diffPPI_s = NaN; percentageDiffPPI = NaN; maxChange_s = NaN;
-        nPreIntervals = 0; nPostIntervals = 0; 
-        return
+    if isempty(PPI) || all(isnan(PPI))
+        return; % Exit early with NaNs
     end
 
-    % Intervals and their start/end times
-    PPI    = diff(peakTimes);        % seconds
-    tStart = peakTimes(1:end-1);     % start of each interval
-    tEnd   = peakTimes(2:end);       % end of each interval
+    % Define start and end times for the intervals
+    tStart = peakTimes(1:end-1);
+    tEnd   = peakTimes(2:end);
 
-    % ----- PRE (<= t0)
+    % --- PRE Window ---
     preIdx = find(tEnd <= t0);
-    if isempty(preIdx)
-        pre3_meanPPI_s = NaN; nPreIntervals = 0;
-    else
-        take = preIdx(max(1, numel(preIdx)-2) : numel(preIdx));   % last up to 3
-        pre3_meanPPI_s = mean(PPI(take), 'omitnan');
-        nPreIntervals  = numel(take);
+    if ~isempty(preIdx)
+        takePre = preIdx(max(1, end-2):end);
+        pre3_vals = PPI(takePre); 
+        pre3_mean = mean(pre3_vals, 'omitnan');
+        nPre = sum(~isnan(pre3_vals)); 
     end
 
-    % ----- POST (≥ t0)
+    % --- POST Window ---
     postIdx = find(tStart >= t0);
-    if isempty(postIdx)
-        post3_meanPPI_s = NaN; nPostIntervals = 0;
-        diffPPI_s = NaN; percentageDiffPPI = NaN; maxChange_s = NaN; 
-        return
-    else
-        take = postIdx(1 : min(3, numel(postIdx)));               % first up to 3
-        post3_meanPPI_s = mean(PPI(take), 'omitnan');
-        nPostIntervals  = numel(take);
+    if ~isempty(postIdx)
+        takePost = postIdx(1:min(3, end));
+        post3_vals = PPI(takePost);
+        post3_mean = mean(post3_vals, 'omitnan');
+        nPost = sum(~isnan(post3_vals));
     end
 
     % ----- Differences
-    if isfinite(pre3_meanPPI_s) && isfinite(post3_meanPPI_s)
-        diffPPI_s = post3_meanPPI_s - pre3_meanPPI_s;
-        if pre3_meanPPI_s ~= 0
-            percentageDiffPPI = 100.0 * diffPPI_s / pre3_meanPPI_s;
-        else
-            percentageDiffPPI = NaN;
-        end
+if isfinite(pre3_mean) && isfinite(post3_mean)
+    % dPPI corresponds to your previous diffPPI_s
+    dPPI = post3_mean - pre3_mean; 
+    
+    if pre3_mean ~= 0
+        % pct corresponds to your previous percentageDiffPPI
+        pct = 100 * dPPI / pre3_mean;
     else
-        diffPPI_s        = NaN;
-        percentageDiffPPI = NaN;
+        pct = NaN;
     end
+else
+    dPPI = NaN;
+    pct  = NaN;
+end
 
-    % ----- Max-change (signed, seconds): largest |pre3 - PPI_post_i| among first up to 3 post intervals
-    if isfinite(pre3_meanPPI_s) && ~isempty(postIdx)
-        cand = postIdx(1 : min(3, numel(postIdx)));     % Get indices of the first up to 3 post-stimulus PPIs
-        diffs = pre3_meanPPI_s - PPI(cand);  % Compute baseline − post for each interval (seconds)
-        maxChange_s = max(diffs);
+% --- Max Change Metric ---
+% Note this only returns the largest positive change (ie increase in HR),
+% not a decelaration
+    if isfinite(pre3_mean) && ~isempty(post3_vals)
+        % Acceleration = Baseline is LONGER than Post-interval
+        % We subtract Post from Baseline: Positive values = Acceleration
+        diffs_accel = pre3_mean - post3_vals; 
+        
+        % We take the MAX. If all diffs are negative (deceleration), 
+        % this will return the smallest deceleration.
+        maxChg = max(diffs_accel, [], 'omitnan'); 
     else
-        maxChange_s = NaN;
+        maxChg = NaN;
     end
-    %% Below code  does the same thing as above BUT takes the largest change (could be decelaration).
-    %% Takes the abs max, then puts the sign back on. Note, this original code minuses the post from the pre, so accelaration is negative
-    % if isfinite(pre3_meanPPI_s) && ~isempty(postIdx)
-    % cand  = postIdx(1 : min(3, numel(postIdx)));
-    % diffs = PPI(cand) - pre3_meanPPI_s;   % post − pre (s), signed
-    % [~, k] = max(abs(diffs));
-    % maxChange_s = diffs(k);
-    % else
-    %    maxChange_s = NaN;
-    % end
 end
