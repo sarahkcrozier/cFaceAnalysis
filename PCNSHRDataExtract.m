@@ -173,9 +173,8 @@ panssPositive = NaN(IDspan,1);
 panssNegative = NaN(IDspan,1);
 
 % --- Load HBD outcomes
-HBDfile = dir(fullfile(options.paths.HBDExport, 'outcomes_myhrd.csv'));
-assert(~isempty(HBDfile), 'HBD export not found in %s', options.paths.HBDExport);
-HBDdata = readtable(fullfile(options.paths.HBDExport, HBDfile(1).name));
+
+HBDdata = readtable(fullfile(options.data.hbdOutcomesFile));
 absInteroThreshold = NaN(IDspan,1);
 absExteroThreshold = NaN(IDspan,1);
 
