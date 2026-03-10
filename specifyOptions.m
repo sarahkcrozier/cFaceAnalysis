@@ -89,10 +89,16 @@ options.paths.plots        = [options.paths.plots,'HRPlots',filesep];
 
 options.data.pcnsDataTable   = [options.paths.DBExport,'pcnsDataTable.csv'];   % whats that?
 options.data.hbdOutcomesFile = [options.paths.HBDExport,'outcomes_myhrd.csv']; % whats that?
+options.data.nPannsPItems = 7;
+options.data.nPannsNItems = 7;
+options.data.nPannsQItems = 16;
 
-% Check if files needed for analyses are in the folder structure
+% Check if files needed for analyses are in the folder structure %?? Where or how is this file generated?
 HBDfile = dir(fullfile(options.data.hbdOutcomesFile));
 assert(~isempty(HBDfile), 'HBD export not found in %s', options.paths.HBDExport);
+
+file = dir(fullfile(options.data.DBFileName));
+assert(~isempty(file), 'REDCap export not found in %s', options.paths.DBExport);
 
 end
 

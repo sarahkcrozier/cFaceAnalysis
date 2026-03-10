@@ -1,0 +1,191 @@
+PCNSHRDataExtract
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceHR.m',24,1)">24  </a>try
+Using folder: 019
+PCNSHRDataExtract
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceHR.m',24,1)">24  </a>try
+Using folder: 019
+filePattern   = [folderPath, 'beh',filesep, 'cface*MH*out.csv']
+
+filePattern =
+
+    '/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/019beh/cface*MH*out.csv'
+
+summaryFile   = dir(filePattern)
+
+summaryFile = 
+
+  0×1 empty <a href="matlab:helpPopup('struct')" style="font-weight:bold">struct</a> array with fields:
+
+    name
+    folder
+    date
+    bytes
+    isdir
+    datenum
+
+filePattern   = [folderPath,filesep, 'beh',filesep, 'cface*MH*out.csv']
+
+filePattern =
+
+    '/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/019/beh/cface*MH*out.csv'
+
+summaryFile   = dir(filePattern)
+
+summaryFile = 
+
+  <a href="matlab:helpPopup('struct')" style="font-weight:bold">struct</a> with fields:
+
+       name: 'cface1_019_Ta_MHbL_MidHA_2022_May_09_1048_out.csv'
+     folder: '/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/019/beh'
+       date: '03-Mar-2026 08:13:00'
+      bytes: 21828
+      isdir: 0
+    datenum: 7.4004e+05
+
+PCNSHRDataExtract
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceHR.m',24,1)">24  </a>try
+Using folder: 019
+segmentsTable
+
+segmentsTable =
+
+  80×5 <a href="matlab:helpPopup('table')" style="font-weight:bold">table</a>
+
+    <strong>instruct_onset</strong>    <strong>instruct_duration</strong>    <strong>postinstruct_onset</strong>    <strong>fixation_onset</strong>    <strong>fixation_duration</strong>
+    <strong>______________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>______________</strong>    <strong>_________________</strong>
+
+        10.063               0.5                 10.529              18.579                1        
+         19.58               0.5                 20.079              25.729                1        
+        26.729               0.5                 27.229              30.479                1        
+        31.479               0.5                 31.979               35.23                1        
+         36.23               0.5                 36.729               40.78                1        
+
+          :                   :                    :                   :                   :        
+
+        472.67               0.5                 473.17              479.22                1        
+        480.22               0.5                 480.72              487.57                1        
+        488.57               0.5                 489.07              495.53                1        
+        496.52               0.5                 497.02              508.28                1        
+        509.27               0.5                 509.77              517.02                1        
+
+	<a href="matlab:if exist('segmentsTable','var') && istabular(segmentsTable),displayWholeObj(segmentsTable,'segmentsTable'),else,fprintf('Unable to display table variable ''segmentsTable'' because it no longer exists.\n');end">Display all 80 rows.</a>
+
+(1:height(segmentsTable)).'
+
+ans =
+
+     1
+     2
+     3
+     4
+     5
+     6
+     7
+     8
+     9
+    10
+    11
+    12
+    13
+    14
+    15
+    16
+    17
+    18
+    19
+    20
+    21
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+    71
+    72
+    73
+    74
+    75
+    76
+    77
+    78
+    79
+    80
+
+height(segmentsTable)
+
+ans =
+
+    80
+
+PCNSHRDataExtract
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceHR.m',24,1)">24  </a>try
+Using folder: 019
+ppgTable
+
+ppgTable =
+
+  52725×2 <a href="matlab:helpPopup('table')" style="font-weight:bold">table</a>
+
+      <strong>time</strong>       <strong>PPG</strong>
+    <strong>_________</strong>    <strong>___</strong>
+
+    0.0037434    450
+    0.0037434    453
+    0.0037434    454
+    0.0037434    458
+    0.0037434    459
+
+        :         : 
+
+       527.97    431
+       527.98    437
+       527.99    442
+          528    448
+       528.01    449
+
+	<a href="matlab:if exist('ppgTable','var') && istabular(ppgTable),displayWholeObj(ppgTable,'ppgTable'),else,fprintf('Unable to display table variable ''ppgTable'' because it no longer exists.\n');end">Display all 52725 rows.</a>
+

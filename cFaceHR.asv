@@ -16,7 +16,7 @@ HR.incongruentHighpassedPeakPPG   = NaN;
 HR.congruentHighpassedPeakPPG     = NaN;
 HR.baselinePPI         = NaN;
 HR.incongruentBaselinePPI = NaN;   % mean of all incongruent pre3_meanPPI_s (s)
-HR.incongruentresponsePPI  = NaN;   % mean of all incongruent post3_meanPPI_s (s)
+HR.incongruentrespontPPI  = NaN;   % mean of all incongruent post3_meanPPI_s (s)
 % -----------------------------------------------------
 
 logPath = fullfile(options.paths.workingDir, 'output_HR_cface.txt');
@@ -39,7 +39,7 @@ try
     disp(['Using folder: ', folderName]);
 
     %% ---- STEP 1: Locate timings (baseline + post-task) ----
-    filePattern   = [folderPath,filesep, 'beh',filesep, 'cface*MH*out.csv'];
+    filePattern   = [folderPath, 'beh', 'cface*MH*', '*out.csv'];
     summaryFile   = dir(filePattern);
     if isempty(summaryFile)
         warning('No *out.csv found for %s.', IDstring);
@@ -72,12 +72,12 @@ try
     % Post-task: last 10 s of the block, based on the final fixation row
     lastIdx = height(segmentsTable);
     postTaskEnd   = segmentsTable.fixation_onset(lastIdx) + segmentsTable.fixation_duration(lastIdx);
-    postTaskStart = max(0, postTaskEnd - 10); % not sure what this does?
+    postTaskStart = max(0, postTaskEnd - 10);
     postTaskTimingStart = postTaskStart;
     postTaskTimingEnd   = postTaskEnd;
 
 %% ---- STEP 2 (inline): read PPG, high-pass, detect & clean beats ----
-ppgFilePattern = [folderPath,filesep, 'beh',filesep, 'cface*MH*ppg.csv'];
+ppgFilePattern = fullfile(folderPath, 'beh', 'cface*MH*', '*ppg.csv');
 ppgFile = dir(ppgFilePattern);
 if isempty(ppgFile)
     warning('No PPG file found for participant %s.', IDstring);
@@ -194,7 +194,7 @@ end
 HR.incongruentAverage = mean(incongruentHRs, 'omitnan');    % bpm, from rolling-5s HR
 HR.congruentAverage   = mean(congruentHRs,   'omitnan');    % bpm, from rolling-5s HR
 HR.incongruentHighpassedPeakPPG = mean(incongruentMaxPPG, 'omitnan'); % a.u.
-HR.congruentHighpassedPeakPPG   = mean(congruentMaxPPG,   'omitnan'); % a.u. WHERE IS THIS NEEDED?
+HR.congruentHighpassedPeakPPG   = mean(congruentMaxPPG,   'omitnan'); % a.u.
 
 
 %% ---- STEP 3b: 3-beat ΔPPI metrics per trial (all in seconds) ----

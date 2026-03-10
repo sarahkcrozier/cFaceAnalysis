@@ -220,11 +220,11 @@ for n = minID:maxID
         sumP = 0; sumN = 0; sumG = 0;
 
         % PANSS positive symptoms (sumP) and negative symptoms (sumN)
-        for i = 1:options.data.nPannsPItems
+        for i = 1:7
             sumP = sumP + data.(['panss_p', num2str(i)])(clinical_row);
             sumN = sumN + data.(['panss_n', num2str(i)])(clinical_row);
         end
-        for i = 1:options.data.nPannsGItems
+        for i = 1:16
             sumG = sumG + data.(['panss_g', num2str(i)])(clinical_row);
         end
         panss(rowIdx)         = sumP + sumN + sumG;
