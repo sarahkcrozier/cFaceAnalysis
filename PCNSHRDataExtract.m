@@ -5,9 +5,10 @@ function PCNSHRDataExtract
 options = specifyOptions();  % must return .paths.DBExport (and others you use)
 
 % ----- Get shared participant rows (with inclusion criteria applied)
-shared = getSharedPCNSData_(options);    % table with ID and shared columns
-N = height(shared);
+shared = getSharedPCNSData(options);    % table with ID and shared columns
+N      = height(shared);
 
+%% Initualize data rows
 % ----- Preallocate HR vars
 baselineHR            = NaN(N,1);
 postTaskHR            = NaN(N,1);
@@ -33,6 +34,7 @@ baselinePPI                   = NaN(N,1);   % s
 incongruentBaselinePPI        = NaN(N,1);   % s
 incongruentResponsePPI        = NaN(N,1);   % s
 
+%% get data
 % ----- Fill metrics per participant
 for i = 1:N
     currentID = shared.ID(i);
@@ -103,6 +105,7 @@ for i = 1:N
     end
 end
 
+%% create table
 % ----- Assemble output table (shared + HR + PeakPPG + PPI summaries)
 hrTbl = shared;
 
@@ -142,15 +145,15 @@ fprintf('Wrote HR data: %s (%d rows)\n', outPath, height(hrTbl));
 end
 
 
-function shared = getSharedPCNSData_(options)
+function shared = getSharedPCNSData(options)
 % Returns a table with one row per included participant containing shared fields:
 % ID, group, sex, age, education, FSIQ, meds_chlor, valid_cfacei,
 % absInteroThreshold, absExteroThreshold, panss, panssPositive, panssNegative.
 
 % --- Load REDCap
-file = dir(fullfile(options.paths.DBExport, 'PCNS_RedCap_Export.csv'));
+file = dir(fullfile(options.data.DBFileName));
 assert(~isempty(file), 'REDCap export not found in %s', options.paths.DBExport);
-data = readtable(fullfile(options.paths.DBExport, file(1).name));
+data = readtable(fullfile(options.data.DBFileName));
 
 minID = min(data.record_id);
 maxID = max(data.record_id);
@@ -259,4 +262,5 @@ shared = table( ...
      'absInteroThreshold','absExteroThreshold', ...
      'panss','panssPositive','panssNegative'} ...
 );
+
 end
