@@ -3,6 +3,10 @@ function PCNSPupilDataExtract
 
 options = specifyOptions();  % must return .paths.DBExport and any others you use
 
+% start logfile
+logPath = fullfile(options.paths.workingDir,options.data.pupilDiaryName)));
+diary(logPath)
+
 % ----- Get shared participant rows (with inclusion criteria applied)
 shared = getSharedPCNSData(options);    % table with ID and shared columns
 N = height(shared);
@@ -60,4 +64,9 @@ pupilTbl = pupilTbl(~isnan(pupilTbl.ID), :);
 outPath = fullfile(options.paths.eyeData, 'PCNS_PupilData.csv');
 writetable(pupilTbl, outPath);
 fprintf('Wrote pupil data: %s (%d rows)\n', outPath, height(pupilTbl));
+
+%% save text of Matlab session
+diary(fullfile(options.paths.workingDir,options.data.pupilDiaryName))
+diary off
+
 end

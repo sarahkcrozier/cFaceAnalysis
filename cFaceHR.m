@@ -19,7 +19,7 @@ HR.incongruentBaselinePPI = NaN;   % mean of all incongruent pre3_meanPPI_s (s)
 HR.incongruentresponsePPI  = NaN;   % mean of all incongruent post3_meanPPI_s (s)
 % -----------------------------------------------------
 
-logPath = fullfile(options.paths.workingDir, 'output_HR_cface.txt');
+logPath = fullfile(options.paths.workingDir, options.data.HRDiaryName);
 diary(logPath)
 % try
     %% Locate participant folder
@@ -168,8 +168,8 @@ if any(~isnan(postTaskIntervals))
 end
 
 %% ---- STEP 3: Trial-window HR in beat domain + per-trial max PPG ----
-segmentsTableIncongruent = cFaceIncongruentTrials(participantID,options.data.HRDiaryName);   % Get incongruent trial windows 
-segmentsTableCongruent   = cFaceCongruentTrials(participantID,options.data.HRDiaryName);     % Get congruent trial windows 
+segmentsTableIncongruent = cFaceIncongruentTrials(participantID);   % Get incongruent trial windows 
+segmentsTableCongruent   = cFaceCongruentTrials(participantID);     % Get congruent trial windows 
 
 % Incongruent trials:
 incongruentHRs    = NaN(height(segmentsTableIncongruent),1);
@@ -449,10 +449,14 @@ writetable(ppiTrialsTbl, outFile);   % no rounding
 %     rethrow(ME)  % comment this out if you prefer soft-fail
 %     diary off
 % end
+
+%% save text of Matlab session
+diary(fullfile(options.paths.workingDir,options.data.HRDiaryName))
+diary off
 end  % ===== end main function =====
 
 
-% ===================== SUBFUNCTIONS =====================
+%% ===================== SUBFUNCTIONS =====================
 
 function [peakTimes, PPI, intervalOK] = cleanPPI(peakTimes,peakIdx,highpassedSignal)
     % cleanPPI - Identifies artifacts but returns FULL list of peaks

@@ -20,11 +20,11 @@ pupilDir = options.paths.eyeData;
 eyePlots = options.paths.eyeDataPlots;
 
 % get the timeings for calculating baseline correction andpeak windows
-segmentsTable = cFaceTrialSegments(participantID)
-trial_s = segmentsTable.instruct_onset % an array of all the trial start times for a given participant
-stimResponse = segmentsTable.stimMove_onset % an array of all the start times for the stimulus response windows
-partEmotion = segmentsTable.ptemot % an array of the participant emoted emotions [AN/HA] per trial
-condition = segmentsTable.condition % an array of the condition [congruent/incongruent] for each trial
+segmentsTable = cFaceTrialSegments(participantID);
+trial_s = segmentsTable.instruct_onset; % an array of all the trial start times for a given participant
+stimResponse = segmentsTable.stimMove_onset; % an array of all the start times for the stimulus response windows
+partEmotion = segmentsTable.ptemot; % an array of the participant emoted emotions [AN/HA] per trial
+condition = segmentsTable.condition; % an array of the condition [congruent/incongruent] for each trial
 
 % -----------------------------
 % Resolve filename from participantID

@@ -1,4 +1,4 @@
-function segmentsTableIncongruent = cFaceIncongruentTrials(participantID,diaryName)
+function segmentsTableIncongruent = cFaceIncongruentTrials(participantID)
 
 %% extract cFace incongruent trial timings
 %% see segmentsTableIncongruent
@@ -6,8 +6,6 @@ function segmentsTableIncongruent = cFaceIncongruentTrials(participantID,diaryNa
 
 options = specifyOptions;
 
-%% save text of Matlab session
-diary(fullfile(options.paths.workingDir,diaryName))
 
 % Format participant ID
 IDstring = sprintf('%03d', participantID);
@@ -45,7 +43,7 @@ segmentsTable.responseWindow = ...
 segmentsTableIncongruent = segmentsTable(segmentsTable.cong==0, ...
     {'trialNo','stimMove_onset','fixation_onset','fixation_duration','responseWindow','cong','ptemot'});
 
-diary off
+end
 
 
 

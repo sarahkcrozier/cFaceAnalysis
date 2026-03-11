@@ -81843,3 +81843,4 @@ Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PC
         [~, cFacePupil] = cFacePupilArea(currentID);
                           ^^^^^^^^^^^^^^^^^^^^^^^^^
 } 
+close all
