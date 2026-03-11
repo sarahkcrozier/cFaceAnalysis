@@ -17,10 +17,12 @@ eyeSide_cell            = repmat({''}, N, 1);   % store as 1-char strings ("R"/"
 % ----- Fill pupil metrics
 for i = 1:N
     currentID = shared.ID(i);
-    % try
+    eyeFile = dir([options.paths.eyeASCFiles,sprintf('%03d', currentID),'*.asc']);
+
+    if ~isempty(eyeFile)
         % [~, cFacePupil] per your convention
         [~, cFacePupil] = cFacePupilArea(currentID);
-        %% 
+        %%
 
         if isfield(cFacePupil,'baseline'),             baselinePupil(i)            = cFacePupil.baseline;            end
         if isfield(cFacePupil,'peakAverage'),          averagePupil(i)             = cFacePupil.peakAverage;         end
@@ -35,9 +37,12 @@ for i = 1:N
                 eyeSide_cell{i} = char(val(1));
             end
         end
-    % catch ME
-    %     warning('cFacePupilArea failed for ID %d: %s', currentID, ME.message);
-    % end
+        % catch ME
+        %     warning('cFacePupilArea failed for ID %d: %s', currentID, ME.message);
+        % end
+    else
+        disp(['No ASCI file found for participants ID ',sprintf('%03d', currentID),'. Processing next participant']);
+    end
 end
 
 % ----- Assemble pupil table (shared + pupil)

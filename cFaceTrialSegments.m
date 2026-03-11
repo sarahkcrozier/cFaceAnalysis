@@ -35,7 +35,7 @@ else
 end
 
 % Find participant folder containing the ID (case-insensitive)
-d      = dir(options.paths.data);
+d      = dir(options.paths.rawData);
 names  = {d.name};
 names  = names(~ismember(names,{'.','..'}));
 hits   = contains(names, IDstring, 'IgnoreCase', true);
@@ -43,12 +43,14 @@ if ~any(hits)
     error('No matching participant folder found for "%s" under %s', IDstring, options.paths.data);
 end
 folderName = names{find(hits,1)};
-folderPath = fullfile(options.paths.data, folderName);
+folderPath = fullfile(options.paths.rawData, folderName);
 
 % Find the *out.csv file
-summaryFile = dir(fullfile(folderPath, 'beh', 'cface*MH*', '*out.csv'));
+filePattern   = [folderPath,filesep, 'beh',filesep, 'cface*MH*out.csv'];
+summaryFile   = dir(filePattern);
 if isempty(summaryFile)
-    error('No cFace *out.csv file found for participant "%s".', IDstring);
+    warning('No *out.csv found for %s.', IDstring);
+    return
 end
 summaryFilePath = fullfile(summaryFile.folder, summaryFile.name);
 

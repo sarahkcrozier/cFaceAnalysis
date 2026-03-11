@@ -78651,3 +78651,3195 @@ Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PC
         [~, cFacePupil] = cFacePupilArea(currentID);
                           ^^^^^^^^^^^^^^^^^^^^^^^^^
 } 
+PCNSPupilDataExtract
+options.paths.eyeASCFiles
+
+ans =
+
+    '/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/'
+
+currentID
+
+currentID =
+
+    19
+
+sprintf('%03d', participantID)
+{Unrecognized function or variable 'participantID'.
+} 
+sprintf('%03d', currentID)
+
+ans =
+
+    '019'
+
+eyeFile = dir(fullfile(options.paths.eyeASCFiles,sprintf('%03d', currentID)))
+
+eyeFile = 
+
+  0×1 empty <a href="matlab:helpPopup('struct')" style="font-weight:bold">struct</a> array with fields:
+
+    name
+    folder
+    date
+    bytes
+    isdir
+    datenum
+
+isempty(eyeFile)
+
+ans =
+
+  <a href="matlab:helpPopup('logical')" style="font-weight:bold">logical</a>
+
+   1
+
+PCNSPupilDataExtract
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',19,1)">19  </a>    currentID = shared.ID(i);
+No ASCI file found for participants ID 019. Processing next participant
+No ASCI file found for participants ID 020. Processing next participant
+No ASCI file found for participants ID 022. Processing next participant
+fullfile(options.paths.eyeASCFiles,sprintf('%03d', currentID)
+ fullfile(options.paths.eyeASCFiles,sprintf('%03d', currentID)
+                                                              ↑
+{Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for mismatched delimiters.
+} 
+fullfile(options.paths.eyeASCFiles,sprintf('%03d', currentID))
+
+ans =
+
+    '/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/024'
+
+eyeFile = dir([options.paths.eyeASCFiles,sprintf('%03d', currentID),'*.asc'])
+
+eyeFile = 
+
+  <a href="matlab:helpPopup('struct')" style="font-weight:bold">struct</a> with fields:
+
+       name: '024.asc'
+     folder: '/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC'
+       date: '03-Mar-2026 08:07:00'
+      bytes: 23269599
+      isdir: 0
+    datenum: 7.4004e+05
+
+PCNSPupilDataExtract
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',19,1)">19  </a>    currentID = shared.ID(i);
+No ASCI file found for participants ID 019. Processing next participant
+{Error using <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 43)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',43,0)">line 43</a>)
+No matching participant folder found for "020" under /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+segmentsTable = cFaceTrialSegments(participantID)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 24)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',24,0)">line 24</a>)
+        [~, cFacePupil] = cFacePupilArea(currentID);
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+PCNSPupilDataExtract
+No ASCI file found for participants ID 019. Processing next participant
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',38,1)">38  </a>d      = dir(options.paths.data);
+PCNSPupilDataExtract
+No ASCI file found for participants ID 019. Processing next participant
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',38,1)">38  </a>d      = dir(options.paths.rawData);
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the
+table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/20_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 24)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',24,0)">line 24</a>)] 
+
+segmentsTable =
+
+  80×12 <a href="matlab:helpPopup('table')" style="font-weight:bold">table</a>
+
+    <strong>trialNo</strong>    <strong>cong</strong>     <strong>condition</strong>     <strong>ptemot</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>fixation_duration</strong>    <strong>instruct_onset</strong>    <strong>instruct_duration</strong>    <strong>postinstruct_onset</strong>    <strong>responseWindow</strong>    <strong>ParticipantID</strong>
+    <strong>_______</strong>    <strong>____</strong>    <strong>___________</strong>    <strong>______</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>______________</strong>    <strong>_____________</strong>
+
+       1        0      incongruent    {'HA'}        16.866            18.583                1                14.549               0.5                 15.049              2.7179             20      
+       2        1      congruent      {'HA'}        24.016            25.734                1                19.583               0.5                 20.082              2.7184             20      
+       3        0      incongruent    {'AN'}        28.765            30.484                1                26.732               0.5                 27.232              2.7187             20      
+       4        1      congruent      {'AN'}        33.515            35.233                1                31.482               0.5                 31.982              2.7177             20      
+       5        0      incongruent    {'HA'}        39.066            40.783                1                36.233               0.5                 36.732              2.7175             20      
+
+       :        :           :           :             :                 :                   :                  :                   :                    :                   :                 :      
+
+      76        1      congruent      {'AN'}        477.51            479.23                1                472.68               0.5                 473.18              2.7161             20      
+      77        1      congruent      {'AN'}        485.86            487.58                1                480.23               0.5                 480.73              2.7177             20      
+      78        0      incongruent    {'AN'}        493.81            495.53                1                488.58               0.5                 489.08              2.7197             20      
+      79        1      congruent      {'AN'}        506.56            508.28                1                496.53               0.5                 497.03              2.7206             20      
+      80        0      incongruent    {'HA'}        515.31            517.03                1                509.28               0.5                 509.78              2.7157             20      
+
+	<a href="matlab:if exist('segmentsTable','var') && istabular(segmentsTable),displayWholeObj(segmentsTable,'segmentsTable'),else,fprintf('Unable to display table variable ''segmentsTable'' because it no longer exists.\n');end">Display all 80 rows.</a>
+
+
+trial_s =
+
+   14.5494
+   19.5831
+   26.7321
+   31.4820
+   36.2331
+   41.7819
+   46.9316
+   52.0818
+   56.8319
+   62.3815
+   67.9315
+   73.8827
+   79.0315
+   86.5815
+   91.3312
+   96.0813
+  101.6311
+  109.5812
+  116.3309
+  122.6810
+  127.4306
+  132.5810
+  139.7310
+  146.8803
+  153.2302
+  158.7803
+  174.7301
+  180.2806
+  185.4305
+  192.1811
+  197.3304
+  203.6802
+  213.6299
+  218.3795
+  223.1294
+  227.8798
+  237.8293
+  242.5792
+  247.7304
+  252.8798
+  258.0292
+  263.5788
+  269.5288
+  277.0788
+  283.0285
+  287.7785
+  292.9285
+  298.4784
+  304.0284
+  311.9782
+  321.1290
+  325.8780
+  331.0284
+  338.5782
+  346.9279
+  353.2777
+  359.2291
+  363.9783
+  369.1274
+  374.2773
+  381.4271
+  389.7795
+  394.5275
+  400.8776
+  405.6448
+  413.5777
+  418.7269
+  423.4768
+  429.4266
+  437.3765
+  442.5265
+  448.8762
+  454.0262
+  459.9762
+  464.7287
+  472.6759
+  480.2259
+  488.5780
+  496.5256
+  509.2756
+
+
+stimResponse =
+
+   16.8655
+   24.0160
+   28.7654
+   33.5155
+   39.0656
+   44.2151
+   49.3655
+   54.1154
+   59.6658
+   65.2154
+   71.1652
+   76.3151
+   83.8648
+   88.6147
+   93.3649
+   98.9148
+  106.8651
+  113.6148
+  119.9642
+  124.7142
+  129.8643
+  137.0143
+  144.1648
+  150.5144
+  156.0642
+  172.0140
+  177.5637
+  182.7136
+  189.4634
+  194.6137
+  200.9633
+  210.9132
+  215.6634
+  220.4130
+  225.1628
+  235.1128
+  239.8628
+  245.0125
+  250.1629
+  255.3143
+  260.8629
+  266.8134
+  274.3638
+  280.3131
+  285.0621
+  290.2125
+  295.7621
+  301.3119
+  309.2618
+  318.4117
+  323.1633
+  328.3117
+  335.8633
+  344.2115
+  350.5613
+  356.5112
+  361.2611
+  366.4127
+  371.5610
+  378.7126
+  387.0609
+  391.8125
+  398.1627
+  402.9112
+  410.8626
+  416.0120
+  420.7606
+  426.7103
+  434.6619
+  439.8102
+  446.1604
+  451.3100
+  457.2597
+  462.0099
+  469.9597
+  477.5113
+  485.8598
+  493.8095
+  506.5595
+  515.3113
+
+
+partEmotion =
+
+  80×1 <a href="matlab:helpPopup('cell')" style="font-weight:bold">cell</a> array
+
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+
+
+condition = 
+
+  80×1 <a href="matlab:helpPopup('categorical')" style="font-weight:bold">categorical</a> array
+
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/020.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/020cFaceResponseWindow.csv  (rows=276, trials=80)
+{Error using <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('save')" style="font-weight:bold">save</a>
+Cannot create '020_allTrials.fig' because
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots' does not exist.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('matlab.graphics.internal.figfile.FigFile/write', '/Applications/MATLAB_R2025b.app/toolbox/matlab/graphics/graphics/+matlab/+graphics/+internal/+figfile/@FigFile/write.m', 33)" style="font-weight:bold">matlab.graphics.internal.figfile.FigFile/write</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2025b.app/toolbox/matlab/graphics/graphics/+matlab/+graphics/+internal/+figfile/@FigFile/write.m',33,0)">line 33</a>)
+save(obj.Path, obj.MatVersion, '-struct', 'SaveVars');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('savefig', '/Applications/MATLAB_R2025b.app/toolbox/matlab/graphics/graphics/objectsystem/savefig.m', 33)" style="font-weight:bold">savefig</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2025b.app/toolbox/matlab/graphics/graphics/objectsystem/savefig.m',33,0)">line 33</a>)
+FF.write();
+^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea/plot_and_save', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 392)" style="font-weight:bold">cFacePupilArea/plot_and_save</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',392,0)">line 392</a>)
+    savefig(f, figPath);
+    ^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 427)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',427,0)">line 427</a>)
+plot_and_save(allIdx,      'All trials',                   'allTrials');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 24)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',24,0)">line 24</a>)
+        [~, cFacePupil] = cFacePupilArea(currentID);
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+clear all
+close all
+PCNSPupilDataExtract
+No ASCI file found for participants ID 019. Processing next participant
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',38,1)">38  </a>d      = dir(options.paths.rawData);
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the
+table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/20_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 24)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',24,0)">line 24</a>)] 
+
+segmentsTable =
+
+  80×12 <a href="matlab:helpPopup('table')" style="font-weight:bold">table</a>
+
+    <strong>trialNo</strong>    <strong>cong</strong>     <strong>condition</strong>     <strong>ptemot</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>fixation_duration</strong>    <strong>instruct_onset</strong>    <strong>instruct_duration</strong>    <strong>postinstruct_onset</strong>    <strong>responseWindow</strong>    <strong>ParticipantID</strong>
+    <strong>_______</strong>    <strong>____</strong>    <strong>___________</strong>    <strong>______</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>______________</strong>    <strong>_____________</strong>
+
+       1        0      incongruent    {'HA'}        16.866            18.583                1                14.549               0.5                 15.049              2.7179             20      
+       2        1      congruent      {'HA'}        24.016            25.734                1                19.583               0.5                 20.082              2.7184             20      
+       3        0      incongruent    {'AN'}        28.765            30.484                1                26.732               0.5                 27.232              2.7187             20      
+       4        1      congruent      {'AN'}        33.515            35.233                1                31.482               0.5                 31.982              2.7177             20      
+       5        0      incongruent    {'HA'}        39.066            40.783                1                36.233               0.5                 36.732              2.7175             20      
+
+       :        :           :           :             :                 :                   :                  :                   :                    :                   :                 :      
+
+      76        1      congruent      {'AN'}        477.51            479.23                1                472.68               0.5                 473.18              2.7161             20      
+      77        1      congruent      {'AN'}        485.86            487.58                1                480.23               0.5                 480.73              2.7177             20      
+      78        0      incongruent    {'AN'}        493.81            495.53                1                488.58               0.5                 489.08              2.7197             20      
+      79        1      congruent      {'AN'}        506.56            508.28                1                496.53               0.5                 497.03              2.7206             20      
+      80        0      incongruent    {'HA'}        515.31            517.03                1                509.28               0.5                 509.78              2.7157             20      
+
+	<a href="matlab:if exist('segmentsTable','var') && istabular(segmentsTable),displayWholeObj(segmentsTable,'segmentsTable'),else,fprintf('Unable to display table variable ''segmentsTable'' because it no longer exists.\n');end">Display all 80 rows.</a>
+
+
+trial_s =
+
+   14.5494
+   19.5831
+   26.7321
+   31.4820
+   36.2331
+   41.7819
+   46.9316
+   52.0818
+   56.8319
+   62.3815
+   67.9315
+   73.8827
+   79.0315
+   86.5815
+   91.3312
+   96.0813
+  101.6311
+  109.5812
+  116.3309
+  122.6810
+  127.4306
+  132.5810
+  139.7310
+  146.8803
+  153.2302
+  158.7803
+  174.7301
+  180.2806
+  185.4305
+  192.1811
+  197.3304
+  203.6802
+  213.6299
+  218.3795
+  223.1294
+  227.8798
+  237.8293
+  242.5792
+  247.7304
+  252.8798
+  258.0292
+  263.5788
+  269.5288
+  277.0788
+  283.0285
+  287.7785
+  292.9285
+  298.4784
+  304.0284
+  311.9782
+  321.1290
+  325.8780
+  331.0284
+  338.5782
+  346.9279
+  353.2777
+  359.2291
+  363.9783
+  369.1274
+  374.2773
+  381.4271
+  389.7795
+  394.5275
+  400.8776
+  405.6448
+  413.5777
+  418.7269
+  423.4768
+  429.4266
+  437.3765
+  442.5265
+  448.8762
+  454.0262
+  459.9762
+  464.7287
+  472.6759
+  480.2259
+  488.5780
+  496.5256
+  509.2756
+
+
+stimResponse =
+
+   16.8655
+   24.0160
+   28.7654
+   33.5155
+   39.0656
+   44.2151
+   49.3655
+   54.1154
+   59.6658
+   65.2154
+   71.1652
+   76.3151
+   83.8648
+   88.6147
+   93.3649
+   98.9148
+  106.8651
+  113.6148
+  119.9642
+  124.7142
+  129.8643
+  137.0143
+  144.1648
+  150.5144
+  156.0642
+  172.0140
+  177.5637
+  182.7136
+  189.4634
+  194.6137
+  200.9633
+  210.9132
+  215.6634
+  220.4130
+  225.1628
+  235.1128
+  239.8628
+  245.0125
+  250.1629
+  255.3143
+  260.8629
+  266.8134
+  274.3638
+  280.3131
+  285.0621
+  290.2125
+  295.7621
+  301.3119
+  309.2618
+  318.4117
+  323.1633
+  328.3117
+  335.8633
+  344.2115
+  350.5613
+  356.5112
+  361.2611
+  366.4127
+  371.5610
+  378.7126
+  387.0609
+  391.8125
+  398.1627
+  402.9112
+  410.8626
+  416.0120
+  420.7606
+  426.7103
+  434.6619
+  439.8102
+  446.1604
+  451.3100
+  457.2597
+  462.0099
+  469.9597
+  477.5113
+  485.8598
+  493.8095
+  506.5595
+  515.3113
+
+
+partEmotion =
+
+  80×1 <a href="matlab:helpPopup('cell')" style="font-weight:bold">cell</a> array
+
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+
+
+condition = 
+
+  80×1 <a href="matlab:helpPopup('categorical')" style="font-weight:bold">categorical</a> array
+
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/020.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/020cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 020:
+  preTask baseline:      1282.7602
+  Overall average:      35.4916
+  Congruent average:    33.1893
+  Incongruent average:  37.7940
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_20.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/020_cface_eyeData.csv (52752 samples)
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the
+table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/22_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 24)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',24,0)">line 24</a>)] 
+
+segmentsTable =
+
+  80×12 <a href="matlab:helpPopup('table')" style="font-weight:bold">table</a>
+
+    <strong>trialNo</strong>    <strong>cong</strong>     <strong>condition</strong>     <strong>ptemot</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>fixation_duration</strong>    <strong>instruct_onset</strong>    <strong>instruct_duration</strong>    <strong>postinstruct_onset</strong>    <strong>responseWindow</strong>    <strong>ParticipantID</strong>
+    <strong>_______</strong>    <strong>____</strong>    <strong>___________</strong>    <strong>______</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>______________</strong>    <strong>_____________</strong>
+
+       1        0      incongruent    {'HA'}        16.857            18.574                1                    10               0.5                      0              2.7162             22      
+       2        1      congruent      {'HA'}        24.007            25.724                1                19.575               0.5                 20.073              2.7172             22      
+       3        0      incongruent    {'AN'}        28.757            30.474                1                26.723               0.5                 27.223              2.7174             22      
+       4        1      congruent      {'AN'}        33.507            35.224                1                31.473               0.5                 31.973              2.7166             22      
+       5        0      incongruent    {'HA'}        39.057            40.774                1                36.225               0.5                 36.723              2.7173             22      
+
+       :        :           :           :             :                 :                   :                  :                   :                    :                   :                 :      
+
+      76        1      congruent      {'AN'}        477.52            479.23                1                472.68               0.5                 473.18              2.7154             22      
+      77        1      congruent      {'AN'}        485.85            487.58                1                480.21               0.5                 480.71              2.7319             22      
+      78        0      incongruent    {'AN'}        493.81            495.53                1                488.58               0.5                 489.08                2.72             22      
+      79        1      congruent      {'AN'}        506.56            508.28                1                496.53               0.5                 497.03              2.7203             22      
+      80        0      incongruent    {'HA'}        515.32            517.01                1                509.28               0.5                 509.78               2.698             22      
+
+	<a href="matlab:if exist('segmentsTable','var') && istabular(segmentsTable),displayWholeObj(segmentsTable,'segmentsTable'),else,fprintf('Unable to display table variable ''segmentsTable'' because it no longer exists.\n');end">Display all 80 rows.</a>
+
+
+trial_s =
+
+   10.0000
+   19.5748
+   26.7234
+   31.4733
+   36.2245
+   41.7731
+   46.9231
+   52.0729
+   56.8231
+   62.3732
+   67.9227
+   73.8737
+   79.0224
+   86.5723
+   91.3224
+   96.0721
+  101.6220
+  109.5720
+  116.3217
+  122.6719
+  127.4214
+  132.5713
+  139.7213
+  146.8713
+  153.2212
+  158.7709
+  174.7212
+  180.2713
+  185.4203
+  192.1706
+  197.3201
+  203.6700
+  213.6198
+  218.3712
+  223.1202
+  227.8701
+  237.8194
+  242.5703
+  247.7197
+  252.8692
+  258.0189
+  263.5690
+  269.5188
+  277.0686
+  283.0185
+  287.7685
+  292.9184
+  298.4696
+  304.0198
+  311.9681
+  321.1356
+  325.8847
+  331.0179
+  338.5846
+  346.9340
+  353.2837
+  359.2336
+  363.9857
+  369.1336
+  374.2669
+  381.4339
+  389.7853
+  394.5346
+  400.8847
+  405.6161
+  413.5847
+  418.7157
+  423.4824
+  429.4322
+  437.3827
+  442.5321
+  448.8652
+  454.0317
+  459.9818
+  464.7319
+  472.6816
+  480.2145
+  488.5836
+  496.5309
+  509.2810
+
+
+stimResponse =
+
+   16.8574
+   24.0071
+   28.7570
+   33.5071
+   39.0567
+   44.2067
+   49.3566
+   54.1065
+   59.6563
+   65.2065
+   71.1563
+   76.3059
+   83.8563
+   88.6058
+   93.3558
+   98.9056
+  106.8554
+  113.6054
+  119.9555
+  124.7051
+  129.8551
+  137.0049
+  144.1548
+  150.5045
+  156.0545
+  172.0043
+  177.5541
+  182.7047
+  189.4540
+  194.6045
+  200.9546
+  210.9034
+  215.6536
+  220.4044
+  225.1536
+  235.1033
+  239.8529
+  245.0028
+  250.1539
+  255.3025
+  260.8525
+  266.8023
+  274.3526
+  280.3020
+  285.0520
+  290.2020
+  295.7521
+  301.3017
+  309.2519
+  318.4027
+  323.1698
+  328.3188
+  335.8676
+  344.2029
+  350.5526
+  356.5027
+  361.2518
+  366.4192
+  371.5681
+  378.7188
+  387.0518
+  391.8188
+  398.1668
+  402.9179
+  410.8510
+  416.0182
+  420.7671
+  426.7162
+  434.6682
+  439.8169
+  446.1670
+  451.3155
+  457.2656
+  462.0018
+  469.9651
+  477.5169
+  485.8508
+  493.8146
+  506.5644
+  515.3169
+
+
+partEmotion =
+
+  80×1 <a href="matlab:helpPopup('cell')" style="font-weight:bold">cell</a> array
+
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+
+
+condition = 
+
+  80×1 <a href="matlab:helpPopup('categorical')" style="font-weight:bold">categorical</a> array
+
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/022.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/022cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 022:
+  preTask baseline:      2964.0196
+  Overall average:      336.0454
+  Congruent average:    329.6904
+  Incongruent average:  342.4005
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_22.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/022_cface_eyeData.csv (52751 samples)
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the
+table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/24_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 24)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',24,0)">line 24</a>)] 
+
+segmentsTable =
+
+  80×12 <a href="matlab:helpPopup('table')" style="font-weight:bold">table</a>
+
+    <strong>trialNo</strong>    <strong>cong</strong>     <strong>condition</strong>     <strong>ptemot</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>fixation_duration</strong>    <strong>instruct_onset</strong>    <strong>instruct_duration</strong>    <strong>postinstruct_onset</strong>    <strong>responseWindow</strong>    <strong>ParticipantID</strong>
+    <strong>_______</strong>    <strong>____</strong>    <strong>___________</strong>    <strong>______</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>______________</strong>    <strong>_____________</strong>
+
+       1        0      incongruent    {'HA'}        16.869             18.57                1                10.369               0.5                 10.519              2.7013             24      
+       2        1      congruent      {'HA'}        24.002            25.736                1                19.587               0.5                 20.085              2.7339             24      
+       3        0      incongruent    {'AN'}        28.768            30.487                1                26.735               0.5                 27.235              2.7181             24      
+       4        1      congruent      {'AN'}        33.518            35.236                1                31.485               0.5                 31.985               2.718             24      
+       5        0      incongruent    {'HA'}        39.068            40.786                1                36.236               0.5                 36.735              2.7182             24      
+
+       :        :           :           :             :                 :                   :                  :                   :                    :                   :                 :      
+
+      76        1      congruent      {'AN'}        477.51            479.23                1                472.68               0.5                 473.18              2.7183             24      
+      77        1      congruent      {'AN'}        485.86            487.58                1                480.23               0.5                 480.73              2.7205             24      
+      78        0      incongruent    {'AN'}        493.81            495.53                1                488.58               0.5                 489.08              2.7157             24      
+      79        1      congruent      {'AN'}        506.56            508.28                1                496.53               0.5                 497.03              2.7151             24      
+      80        0      incongruent    {'HA'}        515.31            517.03                1                509.28               0.5                 509.78              2.7191             24      
+
+	<a href="matlab:if exist('segmentsTable','var') && istabular(segmentsTable),displayWholeObj(segmentsTable,'segmentsTable'),else,fprintf('Unable to display table variable ''segmentsTable'' because it no longer exists.\n');end">Display all 80 rows.</a>
+
+
+trial_s =
+
+   10.3692
+   19.5865
+   26.7350
+   31.4854
+   36.2363
+   41.7846
+   46.9349
+   52.0847
+   56.8344
+   62.3843
+   67.9342
+   73.8853
+   79.0341
+   86.5839
+   91.3338
+   96.0840
+  101.6343
+  109.5833
+  116.3333
+  122.6831
+  127.4331
+  132.5832
+  139.7328
+  146.8826
+  153.2327
+  158.7825
+  174.7322
+  180.2822
+  185.4320
+  192.1820
+  197.3320
+  203.6815
+  213.6322
+  218.3814
+  223.1314
+  227.8811
+  237.8322
+  242.5809
+  247.7309
+  252.8807
+  258.0306
+  263.5822
+  269.5315
+  277.0804
+  283.0302
+  287.7812
+  292.9304
+  298.4801
+  304.0297
+  311.9807
+  321.1295
+  325.8812
+  331.0306
+  338.5792
+  346.9293
+  353.2791
+  359.2287
+  363.9788
+  369.1287
+  374.2804
+  381.4304
+  389.7784
+  394.5280
+  400.8779
+  405.6297
+  413.5775
+  418.7276
+  423.4797
+  429.4286
+  437.3771
+  442.5295
+  448.8796
+  454.0275
+  459.9779
+  464.7268
+  472.6776
+  480.2289
+  488.5762
+  496.5261
+  509.2766
+
+
+stimResponse =
+
+   16.8688
+   24.0025
+   28.7684
+   33.5184
+   39.0682
+   44.2183
+   49.3682
+   54.1187
+   59.6684
+   65.2180
+   71.1679
+   76.3178
+   83.8677
+   88.6175
+   93.3673
+   98.9173
+  106.8671
+  113.6170
+  119.9669
+  124.7168
+  129.8669
+  137.0165
+  144.1664
+  150.5162
+  156.0662
+  172.0166
+  177.5658
+  182.7155
+  189.4656
+  194.6153
+  200.9653
+  210.9154
+  215.6658
+  220.4148
+  225.1649
+  235.1147
+  239.8657
+  245.0145
+  250.1643
+  255.3142
+  260.8644
+  266.8140
+  274.3640
+  280.3140
+  285.0636
+  290.2148
+  295.7647
+  301.3137
+  309.2632
+  318.4132
+  323.1629
+  328.3129
+  335.8627
+  344.2128
+  350.5628
+  356.5128
+  361.2626
+  366.4122
+  371.5623
+  378.7122
+  387.0617
+  391.8120
+  398.1620
+  402.9117
+  410.8613
+  416.0114
+  420.7610
+  426.7110
+  434.6608
+  439.8109
+  446.1608
+  451.3126
+  457.2626
+  462.0110
+  469.9627
+  477.5102
+  485.8599
+  493.8119
+  506.5622
+  515.3094
+
+
+partEmotion =
+
+  80×1 <a href="matlab:helpPopup('cell')" style="font-weight:bold">cell</a> array
+
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+
+
+condition = 
+
+  80×1 <a href="matlab:helpPopup('categorical')" style="font-weight:bold">categorical</a> array
+
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/024.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/024cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 024:
+  preTask baseline:      1754.2180
+  Overall average:      232.2203
+  Congruent average:    237.4762
+  Incongruent average:  226.9644
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_24.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/024_cface_eyeData.csv (52751 samples)
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the
+table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/25_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 24)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',24,0)">line 24</a>)] 
+
+segmentsTable =
+
+  80×12 <a href="matlab:helpPopup('table')" style="font-weight:bold">table</a>
+
+    <strong>trialNo</strong>    <strong>cong</strong>     <strong>condition</strong>     <strong>ptemot</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>fixation_duration</strong>    <strong>instruct_onset</strong>    <strong>instruct_duration</strong>    <strong>postinstruct_onset</strong>    <strong>responseWindow</strong>    <strong>ParticipantID</strong>
+    <strong>_______</strong>    <strong>____</strong>    <strong>___________</strong>    <strong>______</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>______________</strong>    <strong>_____________</strong>
+
+       1        0      incongruent    {'HA'}        16.859            18.575                1                14.225               0.5                 14.725              2.7163             25      
+       2        1      congruent      {'HA'}        24.009            25.726                1                19.576               0.5                 20.075              2.7177             25      
+       3        0      incongruent    {'AN'}        28.758            30.476                1                26.725               0.5                 27.225              2.7179             25      
+       4        1      congruent      {'AN'}        33.508            35.226                1                31.475               0.5                 31.975              2.7179             25      
+       5        0      incongruent    {'HA'}        39.058            40.776                1                36.226               0.5                 36.724              2.7178             25      
+
+       :        :           :           :             :                 :                   :                  :                   :                    :                   :                 :      
+
+      76        1      congruent      {'AN'}        477.52            479.23                1                472.68               0.5                 473.18              2.7173             25      
+      77        1      congruent      {'AN'}        485.87            487.57                1                480.23               0.5                 480.72              2.6993             25      
+      78        0      incongruent    {'AN'}         493.8            495.53                1                488.57               0.5                 489.08              2.7317             25      
+      79        1      congruent      {'AN'}        506.55            508.28                1                496.53               0.5                 497.03              2.7327             25      
+      80        0      incongruent    {'HA'}        515.32            517.03                1                509.28               0.5                 509.78              2.7174             25      
+
+	<a href="matlab:if exist('segmentsTable','var') && istabular(segmentsTable),displayWholeObj(segmentsTable,'segmentsTable'),else,fprintf('Unable to display table variable ''segmentsTable'' because it no longer exists.\n');end">Display all 80 rows.</a>
+
+
+trial_s =
+
+   14.2254
+   19.5760
+   26.7247
+   31.4748
+   36.2259
+   41.7744
+   46.9244
+   52.0742
+   56.8243
+   62.3741
+   67.9238
+   73.8750
+   79.0238
+   86.5737
+   91.3234
+   96.0733
+  101.6238
+  109.5735
+  116.3236
+  122.6729
+  127.4230
+  132.5733
+  139.7230
+  146.8723
+  153.2224
+  158.7721
+  174.7217
+  180.2720
+  185.4219
+  192.1715
+  197.3213
+  203.6714
+  213.6222
+  218.3710
+  223.1210
+  227.8708
+  237.8215
+  242.5706
+  247.7207
+  252.8707
+  258.0203
+  263.5702
+  269.5212
+  277.0702
+  283.0197
+  287.7713
+  292.9206
+  298.4694
+  304.0194
+  311.9704
+  321.1193
+  325.8689
+  331.0204
+  338.5691
+  346.9189
+  353.2685
+  359.2182
+  363.9684
+  369.1180
+  374.2698
+  381.4180
+  389.7677
+  394.5176
+  400.8674
+  405.6194
+  413.5671
+  418.7173
+  423.4836
+  429.4188
+  437.3834
+  442.5335
+  448.8833
+  454.0332
+  459.9830
+  464.7347
+  472.6830
+  480.2326
+  488.5660
+  496.5348
+  509.2845
+
+
+stimResponse =
+
+   16.8588
+   24.0085
+   28.7582
+   33.5081
+   39.0584
+   44.2084
+   49.3579
+   54.1078
+   59.6578
+   65.2077
+   71.1574
+   76.3072
+   83.8577
+   88.6071
+   93.3571
+   98.9072
+  106.8570
+  113.6066
+  119.9566
+  124.7065
+  129.8567
+  137.0061
+  144.1562
+  150.5062
+  156.0559
+  172.0065
+  177.5558
+  182.7055
+  189.4554
+  194.6051
+  200.9550
+  210.9050
+  215.6555
+  220.4048
+  225.1545
+  235.1043
+  239.8556
+  245.0043
+  250.1539
+  255.3040
+  260.8538
+  266.8040
+  274.3535
+  280.3035
+  285.0537
+  290.2045
+  295.7547
+  301.3036
+  309.2529
+  318.4028
+  323.1525
+  328.3026
+  335.8524
+  344.2021
+  350.5528
+  356.5024
+  361.2519
+  366.4017
+  371.5517
+  378.7015
+  387.0514
+  391.8013
+  398.1513
+  402.9013
+  410.8509
+  416.0175
+  420.7674
+  426.7027
+  434.6676
+  439.8173
+  446.1673
+  451.3026
+  457.2522
+  462.0009
+  469.9521
+  477.5163
+  485.8682
+  493.8022
+  506.5519
+  515.3160
+
+
+partEmotion =
+
+  80×1 <a href="matlab:helpPopup('cell')" style="font-weight:bold">cell</a> array
+
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+
+
+condition = 
+
+  80×1 <a href="matlab:helpPopup('categorical')" style="font-weight:bold">categorical</a> array
+
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/025.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/025cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 025:
+  preTask baseline:      2769.3435
+  Overall average:      1052.8840
+  Congruent average:    938.5975
+  Incongruent average:  1167.1705
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_25.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/025_cface_eyeData.csv (52752 samples)
+No ASCI file found for participants ID 026. Processing next participant
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the
+table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/28_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 24)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',24,0)">line 24</a>)] 
+
+segmentsTable =
+
+  80×12 <a href="matlab:helpPopup('table')" style="font-weight:bold">table</a>
+
+    <strong>trialNo</strong>    <strong>cong</strong>     <strong>condition</strong>     <strong>ptemot</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>fixation_duration</strong>    <strong>instruct_onset</strong>    <strong>instruct_duration</strong>    <strong>postinstruct_onset</strong>    <strong>responseWindow</strong>    <strong>ParticipantID</strong>
+    <strong>_______</strong>    <strong>____</strong>    <strong>___________</strong>    <strong>______</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>______________</strong>    <strong>_____________</strong>
+
+       1        0      incongruent    {'HA'}        16.861            18.579                1                10.328               0.5                 10.828              2.7176             28      
+       2        1      congruent      {'HA'}        24.011            25.728                1                19.579               0.5                 20.077              2.7175             28      
+       3        0      incongruent    {'AN'}        28.761            30.479                1                26.727               0.5                 27.227               2.718             28      
+       4        1      congruent      {'AN'}        33.511            35.228                1                31.477               0.5                 31.977              2.7176             28      
+       5        0      incongruent    {'HA'}        39.061            40.778                1                36.228               0.5                 36.727              2.7175             28      
+
+       :        :           :           :             :                 :                   :                  :                   :                    :                   :                 :      
+
+      76        1      congruent      {'AN'}         477.5            479.22                1                472.67               0.5                 473.17              2.7147             28      
+      77        1      congruent      {'AN'}        485.85            487.57                1                480.22               0.5                 480.72              2.7187             28      
+      78        0      incongruent    {'AN'}         493.8            495.52                1                488.57               0.5                 489.07              2.7206             28      
+      79        1      congruent      {'AN'}        506.55            508.27                1                496.52               0.5                 497.02              2.7204             28      
+      80        0      incongruent    {'HA'}         515.3            517.02                1                509.27               0.5                 509.77              2.7183             28      
+
+	<a href="matlab:if exist('segmentsTable','var') && istabular(segmentsTable),displayWholeObj(segmentsTable,'segmentsTable'),else,fprintf('Unable to display table variable ''segmentsTable'' because it no longer exists.\n');end">Display all 80 rows.</a>
+
+
+trial_s =
+
+   10.3277
+   19.5786
+   26.7273
+   31.4770
+   36.2282
+   41.7769
+   46.9267
+   52.0766
+   56.8265
+   62.3765
+   67.9264
+   73.8781
+   79.0266
+   86.5760
+   91.3260
+   96.0758
+  101.6258
+  109.5761
+  116.3261
+  122.6760
+  127.4253
+  132.5752
+  139.7253
+  146.8755
+  153.2252
+  158.7752
+  174.7246
+  180.2744
+  185.4242
+  192.1740
+  197.3252
+  203.6739
+  213.6237
+  218.3736
+  223.1234
+  227.8744
+  237.8231
+  242.5730
+  247.7230
+  252.8742
+  258.0236
+  263.5725
+  269.5225
+  277.0735
+  283.0234
+  287.7723
+  292.9223
+  298.4719
+  304.0219
+  311.9717
+  321.1233
+  325.8727
+  331.0216
+  338.5725
+  346.9211
+  353.2709
+  359.2208
+  363.9724
+  369.1216
+  374.2707
+  381.4215
+  389.7702
+  394.5217
+  400.8716
+  405.6200
+  413.5717
+  418.7216
+  423.4697
+  429.4197
+  437.3706
+  442.5192
+  448.8693
+  454.0191
+  459.9690
+  464.7187
+  472.6688
+  480.2197
+  488.5685
+  496.5183
+  509.2683
+
+
+stimResponse =
+
+   16.8611
+   24.0107
+   28.7609
+   33.5105
+   39.0607
+   44.2102
+   49.3605
+   54.1103
+   59.6600
+   65.2099
+   71.1599
+   76.3100
+   83.8596
+   88.6098
+   93.3594
+   98.9095
+  106.8593
+  113.6092
+  119.9591
+  124.7094
+  129.8599
+  137.0093
+  144.1587
+  150.5083
+  156.0582
+  172.0079
+  177.5580
+  182.7078
+  189.4578
+  194.6076
+  200.9575
+  210.9086
+  215.6573
+  220.4073
+  225.1572
+  235.1076
+  239.8566
+  245.0069
+  250.1565
+  255.3064
+  260.8575
+  266.8077
+  274.3563
+  280.3059
+  285.0568
+  290.2059
+  295.7556
+  301.3055
+  309.2558
+  318.4052
+  323.1552
+  328.3067
+  335.8550
+  344.2046
+  350.5547
+  356.5045
+  361.2545
+  366.4042
+  371.5560
+  378.7056
+  387.0540
+  391.8037
+  398.1538
+  402.9061
+  410.8535
+  416.0060
+  420.7551
+  426.7039
+  434.6530
+  439.8048
+  446.1550
+  451.3030
+  457.2528
+  462.0024
+  469.9529
+  477.5050
+  485.8521
+  493.8019
+  506.5520
+  515.3015
+
+
+partEmotion =
+
+  80×1 <a href="matlab:helpPopup('cell')" style="font-weight:bold">cell</a> array
+
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+
+
+condition = 
+
+  80×1 <a href="matlab:helpPopup('categorical')" style="font-weight:bold">categorical</a> array
+
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/028.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/028cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 028:
+  preTask baseline:      2882.3889
+  Overall average:      249.3839
+  Congruent average:    195.1671
+  Incongruent average:  303.6008
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_28.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/028_cface_eyeData.csv (52752 samples)
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the
+table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/29_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 24)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',24,0)">line 24</a>)] 
+
+segmentsTable =
+
+  80×12 <a href="matlab:helpPopup('table')" style="font-weight:bold">table</a>
+
+    <strong>trialNo</strong>    <strong>cong</strong>     <strong>condition</strong>     <strong>ptemot</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>fixation_duration</strong>    <strong>instruct_onset</strong>    <strong>instruct_duration</strong>    <strong>postinstruct_onset</strong>    <strong>responseWindow</strong>    <strong>ParticipantID</strong>
+    <strong>_______</strong>    <strong>____</strong>    <strong>___________</strong>    <strong>______</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>______________</strong>    <strong>_____________</strong>
+
+       1        0      incongruent    {'HA'}        16.863            18.581                1                14.096               0.5                 14.596              2.7177             29      
+       2        1      congruent      {'HA'}        24.013            25.731                1                19.581               0.5                 20.079              2.7183             29      
+       3        0      incongruent    {'AN'}        28.763            30.481                1                26.729               0.5                 27.229              2.7181             29      
+       4        1      congruent      {'AN'}        33.513             35.23                1                31.479               0.5                 31.979              2.7177             29      
+       5        0      incongruent    {'HA'}        39.063            40.781                1                 36.23               0.5                 36.729               2.718             29      
+
+       :        :           :           :             :                 :                   :                  :                   :                    :                   :                 :      
+
+      76        1      congruent      {'AN'}        477.51            479.23                1                472.67               0.5                 473.17              2.7202             29      
+      77        1      congruent      {'AN'}        485.86            487.57                1                480.22               0.5                 480.72              2.7148             29      
+      78        0      incongruent    {'AN'}        493.81            495.52                1                488.57               0.5                 489.07              2.7181             29      
+      79        1      congruent      {'AN'}        506.56            508.28                1                496.53               0.5                 497.02              2.7189             29      
+      80        0      incongruent    {'HA'}        515.31            517.02                1                509.28               0.5                 509.77              2.7179             29      
+
+	<a href="matlab:if exist('segmentsTable','var') && istabular(segmentsTable),displayWholeObj(segmentsTable,'segmentsTable'),else,fprintf('Unable to display table variable ''segmentsTable'' because it no longer exists.\n');end">Display all 80 rows.</a>
+
+
+trial_s =
+
+   14.0964
+   19.5805
+   26.7292
+   31.4793
+   36.2304
+   41.7791
+   46.9292
+   52.0788
+   56.8287
+   62.3787
+   67.9285
+   73.8797
+   79.0289
+   86.5783
+   91.3285
+   96.0785
+  101.6284
+  109.5780
+  116.3283
+  122.6779
+  127.4278
+  132.5777
+  139.7277
+  146.8774
+  153.2274
+  158.7774
+  174.7279
+  180.2780
+  185.4270
+  192.1771
+  197.3269
+  203.6767
+  213.6266
+  218.3767
+  223.1265
+  227.8765
+  237.8264
+  242.5773
+  247.7266
+  252.8762
+  258.0261
+  263.5761
+  269.5258
+  277.0757
+  283.0257
+  287.7756
+  292.9256
+  298.4767
+  304.0268
+  311.9757
+  321.1251
+  325.8753
+  331.0250
+  338.5748
+  346.9252
+  353.2763
+  359.2253
+  363.9749
+  369.1246
+  374.2747
+  381.4247
+  389.7748
+  394.5244
+  400.8741
+  405.6239
+  413.5738
+  418.7239
+  423.4737
+  429.4237
+  437.3735
+  442.5236
+  448.8733
+  454.0235
+  459.9757
+  464.7247
+  472.6733
+  480.2232
+  488.5733
+  496.5252
+  509.2752
+
+
+stimResponse =
+
+   16.8630
+   24.0127
+   28.7626
+   33.5127
+   39.0628
+   44.2125
+   49.3626
+   54.1126
+   59.6622
+   65.2127
+   71.1622
+   76.3122
+   83.8619
+   88.6118
+   93.3618
+   98.9119
+  106.8616
+  113.6117
+  119.9614
+  124.7117
+  129.8617
+  137.0115
+  144.1612
+  150.5112
+  156.0609
+  172.0108
+  177.5609
+  182.7112
+  189.4606
+  194.6114
+  200.9614
+  210.9105
+  215.6603
+  220.4100
+  225.1606
+  235.1100
+  239.8602
+  245.0106
+  250.1608
+  255.3097
+  260.8596
+  266.8096
+  274.3594
+  280.3097
+  285.0593
+  290.2092
+  295.7591
+  301.3091
+  309.2588
+  318.4102
+  323.1590
+  328.3089
+  335.8587
+  344.2105
+  350.5601
+  356.5102
+  361.2584
+  366.4083
+  371.5580
+  378.7082
+  387.0598
+  391.8077
+  398.1576
+  402.9076
+  410.8587
+  416.0073
+  420.7573
+  426.7075
+  434.6571
+  439.8071
+  446.1571
+  451.3070
+  457.2569
+  462.0071
+  469.9567
+  477.5067
+  485.8595
+  493.8064
+  506.5562
+  515.3064
+
+
+partEmotion =
+
+  80×1 <a href="matlab:helpPopup('cell')" style="font-weight:bold">cell</a> array
+
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+
+
+condition = 
+
+  80×1 <a href="matlab:helpPopup('categorical')" style="font-weight:bold">categorical</a> array
+
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/029.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/029cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 029:
+  preTask baseline:      1227.2183
+  Overall average:      67.5736
+  Congruent average:    57.9341
+  Incongruent average:  77.2130
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_29.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/029_cface_eyeData.csv (52752 samples)
+No ASCI file found for participants ID 030. Processing next participant
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the
+table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/31_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 24)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',24,0)">line 24</a>)] 
+
+segmentsTable =
+
+  80×12 <a href="matlab:helpPopup('table')" style="font-weight:bold">table</a>
+
+    <strong>trialNo</strong>    <strong>cong</strong>     <strong>condition</strong>     <strong>ptemot</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>fixation_duration</strong>    <strong>instruct_onset</strong>    <strong>instruct_duration</strong>    <strong>postinstruct_onset</strong>    <strong>responseWindow</strong>    <strong>ParticipantID</strong>
+    <strong>_______</strong>    <strong>____</strong>    <strong>___________</strong>    <strong>______</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>______________</strong>    <strong>_____________</strong>
+
+       1        0      incongruent    {'HA'}        16.865            18.582                1                13.715               0.5                 14.215              2.7168             31      
+       2        1      congruent      {'HA'}        24.015            25.733                1                19.583               0.5                 20.082              2.7178             31      
+       3        0      incongruent    {'AN'}        28.765            30.483                1                26.731               0.5                 27.231              2.7177             31      
+       4        1      congruent      {'AN'}        33.515            35.233                1                31.481               0.5                 31.981              2.7179             31      
+       5        0      incongruent    {'HA'}        39.065            40.783                1                36.232               0.5                 36.731               2.718             31      
+
+       :        :           :           :             :                 :                   :                  :                   :                    :                   :                 :      
+
+      76        1      congruent      {'AN'}        477.51            479.22                1                472.67               0.5                 473.17              2.7176             31      
+      77        1      congruent      {'AN'}        485.86            487.57                1                480.22               0.5                 480.72               2.715             31      
+      78        0      incongruent    {'AN'}        493.81            495.53                1                488.57               0.5                 489.07              2.7197             31      
+      79        1      congruent      {'AN'}        506.56            508.27                1                496.53               0.5                 497.02               2.719             31      
+      80        0      incongruent    {'HA'}        515.31            517.02                1                509.27               0.5                 509.77              2.7171             31      
+
+	<a href="matlab:if exist('segmentsTable','var') && istabular(segmentsTable),displayWholeObj(segmentsTable,'segmentsTable'),else,fprintf('Unable to display table variable ''segmentsTable'' because it no longer exists.\n');end">Display all 80 rows.</a>
+
+
+trial_s =
+
+   13.7154
+   19.5828
+   26.7314
+   31.4814
+   36.2324
+   41.7811
+   46.9310
+   52.0808
+   56.8311
+   62.3811
+   67.9307
+   73.8819
+   79.0303
+   86.5805
+   91.3301
+   96.0800
+  101.6299
+  109.5799
+  116.3298
+  122.6795
+  127.4295
+  132.5793
+  139.7292
+  146.8792
+  153.2294
+  158.7789
+  174.7285
+  180.2791
+  185.4283
+  192.1793
+  197.3282
+  203.6780
+  213.6279
+  218.3778
+  223.1283
+  227.8777
+  237.8275
+  242.5785
+  247.7284
+  252.8770
+  258.0272
+  263.5768
+  269.5270
+  277.0766
+  283.0264
+  287.7762
+  292.9263
+  298.4763
+  304.0273
+  311.9761
+  321.1259
+  325.8757
+  331.0256
+  338.5756
+  346.9265
+  353.2765
+  359.2265
+  363.9749
+  369.1251
+  374.2750
+  381.4248
+  389.7755
+  394.5242
+  400.8743
+  405.6241
+  413.5740
+  418.7238
+  423.4737
+  429.4237
+  437.3735
+  442.5234
+  448.8732
+  454.0231
+  459.9731
+  464.7255
+  472.6728
+  480.2226
+  488.5736
+  496.5250
+  509.2721
+
+
+stimResponse =
+
+   16.8653
+   24.0152
+   28.7650
+   33.5151
+   39.0649
+   44.2148
+   49.3647
+   54.1144
+   59.6645
+   65.2151
+   71.1643
+   76.3145
+   83.8638
+   88.6138
+   93.3637
+   98.9136
+  106.8634
+  113.6134
+  119.9637
+  124.7131
+  129.8630
+  137.0131
+  144.1629
+  150.5126
+  156.0625
+  172.0122
+  177.5621
+  182.7119
+  189.4618
+  194.6124
+  200.9623
+  210.9115
+  215.6615
+  220.4112
+  225.1626
+  235.1109
+  239.8610
+  245.0108
+  250.1615
+  255.3106
+  260.8605
+  266.8105
+  274.3606
+  280.3107
+  285.0600
+  290.2103
+  295.7602
+  301.3097
+  309.2597
+  318.4109
+  323.1592
+  328.3092
+  335.8596
+  344.2089
+  350.5591
+  356.5086
+  361.2598
+  366.4085
+  371.5588
+  378.7082
+  387.0596
+  391.8089
+  398.1587
+  402.9079
+  410.8588
+  416.0078
+  420.7576
+  426.7072
+  434.6571
+  439.8070
+  446.1570
+  451.3069
+  457.2572
+  462.0067
+  469.9567
+  477.5064
+  485.8590
+  493.8060
+  506.5558
+  515.3061
+
+
+partEmotion =
+
+  80×1 <a href="matlab:helpPopup('cell')" style="font-weight:bold">cell</a> array
+
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+
+
+condition = 
+
+  80×1 <a href="matlab:helpPopup('categorical')" style="font-weight:bold">categorical</a> array
+
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/031.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/031cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 031:
+  preTask baseline:      551.3753
+  Overall average:      26.9800
+  Congruent average:    28.1765
+  Incongruent average:  25.7835
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_31.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/031_cface_eyeData.csv (52750 samples)
+{Error using <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 43)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',43,0)">line 43</a>)
+No matching participant folder found for "032" under /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+segmentsTable = cFaceTrialSegments(participantID)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 24)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',24,0)">line 24</a>)
+        [~, cFacePupil] = cFacePupilArea(currentID);
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
