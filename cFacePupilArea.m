@@ -15,7 +15,7 @@ function [eyeDataTbl, cFacePupil] = cFacePupilArea(participantID)
 % Setup: paths
 % -----------------------------
 options  = specifyOptions;
-ascDir   = options.paths.EDFtoASC;
+ascDir   = options.paths.eyeASCFiles;
 pupilDir = options.paths.eyeData;
 eyePlots = options.paths.eyeDataPlots;
 
