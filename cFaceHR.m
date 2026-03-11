@@ -105,17 +105,25 @@ Wn = max(min(Wn, 0.99), 1e-6);      % guard against extreme Fs
 [b,a] = butter(3, Wn, 'high');
 highpassedSignal = filtfilt(b, a, signal);
 
+% plot filtered signal
+figure;
+plot(highpassedSignal);
+
 % --- (3) fixed-distance peak detection (assumes upright systolic peaks)
 minPeakDistanceSamples = 56;        
 [~, peakIdx] = findpeaks(highpassedSignal, ...
     'MinPeakDistance', minPeakDistanceSamples);
+
+% plot identified peaks
+hold on
+plot(peakIdx,highpassedSignal(peakIdx),'Marker','o');
 
 % Extract timestamps and immediately remove duplicates
 peakTimes = unique(time(peakIdx));
 
 % --- (4) artifact handling in interval domain 
 % Returns full peakTimes and a PPI vector with NaNs for bad intervals
-[peakTimes, PPI, ~] = cleanPPI(peakTimes); 
+[peakTimes, PPI, ~] = cleanPPI(peakTimes,peakIdx,highpassedSignal); 
 
 % ---- Rolling HR for 5 s windows (for trial means) ----
 rollingWindowSec = 5.0;                           
@@ -429,7 +437,6 @@ writetable(ppiTrialsTbl, outFile);   % no rounding
 catch ME
     warning('cFaceHR(%s) failed: %s', IDstring, ME.message);
     rethrow(ME)  % comment this out if you prefer soft-fail
-finally
     diary off
 end
 end  % ===== end main function =====
@@ -437,7 +444,7 @@ end  % ===== end main function =====
 
 % ===================== SUBFUNCTIONS =====================
 
-function [peakTimes, PPI, intervalOK] = cleanPPI(peakTimes)
+function [peakTimes, PPI, intervalOK] = cleanPPI(peakTimes,peakIdx,highpassedSignal)
     % cleanPPI - Identifies artifacts but returns FULL list of peaks
     % and a PPI vector where artifacts are NaNs. This prevents "merging" gaps.
     
@@ -461,11 +468,16 @@ function [peakTimes, PPI, intervalOK] = cleanPPI(peakTimes)
         return
     end
     
-    deviation = abs(PPI - median(ref,'omitnan')) / (1.4826*mad(ref,1));
-    statOK = deviation <= 3.5;
+    deviation = abs(PPI - median(ref,'omitnan')) / (1.4826*mad(ref,1)); % where does this number come from?
+    statOK = deviation <= 3.5; % where does this number come from?
+
 
     % 4. Combine checks
     intervalOK = physOK & statOK;
+
+    % plot new peaks
+    hold on
+    plot(peakIdx(statOK),highpassedSignal(peakIdx(statOK)),'Marker','+')
 
     % 5. REPLACE bad intervals with NaN (Do NOT remove peaks)
     PPI(~intervalOK) = NaN; 

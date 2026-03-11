@@ -69,7 +69,7 @@ if ~exist(options.paths.HBDExport)
 end
 
 
-if isempty(options.paths.data2) % only needed because data is organized differently
+if ~isempty(options.paths.data2) % only needed because data is organized differently
     options.paths.eyeASCFiles  = [options.paths.data2,'EDFtoASC',filesep];   % the location of converted EDF files (manually converted to ASC)
     options.paths.eyeData      = [options.paths.data2,'eyeData',filesep];      % save processed eye data here
     options.paths.HRdata       = [options.paths.data2,'HRdata',filesep];
@@ -91,7 +91,7 @@ options.data.pcnsDataTable   = [options.paths.DBExport,'pcnsDataTable.csv'];   %
 options.data.hbdOutcomesFile = [options.paths.HBDExport,'outcomes_myhrd.csv']; % whats that?
 options.data.nPannsPItems = 7;
 options.data.nPannsNItems = 7;
-options.data.nPannsQItems = 16;
+options.data.nPannsGItems = 16;
 
 % Check if files needed for analyses are in the folder structure %?? Where or how is this file generated?
 HBDfile = dir(fullfile(options.data.hbdOutcomesFile));
