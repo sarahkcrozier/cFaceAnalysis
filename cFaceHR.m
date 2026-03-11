@@ -21,7 +21,7 @@ HR.incongruentresponsePPI  = NaN;   % mean of all incongruent post3_meanPPI_s (s
 
 logPath = fullfile(options.paths.workingDir, 'output_HR_cface.txt');
 diary(logPath)
-try
+% try
     %% Locate participant folder
     participantFolders = dir(options.paths.rawData);
     folderNames = {participantFolders.name};
@@ -106,7 +106,7 @@ Wn = max(min(Wn, 0.99), 1e-6);      % guard against extreme Fs
 highpassedSignal = filtfilt(b, a, signal);
 
 % plot filtered signal
-figure;
+fig=figure;
 plot(highpassedSignal);
 
 % --- (3) fixed-distance peak detection (assumes upright systolic peaks)
@@ -115,8 +115,8 @@ minPeakDistanceSamples = 56;
     'MinPeakDistance', minPeakDistanceSamples);
 
 % plot identified peaks
-hold on
-plot(peakIdx,highpassedSignal(peakIdx),'Marker','o');
+% hold on
+% plot(peakIdx,highpassedSignal(peakIdx),'Marker','o');
 
 % Extract timestamps and immediately remove duplicates
 peakTimes = unique(time(peakIdx));
@@ -130,6 +130,13 @@ rollingWindowSec = 5.0;
 % Updated: Pass the cleaned PPI vector so rolling HR ignores the gaps
 HRrolling5 = computeHRrolling(peakTimes, time, rollingWindowSec, PPI);  
 
+% Save .fig
+filename = sprintf('cFaceRawPlot_%s.fig', IDstring);
+saveas(fig, fullfile(options.paths.plots, filename));
+% Save .png
+filename = sprintf('cFaceRawPlot_%s.png', IDstring);
+saveas(fig, fullfile(options.paths.plots, filename),'png');
+close(fig);
 
 % ---- Baseline HR (from clean peaks) ----
 % Find intervals where the END of the interval is before the baseline timing
@@ -161,8 +168,8 @@ if any(~isnan(postTaskIntervals))
 end
 
 %% ---- STEP 3: Trial-window HR in beat domain + per-trial max PPG ----
-segmentsTableIncongruent = cFaceIncongruentTrials(participantID);   % Get incongruent trial windows 
-segmentsTableCongruent   = cFaceCongruentTrials(participantID);     % Get congruent trial windows 
+segmentsTableIncongruent = cFaceIncongruentTrials(participantID,options.data.HRDiaryName);   % Get incongruent trial windows 
+segmentsTableCongruent   = cFaceCongruentTrials(participantID,options.data.HRDiaryName);     % Get congruent trial windows 
 
 % Incongruent trials:
 incongruentHRs    = NaN(height(segmentsTableIncongruent),1);
@@ -416,6 +423,9 @@ writetable(ppiTrialsTbl, outFile);   % no rounding
     % Save .fig
     filename = sprintf('cFacePlot_%s.fig', IDstring);
     saveas(fig, fullfile(options.paths.plots, filename));
+    % Save .png
+    filename = sprintf('cFacePlot_%s.png', IDstring);
+    saveas(fig, fullfile(options.paths.plots, filename),'png');
     close(fig);
 
     %% Report
@@ -434,11 +444,11 @@ writetable(ppiTrialsTbl, outFile);   % no rounding
     fprintf('Max-change PPI (s): mean inc=%.4f, con=%.4f, all=%.4f\n', ...
          HR.IncongruentMaxChangePPI, HR.CongruentMaxChangePPI, HR.AllTrialsMaxChangePPI);
 
-catch ME
-    warning('cFaceHR(%s) failed: %s', IDstring, ME.message);
-    rethrow(ME)  % comment this out if you prefer soft-fail
-    diary off
-end
+% catch ME
+%     warning('cFaceHR(%s) failed: %s', IDstring, ME.message);
+%     rethrow(ME)  % comment this out if you prefer soft-fail
+%     diary off
+% end
 end  % ===== end main function =====
 
 

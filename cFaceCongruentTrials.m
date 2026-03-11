@@ -1,4 +1,4 @@
-function segmentsTableCongruent = cFaceCongruentTrials(participantID)
+function segmentsTableCongruent = cFaceCongruentTrials(participantID,diaryName)
 
 %% extract cFace congruent trial timings
 %% see segmentsTableIncongruent
@@ -7,13 +7,13 @@ function segmentsTableCongruent = cFaceCongruentTrials(participantID)
 options = specifyOptions;
 
 %% save text of Matlab session
-diary(fullfile(options.paths.analysis,'output_precressingpupils_cface.txt'))
+diary(fullfile(options.paths.workingDir,diaryName));
 
 % Format participant ID
 IDstring = sprintf('%03d', participantID);
 
 % Find matching folder
-participantFolders = dir(options.paths.data);
+participantFolders = dir(options.paths.rawData);
 folderNames = {participantFolders.name};
 folderNames = folderNames(~ismember(folderNames, {'.','..'}));  % skip system entries
 
@@ -22,14 +22,14 @@ if ~any(matchIdx)
     error('No matching folder found for participant ID %s', IDstring);
 end
 folderName = folderNames{find(matchIdx, 1)};
-folderPath = fullfile(options.paths.data, folderName);
+folderPath = fullfile(options.paths.rawData, folderName);
     
 % Locate summary file
-summaryFile = dir(fullfile(folderPath, 'beh', 'cface*MH*', '*out.csv'));
+summaryFile = dir([folderPath,filesep,'beh',filesep,'cface*MH*out.csv']);
 if isempty(summaryFile)
     error('No summary file found for participant %s.', IDstring);
 end
-summaryFilePath = fullfile(summaryFile.folder, summaryFile.name);
+summaryFilePath = fullfile(summaryFile.folder,summaryFile.name);
 
 % Import relevant columns
 opts = detectImportOptions(summaryFilePath);

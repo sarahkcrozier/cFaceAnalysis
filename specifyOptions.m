@@ -89,6 +89,8 @@ options.paths.plots        = [options.paths.plots,'HRPlots',filesep];
 
 options.data.pcnsDataTable   = [options.paths.DBExport,'pcnsDataTable.csv'];   % whats that?
 options.data.hbdOutcomesFile = [options.paths.HBDExport,'outcomes_myhrd.csv']; % whats that?
+options.data.HRDiaryName     = 'output_HR_cface.txt';
+options.data.pupilDiaryName  = 'output_pupils_cface.txt';
 options.data.nPannsPItems = 7;
 options.data.nPannsNItems = 7;
 options.data.nPannsGItems = 16;
