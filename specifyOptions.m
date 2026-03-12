@@ -6,7 +6,7 @@ function options = specifyOptions
 %% 
 
 options.study.acronym = 'PCNS';
-options.study.DBName = 'CogEmotPsych';
+options.study.DBName  = 'CogEmotPsych';
 options.data.DBFileName = []; % will be filled if a file is found staring with options.study.DBName
 options.study.tasks = {'cFace','FF1','HBD'};
 

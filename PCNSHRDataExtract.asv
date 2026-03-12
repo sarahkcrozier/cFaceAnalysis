@@ -21,16 +21,16 @@ incongruentPeakPPG    = NaN(N,1); % maximum PPG value during incongruent trials
 congruentPeakPPG      = NaN(N,1); % maximum PPG value during congruent trials
 
 % ----- New PPI summary metrics
-IncongruentDiffPPI            = NaN(N,1);   % s average of 3 peaks post outcome start - average of 3 peaks before outcome start
-CongruentDiffPPI              = NaN(N,1);   % s average of 3 peaks post outcome start - average of 3 peaks before outcome start
-AllTrialsDiffPPI              = NaN(N,1);   % s average of 3 peaks post outcome start - average of 3 peaks before outcome start
-IncongruentPercentageDiffPPI  = NaN(N,1);   % %  see above as percentage
+IncongruentDiffPPI            = NaN(N,1);   % s 3 peaks post outcome start - 3 peaks before
+CongruentDiffPPI              = NaN(N,1);   % s
+AllTrialsDiffPPI              = NaN(N,1);   % s
+IncongruentPercentageDiffPPI  = NaN(N,1);   % %
 CongruentPercentageDiffPPI    = NaN(N,1);   % %
 AllTrialsPercentageDiffPPI    = NaN(N,1);   % %
-IncongruentMaxChangePPI       = NaN(N,1);   % s minimum interval - average of 3 peaks before outcome start
-CongruentMaxChangePPI         = NaN(N,1);   % s minimum interval - average of 3 peaks before outcome start
-AllTrialsMaxChangePPI         = NaN(N,1);   % s minimum interval - average of 3 peaks before outcome start
-baselinePPI                   = NaN(N,1);   % s 
+IncongruentMaxChangePPI       = NaN(N,1);   % s
+CongruentMaxChangePPI         = NaN(N,1);   % s
+AllTrialsMaxChangePPI         = NaN(N,1);   % s
+baselinePPI                   = NaN(N,1);   % s
 incongruentBaselinePPI        = NaN(N,1);   % s
 incongruentResponsePPI        = NaN(N,1);   % s
 

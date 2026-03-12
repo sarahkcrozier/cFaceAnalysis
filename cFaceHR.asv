@@ -501,7 +501,10 @@ function [peakTimes, PPI, intervalOK] = cleanPPI(peakTimes,peakIdx,highpassedSig
 
     % 3. find outliers in reference to inplausible peak amplitude in
     %     reference to previous peak amplitudes
-    upperBound = (max(highpassedSignal)-abs(median(highpassedSignal)))/2; %% USE THIS AND GET RID OF peak that is lower not higher!
+    peakAmpDiff = abs(diff(highpassedSignal(peakIdx(intervalOK))));
+    upperBound = (max(highpassedSignal)-abs(median(highpassedSignal)))/2
+    upperBound = median(peakAmpDiff,'omitnan') + 10*std(peakAmpDiff,1) ;
+    lowerBound = median(peakAmpDiff,'omitnan') - 10*std(peakAmpDiff,1) ;
     signalOK = find(peakAmpDiff);
     signalNotOK = [];
 
