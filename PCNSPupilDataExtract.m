@@ -4,7 +4,7 @@ function PCNSPupilDataExtract
 options = specifyOptions();  % must return .paths.DBExport and any others you use
 
 % start logfile
-logPath = fullfile(options.paths.workingDir,options.data.pupilDiaryName)));
+logPath = fullfile(options.paths.workingDir,options.data.pupilDiaryName);
 diary(logPath)
 
 % ----- Get shared participant rows (with inclusion criteria applied)
@@ -41,9 +41,6 @@ for i = 1:N
                 eyeSide_cell{i} = char(val(1));
             end
         end
-        % catch ME
-        %     warning('cFacePupilArea failed for ID %d: %s', currentID, ME.message);
-        % end
     else
         disp(['No ASCI file found for participants ID ',sprintf('%03d', currentID),'. Processing next participant']);
     end

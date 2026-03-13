@@ -114304,3 +114304,8 @@ ID 133 | base=NaN bpm, post=NaN bpm | incHR=NaN, congHR=NaN | PeakPPG: base=NaN,
 In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSHRDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSHRDataExtract.m', 42)" style="font-weight:bold">PCNSHRDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSHRDataExtract.m',42,0)">line 42</a>)] 
 ID 134 | base=NaN bpm, post=NaN bpm | incHR=NaN, congHR=NaN | PeakPPG: base=NaN, inc=NaN, cong=NaN | ΔPPI(s): inc=NaN, cong=NaN, all=NaN | %ΔPPI: inc=NaN, cong=NaN, all=NaN | maxΔPPI(s): inc=NaN, cong=NaN, all=NaN
 Wrote HR data: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/HRdata/PCNS_HRData.csv (78 rows)
+PCNSPupilDataExtract
+{Error: <a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',7,73)">File: PCNSPupilDataExtract.m Line: 7 Column: 73</a>
+Unmatched ')'. Check for missing '('.
+} 
+PCNSPupilDataExtract
