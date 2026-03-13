@@ -38,7 +38,7 @@ incongruentResponsePPI        = NaN(N,1);   % s
 % ----- Fill metrics per participant
 for i = 1:N
     currentID = shared.ID(i);
-    try
+    % try
         HR = cFaceHR(currentID);
 
         % HR measures
@@ -100,9 +100,9 @@ for i = 1:N
             IncongruentDiffPPI(i), CongruentDiffPPI(i), AllTrialsDiffPPI(i), ...
             IncongruentPercentageDiffPPI(i), CongruentPercentageDiffPPI(i), AllTrialsPercentageDiffPPI(i), ...
             IncongruentMaxChangePPI(i), CongruentMaxChangePPI(i), AllTrialsMaxChangePPI(i));
-    catch ME
-        warning('cFaceHR failed for ID %d: %s', currentID, ME.message);
-    end
+    % catch ME
+    %     warning('cFaceHR failed for ID %d: %s', currentID, ME.message);
+    % end
 end
 
 %% create table

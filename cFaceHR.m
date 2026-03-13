@@ -21,61 +21,61 @@ HR.incongruentresponsePPI  = NaN;   % mean of all incongruent post3_meanPPI_s (s
 
 logPath = fullfile(options.paths.workingDir, options.data.HRDiaryName);
 diary(logPath)
-% try
-    %% Locate participant folder
-    participantFolders = dir(options.paths.rawData);
-    folderNames = {participantFolders.name};
-    folderNames = folderNames(~ismember(folderNames, {'.','..'}));
-    matchIdx = contains(folderNames, IDstring);
-    if ~any(matchIdx)
-        warning('No folder matched for participant %s.', IDstring);
-        return
-    end
-    if sum(matchIdx) > 1
-        warning('Multiple folders matched for ID %s. Using the first.', IDstring);
-    end
-    folderName = folderNames{find(matchIdx, 1)};
-    folderPath = fullfile(options.paths.rawData, folderName);
-    disp(['Using folder: ', folderName]);
 
-    %% ---- STEP 1: Locate timings (baseline + post-task) ----
-    filePattern   = [folderPath,filesep, 'beh',filesep, 'cface*MH*out.csv'];
-    summaryFile   = dir(filePattern);
-    if isempty(summaryFile)
-        warning('No *out.csv found for %s.', IDstring);
-        return
-    end
-    summaryFilePath = fullfile(summaryFile.folder, summaryFile.name);
+%% Locate participant folder
+participantFolders = dir(options.paths.rawData);
+folderNames = {participantFolders.name};
+folderNames = folderNames(~ismember(folderNames, {'.','..'}));
+matchIdx = contains(folderNames, IDstring);
+if ~any(matchIdx)
+    warning('No folder matched for participant %s.', IDstring);
+    return
+end
+if sum(matchIdx) > 1
+    warning('Multiple folders matched for ID %s. Using the first.', IDstring);
+end
+folderName = folderNames{find(matchIdx, 1)};
+folderPath = fullfile(options.paths.rawData, folderName);
+disp(['Using folder: ', folderName]);
 
-    opts = detectImportOptions(summaryFilePath);
-    % these columns must exist in the CSV
-    opts.SelectedVariableNames = {'instruct_onset','instruct_duration', ...
-                                  'postinstruct_onset','fixation_onset','fixation_duration'};
-    segmentsTable = readtable(summaryFilePath, opts);
-    
-    % Add sequential trial numbers based on row order (1..N)
-    if ~ismember('trialNo', segmentsTable.Properties.VariableNames)
-        segmentsTable.trialNo = (1:height(segmentsTable)).';
-    end
+%% ---- STEP 1: Locate timings (baseline + post-task) ----
+filePattern   = [folderPath,filesep, 'beh',filesep, 'cface*MH*out.csv'];
+summaryFile   = dir(filePattern);
+if isempty(summaryFile)
+    warning('No *out.csv found for %s.', IDstring);
+    return
+end
+summaryFilePath = fullfile(summaryFile.folder, summaryFile.name);
 
-    % Baseline timing (first instruct onset, with guard for 0)
-    if segmentsTable.instruct_onset(1) == 0
-        if segmentsTable.postinstruct_onset(1) == 0
-            baselineTiming = 10; % fallback
-        else
-            baselineTiming = segmentsTable.postinstruct_onset(1) - segmentsTable.instruct_duration(1);
-        end
+opts = detectImportOptions(summaryFilePath);
+% these columns must exist in the CSV
+opts.SelectedVariableNames = {'instruct_onset','instruct_duration', ...
+    'postinstruct_onset','fixation_onset','fixation_duration'};
+segmentsTable = readtable(summaryFilePath, opts);
+
+% Add sequential trial numbers based on row order (1..N)
+if ~ismember('trialNo', segmentsTable.Properties.VariableNames)
+    segmentsTable.trialNo = (1:height(segmentsTable)).';
+end
+
+% Baseline timing (first instruct onset, with guard for 0)
+if segmentsTable.instruct_onset(1) == 0
+    if segmentsTable.postinstruct_onset(1) == 0
+        baselineTiming = 10; % fallback
     else
-        baselineTiming = segmentsTable.instruct_onset(1);
+        baselineTiming = segmentsTable.postinstruct_onset(1) - segmentsTable.instruct_duration(1);
     end
+else
+    baselineTiming = segmentsTable.instruct_onset(1);
+end
 
-    % Post-task: last 10 s of the block, based on the final fixation row
-    % This computes the pre and post task HR stuff
-    lastIdx = height(segmentsTable);
-    postTaskEnd   = segmentsTable.fixation_onset(lastIdx) + segmentsTable.fixation_duration(lastIdx);
-    postTaskStart = max(0, postTaskEnd - 10); % not sure what this does?
-    postTaskTimingStart = postTaskStart;
-    postTaskTimingEnd   = postTaskEnd;
+% Post-task: last 10 s of the block, based on the final fixation row
+% This computes the pre and post task HR stuff
+lastIdx = height(segmentsTable);
+postTaskEnd   = segmentsTable.fixation_onset(lastIdx) + segmentsTable.fixation_duration(lastIdx);
+postTaskStart = max(0, postTaskEnd - 10); % not sure what this does?
+postTaskTimingStart = postTaskStart;
+postTaskTimingEnd   = postTaskEnd;
 
 %% ---- STEP 2 (inline): read PPG, high-pass, detect & clean beats ----
 ppgFilePattern = [folderPath,filesep, 'beh',filesep, 'cface*MH*ppg.csv'];
@@ -111,7 +111,7 @@ fig=figure;
 plot(highpassedSignal);
 
 % --- (3) fixed-distance peak detection (assumes upright systolic peaks)
-minPeakDistanceSamples = 56;        
+minPeakDistanceSamples = 50;
 [~, peakIdx] = findpeaks(highpassedSignal, ...
     'MinPeakDistance', minPeakDistanceSamples);
 
@@ -119,17 +119,19 @@ minPeakDistanceSamples = 56;
 hold on
 plot(peakIdx,highpassedSignal(peakIdx),'Marker','o');
 
-% Extract timestamps and immediately remove duplicates
+% Extract timestamps and remove duplicates
 peakTimes = unique(time(peakIdx));
 
-% --- (4) artifact handling in interval domain 
+% --- (4) artifact handling in interval domain
 % Returns full peakTimes and a PPI vector with NaNs for bad intervals
-[peakTimes, PPI, ~] = cleanPPI(peakTimes,peakIdx,highpassedSignal); 
+[PPI, intervalOK, peakIdx, ampOutliers] = cleanPeakDetection(peakTimes,peakIdx,highpassedSignal);
+
+peakTimes = unique(time(peakIdx)); % update with new peakIds
 
 % ---- Rolling HR for 5 s windows (for trial means) ----
-rollingWindowSec = 5.0;                           
+rollingWindowSec = 5.0;
 % Updated: Pass the cleaned PPI vector so rolling HR ignores the gaps
-HRrolling5 = computeHRrolling(peakTimes, time, rollingWindowSec, PPI);  
+HRrolling5 = computeHRrolling(peakTimes, time, rollingWindowSec, PPI);
 
 % Save .fig
 filename = sprintf('cFaceRawPlot_%s.fig', IDstring);
@@ -142,7 +144,7 @@ close(fig);
 % ---- Baseline HR (from clean peaks) ----
 % Find intervals where the END of the interval is before the baseline timing
 % usues intervals for more accurate calcualtion
-inBaseline = (peakTimes(2:end) <= baselineTiming); 
+inBaseline = (peakTimes(2:end) <= baselineTiming);
 baselineIntervals = PPI(inBaseline); % This now contains NaNs for extreme/unlikely beats
 
 if any(~isnan(baselineIntervals))
@@ -150,7 +152,7 @@ if any(~isnan(baselineIntervals))
     HR.baselinePPI = mean(baselineIntervals, 'omitnan');
     % Convert mean PPI to BPM
     HR.baseline = 60 / HR.baselinePPI;
-    
+
     % Baseline amplitude (approximate, using time window)
     ib = (time <= baselineTiming);
     HR.baselineHighpassedPeakPPG = max(highpassedSignal(ib),[],'omitnan');
@@ -169,8 +171,8 @@ if any(~isnan(postTaskIntervals))
 end
 
 %% ---- STEP 3: Trial-window HR in beat domain + per-trial max PPG ----
-segmentsTableIncongruent = cFaceIncongruentTrials(participantID);   % Get incongruent trial windows 
-segmentsTableCongruent   = cFaceCongruentTrials(participantID);     % Get congruent trial windows 
+segmentsTableIncongruent = cFaceIncongruentTrials(participantID);   % Get incongruent trial windows
+segmentsTableCongruent   = cFaceCongruentTrials(participantID);     % Get congruent trial windows
 
 % Incongruent trials:
 incongruentHRs    = NaN(height(segmentsTableIncongruent),1);
@@ -181,11 +183,11 @@ for i = 1:height(segmentsTableIncongruent)
 
     % NEW: mean of rolling 5 s HR within the trial window (bpm)
     idx = (time >= t0) & (time <= t1);
-    incongruentHRs(i) = mean(HRrolling5(idx), 'omitnan');            % trial-level HR (bpm) 
+    incongruentHRs(i) = mean(HRrolling5(idx), 'omitnan');            % trial-level HR (bpm)
 
     % PPG amplitude (unchanged)
     if any(idx)
-        incongruentMaxPPG(i) = max(highpassedSignal(idx),[],'omitnan'); 
+        incongruentMaxPPG(i) = max(highpassedSignal(idx),[],'omitnan');
     end
 end
 
@@ -198,11 +200,11 @@ for i = 1:height(segmentsTableCongruent)
 
     % NEW: mean of rolling 5 s HR within the trial window (bpm)
     idx = (time >= t0) & (time <= t1);
-    congruentHRs(i) = mean(HRrolling5(idx), 'omitnan');              % trial-level HR (bpm) 
+    congruentHRs(i) = mean(HRrolling5(idx), 'omitnan');              % trial-level HR (bpm)
 
     % PPG amplitude (unchanged)
     if any(idx)
-        congruentMaxPPG(i) = max(highpassedSignal(idx),[],'omitnan'); 
+        congruentMaxPPG(i) = max(highpassedSignal(idx),[],'omitnan');
     end
 end
 
@@ -235,7 +237,7 @@ for i = 1:nI
     % Updated: Use Robust function + pass cleaned PPI vector
     [pre3, post3, dPPI_s, pct, maxchg_s, npre, npost] = ...
         deltaPPI3beat_seconds_robust(peakTimes, PPI, t0);
-    
+
     % --- SAFETY CHECK: Discard if >50% data missing ---
     totalValid = npre + npost;
     if totalValid < 3
@@ -272,7 +274,7 @@ for i = 1:nC
     % Updated: Use Robust function + pass cleaned PPI vector
     [pre3, post3, dPPI_s, pct, maxchg_s, npre, npost] = ...
         deltaPPI3beat_seconds_robust(peakTimes, PPI, t0);
-        
+
     % --- SAFETY CHECK: Discard if >50% data missing ---
     totalValid = npre + npost;
     if totalValid < 3
@@ -305,8 +307,8 @@ T_inc = table( ...
     percentageDiffPPI_inc, maxChange_s_inc, ...
     nPreIntervals_inc, nPostIntervals_inc, ...
     'VariableNames', {'participantID','condition','trialNumber','onsetTime_s', ...
-                      'pre3_meanPPI_s','post3_meanPPI_s','diffPPI_s', ...
-                      'percentageDiffPPI','maxChange_s','nPre','nPost'});
+    'pre3_meanPPI_s','post3_meanPPI_s','diffPPI_s', ...
+    'percentageDiffPPI','maxChange_s','nPre','nPost'});
 
 T_con = table( ...
     participantCol_con, cond_con, trialNo_con, onset_con, ...
@@ -314,8 +316,8 @@ T_con = table( ...
     percentageDiffPPI_con, maxChange_s_con, ...
     nPreIntervals_con, nPostIntervals_con, ...
     'VariableNames', {'participantID','condition','trialNumber','onsetTime_s', ...
-                      'pre3_meanPPI_s','post3_meanPPI_s','diffPPI_s', ...
-                      'percentageDiffPPI','maxChange_s','nPre','nPost'});
+    'pre3_meanPPI_s','post3_meanPPI_s','diffPPI_s', ...
+    'percentageDiffPPI','maxChange_s','nPre','nPost'});
 
 ppiTrialsTbl = [T_inc; T_con];   % one row per trial, with condition + participantID
 
@@ -340,8 +342,8 @@ summaryTbl = table( ...
     [mu(ppiTrialsTbl.percentageDiffPPI, mu_inc); mu(ppiTrialsTbl.percentageDiffPPI, mu_con); mu(ppiTrialsTbl.percentageDiffPPI, all_mask)], ...
     [mu(ppiTrialsTbl.maxChange_s,    mu_inc); mu(ppiTrialsTbl.maxChange_s,    mu_con); mu(ppiTrialsTbl.maxChange_s,    all_mask)], ...
     'VariableNames', {'participantID','condition', ...
-                      'pre3_meanPPI_s','post3_meanPPI_s','diffPPI_s', ...
-                      'percentageDiffPPI','maxChange_s'});
+    'pre3_meanPPI_s','post3_meanPPI_s','diffPPI_s', ...
+    'percentageDiffPPI','maxChange_s'});
 HR.PPImetrics_summary = summaryTbl;
 
 
@@ -372,78 +374,78 @@ outFile = fullfile(options.paths.HRdata, sprintf('%s_PPImetrics.csv', IDstring))
 writetable(ppiTrialsTbl, outFile);   % no rounding
 
 
-    %% ---- Plot with shaded windows (HRline vs time) ----
-    HRline = HRrolling5;                  % use the same 5-s rolling HR used for trial means
-    plotWindowSec = rollingWindowSec;     % optional: carry the window value into the legend/title
+%% ---- Plot with shaded windows (HRline vs time) ----
+HRline = HRrolling5;                  % use the same 5-s rolling HR used for trial means
+plotWindowSec = rollingWindowSec;     % optional: carry the window value into the legend/title
 
-    % make sure plot folder exists
-    if ~exist(options.paths.plots, 'dir'), mkdir(options.paths.plots); end
+% make sure plot folder exists
+if ~exist(options.paths.plots, 'dir'), mkdir(options.paths.plots); end
 
-    fig = figure('Color','w'); hold on; box on;
-    xlabel('Time (s)'); ylabel('HR (bpm)');
-    title(sprintf('Rolling 5-second HR (cleaned) with Congruent & Incongruent Windows — ID %s', IDstring), ...
-          'Interpreter','none');
+fig = figure('Color','w'); hold on; box on;
+xlabel('Time (s)'); ylabel('HR (bpm)');
+title(sprintf('Rolling 5-second HR (cleaned) with Congruent & Incongruent Windows — ID %s', IDstring), ...
+    'Interpreter','none');
 
-    yl = [min(HRline,[],'omitnan') max(HRline,[],'omitnan')];
-    if ~all(isfinite(yl)) || yl(1)==yl(2), yl = [40 140]; end
-    ylim(yl);
-    yfill = [yl(1) yl(1) yl(2) yl(2)];
+yl = [min(HRline,[],'omitnan') max(HRline,[],'omitnan')];
+if ~all(isfinite(yl)) || yl(1)==yl(2), yl = [40 140]; end
+ylim(yl);
+yfill = [yl(1) yl(1) yl(2) yl(2)];
 
-    % Incongruent windows
-    if ~isempty(segmentsTableIncongruent) && height(segmentsTableIncongruent)>0
-        for i = 1:height(segmentsTableIncongruent)
-            x0 = segmentsTableIncongruent.stimMove_onset(i);
-            x1 = x0 + segmentsTableIncongruent.responseWindow(i);
-            patch('XData',[x0 x1 x1 x0], 'YData',yfill, ...
-                  'FaceColor',[0.85 0.33 0.10], 'FaceAlpha',0.13, ...
-                  'EdgeColor','none', 'DisplayName','Incongruent window');
-        end
+% Incongruent windows
+if ~isempty(segmentsTableIncongruent) && height(segmentsTableIncongruent)>0
+    for i = 1:height(segmentsTableIncongruent)
+        x0 = segmentsTableIncongruent.stimMove_onset(i);
+        x1 = x0 + segmentsTableIncongruent.responseWindow(i);
+        patch('XData',[x0 x1 x1 x0], 'YData',yfill, ...
+            'FaceColor',[0.85 0.33 0.10], 'FaceAlpha',0.13, ...
+            'EdgeColor','none', 'DisplayName','Incongruent window');
     end
+end
 
-    % Congruent windows
-    if ~isempty(segmentsTableCongruent) && height(segmentsTableCongruent)>0
-        for i = 1:height(segmentsTableCongruent)
-            x0 = segmentsTableCongruent.stimMove_onset(i);
-            x1 = x0 + segmentsTableCongruent.responseWindow(i);
-            patch('XData',[x0 x1 x1 x0], 'YData',yfill, ...
-                  'FaceColor',[0.10 0.60 0.80], 'FaceAlpha',0.13, ...
-                  'EdgeColor','none', 'DisplayName','Congruent window');
-        end
+% Congruent windows
+if ~isempty(segmentsTableCongruent) && height(segmentsTableCongruent)>0
+    for i = 1:height(segmentsTableCongruent)
+        x0 = segmentsTableCongruent.stimMove_onset(i);
+        x1 = x0 + segmentsTableCongruent.responseWindow(i);
+        patch('XData',[x0 x1 x1 x0], 'YData',yfill, ...
+            'FaceColor',[0.10 0.60 0.80], 'FaceAlpha',0.13, ...
+            'EdgeColor','none', 'DisplayName','Congruent window');
     end
+end
 
-    % HR line on top
-    hHR = plot(time, HRline, 'b-', 'LineWidth', 1.2, ...
-           'DisplayName', sprintf('HR (rolling %.1f s)', plotWindowSec));
-    uistack(hHR,'top');
+% HR line on top
+hHR = plot(time, HRline, 'b-', 'LineWidth', 1.2, ...
+    'DisplayName', sprintf('HR (rolling %.1f s)', plotWindowSec));
+uistack(hHR,'top');
 
-    % Legend
-    legendObjects = findobj(gca,'-property','DisplayName');
-    [~, uniqIdx] = unique(string(get(legendObjects,'DisplayName')));
-    legend(legendObjects(uniqIdx), 'Location','best');
+% Legend
+legendObjects = findobj(gca,'-property','DisplayName');
+[~, uniqIdx] = unique(string(get(legendObjects,'DisplayName')));
+legend(legendObjects(uniqIdx), 'Location','best');
 
-    % Save .fig
-    filename = sprintf('cFacePlot_%s.fig', IDstring);
-    saveas(fig, fullfile(options.paths.plots, filename));
-    % Save .png
-    filename = sprintf('cFacePlot_%s.png', IDstring);
-    saveas(fig, fullfile(options.paths.plots, filename),'png');
-    close(fig);
+% Save .fig
+filename = sprintf('cFacePlot_%s.fig', IDstring);
+saveas(fig, fullfile(options.paths.plots, filename));
+% Save .png
+filename = sprintf('cFacePlot_%s.png', IDstring);
+saveas(fig, fullfile(options.paths.plots, filename),'png');
+close(fig);
 
-    %% Report
-    fprintf('Baseline timing for %s: %.3f seconds\n', IDstring, baselineTiming);
-    fprintf('PostTaskHR (bpm) for %s: %.3f\n', IDstring, HR.postTask);
-    fprintf('Mean HR baseline (bpm): %.3f\n', HR.baseline);
-    fprintf('Mean HR in incongruent windows (bpm): %.3f\n', HR.incongruentAverage);
-    fprintf('Mean HR in congruent windows (bpm): %.3f\n', HR.congruentAverage);
-    fprintf('BaselineHighpassedPeakPPG: %.3f | IncongruentHighpassedPeakPPG: %.3f | CongruentHighpassedPeakPPG: %.3f\n', ...
-        HR.baselineHighpassedPeakPPG, HR.incongruentHighpassedPeakPPG, HR.congruentHighpassedPeakPPG);
-   
-    fprintf('ΔPPI (s): mean inc=%.4f, con=%.4f, all=%.4f | %%ΔPPI: mean inc=%.2f, con=%.2f, all=%.2f\n', ...
-         HR.IncongruentDiffPPI, HR.CongruentDiffPPI, HR.AllTrialsDiffPPI, ...
-         HR.IncongruentPercentageDiffPPI, HR.CongruentPercentageDiffPPI, HR.AllTrialsPercentageDiffPPI);
+%% Report
+fprintf('Baseline timing for %s: %.3f seconds\n', IDstring, baselineTiming);
+fprintf('PostTaskHR (bpm) for %s: %.3f\n', IDstring, HR.postTask);
+fprintf('Mean HR baseline (bpm): %.3f\n', HR.baseline);
+fprintf('Mean HR in incongruent windows (bpm): %.3f\n', HR.incongruentAverage);
+fprintf('Mean HR in congruent windows (bpm): %.3f\n', HR.congruentAverage);
+fprintf('BaselineHighpassedPeakPPG: %.3f | IncongruentHighpassedPeakPPG: %.3f | CongruentHighpassedPeakPPG: %.3f\n', ...
+    HR.baselineHighpassedPeakPPG, HR.incongruentHighpassedPeakPPG, HR.congruentHighpassedPeakPPG);
 
-    fprintf('Max-change PPI (s): mean inc=%.4f, con=%.4f, all=%.4f\n', ...
-         HR.IncongruentMaxChangePPI, HR.CongruentMaxChangePPI, HR.AllTrialsMaxChangePPI);
+fprintf('ΔPPI (s): mean inc=%.4f, con=%.4f, all=%.4f | %%ΔPPI: mean inc=%.2f, con=%.2f, all=%.2f\n', ...
+    HR.IncongruentDiffPPI, HR.CongruentDiffPPI, HR.AllTrialsDiffPPI, ...
+    HR.IncongruentPercentageDiffPPI, HR.CongruentPercentageDiffPPI, HR.AllTrialsPercentageDiffPPI);
+
+fprintf('Max-change PPI (s): mean inc=%.4f, con=%.4f, all=%.4f\n', ...
+    HR.IncongruentMaxChangePPI, HR.CongruentMaxChangePPI, HR.AllTrialsMaxChangePPI);
 
 % catch ME
 %     warning('cFaceHR(%s) failed: %s', IDstring, ME.message);
@@ -459,185 +461,105 @@ end  % ===== end main function =====
 
 %% ===================== SUBFUNCTIONS =====================
 
-function [peakTimes, PPI, intervalOK] = cleanPPI(peakTimes,peakIdx,highpassedSignal)
-    % cleanPPI - Identifies artifacts but returns FULL list of peaks
-    % and a PPI vector where artifacts are NaNs. This prevents "merging" gaps.
-    
-    if numel(peakTimes) < 2
-        PPI = [];
-        intervalOK = [];
-        return
-    end
-
-    % 1. Calculate raw intervals (seconds)
-    PPI = diff(peakTimes); 
-
-    % 2. find implausible intervals
-    upperBound = 11 * median(PPI,'omitnan');
-    lowerBound = median(PPI,'omitnan')/ 11;
-    intervalOK = find(PPI);
-    intervalNotOK = [];
-
-    if ~isempty(find(PPI>upperBound))
-        intervalNotOK  = find(PPI>upperBound);
-    end
-    if ~isempty(find(PPI<lowerBound))
-        intervalNotOK  =  sort([intervalNotOK; find(PPI<lowerBound)]);
-    end
-
-    if ~isempty(intervalNotOK)
-        intervalOK(intervalNotOK) =[];
-        intervalNotOK = intervalNotOK+1;
-    else
-        intervalNotOK = [];
-    end
-
-    intervalOK = intervalOK +1; 
-    % plot new peaks
-    hold on
-    plot(peakIdx(intervalOK),highpassedSignal(peakIdx(intervalOK)),'Marker','+')
-    hold on
-    plot(peakIdx(intervalNotOK),highpassedSignal(peakIdx(intervalNotOK)),'Marker','*')
-
-    % 3. find outliers in reference to inplausible peak amplitude in
-    %     reference to previous peak amplitudes
-    upperBound = (max(highpassedSignal)-abs(median(highpassedSignal)))/2; %% USE THIS AND GET RID OF peak that is lower not higher!
-    signalOK = find(peakAmpDiff);
-    signalNotOK = [];
-
-    if ~isempty(find(peakAmpDiff<upperBound))
-        bigDiffs = find(peakAmpDiff>upperBound);
-        seqDiffs = diff(bigDiffs);
-        if any(seqDiffs==1)
-            idx = find(seqDiffs==1)
-            for i = 1: numel(idx)
-            signalNotOK = find(bigDiffs)
-            end
-        end
-
-    end
-    if ~isempty(find(peakAmpDiff<lowerBound))
-        signalNotOK  =  sort([signalNotOK; find(peakAmpDiff<lowerBound)]);
-    end
-
-    if ~isempty(signalNotOK)
-        signalOK(signalNotOK) =[];
-        signalNotOK = signalNotOK+1;
-    else
-        signalNotOK =[];
-    end
-
-  signalOK = signalOK+1;
-
-    % plot new peaks
-    hold on
-    plot(peakIdx(signalOK),highpassedSignal(peakIdx(signalOK)),'Marker','+')
-    hold on
-    plot(peakIdx(signalNotOK),highpassedSignal(peakIdx(signalNotOK)),'Marker','*')
-    
-    % 5. REPLACE bad intervals with NaN (Do NOT remove peaks)
-    peakAmpDiff(signalNotOK) = NaN; 
-end
-
 function HRrolling = computeHRrolling(peakTimes, time, windowSec, PPI)
-% computeHRrolling - Builds continuous HR line. 
+% computeHRrolling - Builds continuous HR line.
 % Accepts PPI vector (with NaNs) to handle gaps correctly.
 
-    if nargin < 3 || isempty(windowSec)
-        windowSec = 5.0;
-    end
-    % Legacy fallback: if PPI not passed, calculate it (but this risks merging gaps!)
-    if nargin < 4
-        PPI = diff(peakTimes);
-    end
+if nargin < 3 || isempty(windowSec)
+    windowSec = 5.0;
+end
+% Legacy fallback: if PPI not passed, calculate it (but this risks merging gaps!)
+if nargin < 4
+    PPI = diff(peakTimes);
+end
 
-    if numel(peakTimes) < 2 || isempty(time)
-        HRrolling = nan(size(time));
-        return
-    end
+if numel(peakTimes) < 2 || isempty(time)
+    HRrolling = nan(size(time));
+    return
+end
 
-    peakTimes = peakTimes(:);
-    time      = time(:);
+peakTimes = peakTimes(:);
+time      = time(:);
 
-    % 1. Calculate Instantaneous HR (Result will contain NaNs where gaps are)
-    instHR = 60 ./ PPI;            
+% 1. Calculate Instantaneous HR (Result will contain NaNs where gaps are)
+instHR = 60 ./ PPI;
 
-    % 2. Assign time points to the END of the interval
-    hrTimes = peakTimes(2:end);    
+% 2. Assign time points to the END of the interval
+hrTimes = peakTimes(2:end);
 
-    % 3. Time-based moving average (Rolling Window)
-    % --- Centered time-based moving average ---
-    HRsmooth = nan(size(instHR));
-    halfWin = windowSec / 2; % For a 5s window, this is 2.5s
+% 3. Time-based moving average (Rolling Window)
+% --- Centered time-based moving average ---
+HRsmooth = nan(size(instHR));
+halfWin = windowSec / 2; % For a 5s window, this is 2.5s
 
-    for i = 1:numel(hrTimes)
-        % Define the window: 2.5s before and 2.5s after the current beat
-        tMin = hrTimes(i) - halfWin;
-        tMax = hrTimes(i) + halfWin;
-        
-        % Find all beats that fall within this +/- 2.5s range
-        inWindowIdx = find(hrTimes >= tMin & hrTimes <= tMax);
-        
-        % Average the valid beats in this centered window
-        if ~isempty(inWindowIdx)
-            HRsmooth(i) = mean(instHR(inWindowIdx), 'omitnan');
-        else
-            HRsmooth(i) = NaN;
-        end
-    end
+for i = 1:numel(hrTimes)
+    % Define the window: 2.5s before and 2.5s after the current beat
+    tMin = hrTimes(i) - halfWin;
+    tMax = hrTimes(i) + halfWin;
 
-    % 4. Interpolate to continuous time axis
-    % We must remove NaNs from the source before interpolating, 
-    % otherwise interp1 returns all NaNs.
-    validIdx = find(~isnan(HRsmooth));
-    
-    if numel(validIdx) < 2
-        HRrolling = nan(size(time));
+    % Find all beats that fall within this +/- 2.5s range
+    inWindowIdx = find(hrTimes >= tMin & hrTimes <= tMax);
+
+    % Average the valid beats in this centered window
+    if ~isempty(inWindowIdx)
+        HRsmooth(i) = mean(instHR(inWindowIdx), 'omitnan');
     else
-        % Interpolate only using valid smooth points
-        HRrolling = interp1(hrTimes(validIdx), HRsmooth(validIdx), time, 'pchip', 'extrap');
-        
-        % Mask out times before the first beat to avoid weird extrapolation
-        HRrolling(time < hrTimes(1)) = NaN; 
+        HRsmooth(i) = NaN;
     end
+end
+
+% 4. Interpolate to continuous time axis
+% We must remove NaNs from the source before interpolating,
+% otherwise interp1 returns all NaNs.
+validIdx = find(~isnan(HRsmooth));
+
+if numel(validIdx) < 2
+    HRrolling = nan(size(time));
+else
+    % Interpolate only using valid smooth points
+    HRrolling = interp1(hrTimes(validIdx), HRsmooth(validIdx), time, 'pchip', 'extrap');
+
+    % Mask out times before the first beat to avoid weird extrapolation
+    HRrolling(time < hrTimes(1)) = NaN;
+end
 end
 
 function [pre3_mean, post3_mean, dPPI, pct, maxChg, nPre, nPost] = deltaPPI3beat_seconds_robust(peakTimes, PPI, t0)
-    % Initialize all outputs to NaN/0 to prevent "not assigned" errors
-    [pre3_mean, post3_mean, dPPI, pct, maxChg] = deal(NaN);
-    [nPre, nPost] = deal(0);
+% Initialize all outputs to NaN/0 to prevent "not assigned" errors
+[pre3_mean, post3_mean, dPPI, pct, maxChg] = deal(NaN);
+[nPre, nPost] = deal(0);
 
-    if isempty(PPI) || all(isnan(PPI))
-        return; % Exit early with NaNs
-    end
+if isempty(PPI) || all(isnan(PPI))
+    return; % Exit early with NaNs
+end
 
-    % Define start and end times for the intervals
-    tStart = peakTimes(1:end-1);
-    tEnd   = peakTimes(2:end);
+% Define start and end times for the intervals
+tStart = peakTimes(1:end-1);
+tEnd   = peakTimes(2:end);
 
-    % --- PRE Window ---
-    preIdx = find(tEnd <= t0);
-    if ~isempty(preIdx)
-        takePre = preIdx(max(1, end-2):end);
-        pre3_vals = PPI(takePre); 
-        pre3_mean = mean(pre3_vals, 'omitnan');
-        nPre = sum(~isnan(pre3_vals)); 
-    end
+% --- PRE Window ---
+preIdx = find(tEnd <= t0);
+if ~isempty(preIdx)
+    takePre = preIdx(max(1, end-2):end);
+    pre3_vals = PPI(takePre);
+    pre3_mean = mean(pre3_vals, 'omitnan');
+    nPre = sum(~isnan(pre3_vals));
+end
 
-    % --- POST Window ---
-    postIdx = find(tStart >= t0);
-    if ~isempty(postIdx)
-        takePost = postIdx(1:min(3, end));
-        post3_vals = PPI(takePost);
-        post3_mean = mean(post3_vals, 'omitnan');
-        nPost = sum(~isnan(post3_vals));
-    end
+% --- POST Window ---
+postIdx = find(tStart >= t0);
+if ~isempty(postIdx)
+    takePost = postIdx(1:min(3, end));
+    post3_vals = PPI(takePost);
+    post3_mean = mean(post3_vals, 'omitnan');
+    nPost = sum(~isnan(post3_vals));
+end
 
-    % ----- Differences
+% ----- Differences
 if isfinite(pre3_mean) && isfinite(post3_mean)
     % dPPI corresponds to your previous diffPPI_s
-    dPPI = post3_mean - pre3_mean; 
-    
+    dPPI = post3_mean - pre3_mean;
+
     if pre3_mean ~= 0
         % pct corresponds to your previous percentageDiffPPI
         pct = 100 * dPPI / pre3_mean;
@@ -652,15 +574,15 @@ end
 % --- Max Change Metric ---
 % Note this only returns the largest positive change (ie increase in HR),
 % not a decelaration
-    if isfinite(pre3_mean) && ~isempty(post3_vals)
-        % Acceleration = Baseline is LONGER than Post-interval
-        % We subtract Post from Baseline: Positive values = Acceleration
-        diffs_accel = pre3_mean - post3_vals; 
-        
-        % We take the MAX. If all diffs are negative (deceleration), 
-        % this will return the smallest deceleration.
-        maxChg = max(diffs_accel, [], 'omitnan'); 
-    else
-        maxChg = NaN;
-    end
+if isfinite(pre3_mean) && ~isempty(post3_vals)
+    % Acceleration = Baseline is LONGER than Post-interval
+    % We subtract Post from Baseline: Positive values = Acceleration
+    diffs_accel = pre3_mean - post3_vals;
+
+    % We take the MAX. If all diffs are negative (deceleration),
+    % this will return the smallest deceleration.
+    maxChg = max(diffs_accel, [], 'omitnan');
+else
+    maxChg = NaN;
+end
 end
