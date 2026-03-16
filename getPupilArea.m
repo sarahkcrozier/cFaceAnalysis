@@ -1,4 +1,4 @@
-function [eyeDataTbl, cFacePupil] = cFacePupilArea(participantID)
+function [eyeDataTbl, cFacePupil] = getPupilArea(participantID)
 % cFacePupilArea
 % Parse EyeLink ASC file for the specified participant and save a CSV with:
 % - raw pupil area
@@ -48,9 +48,9 @@ rawText = fileread(ascPath);
 % -----------------------------
 % Determine tracked eye (R/L)
 % -----------------------------
-if ~isempty(regexpi(rawText, '\bSAMPLES\s+GAZE\s+RIGHT\b'))
+if ~isempty(regexpi(rawText, '\bSAMPLES\s+GAZE\s+RIGHT\b','once'))
     trackedEye = 'R';
-elseif ~isempty(regexpi(rawText, '\bSAMPLES\s+GAZE\s+LEFT\b'))
+elseif ~isempty(regexpi(rawText, '\bSAMPLES\s+GAZE\s+LEFT\b','once'))
     trackedEye = 'L';
 else
     recEye = regexp(rawText, 'RECORD\s+CR\s+1000\s+2\s+1\s+([LR])', 'tokens', 'once');
@@ -275,8 +275,8 @@ meanBaselineVec = NaN(nSamples,1);
 trial_s = trial_s(:);
 stimResponseTimings = stimResponse(:);     
 
-N = numel(trial_s);
-N = min(numel(trial_s), numel(stimResponseTimings));                    % guard against length mismatch
+% guard against length mismatch, pick the shorter of the two vectors
+N = min(numel(trial_s), numel(stimResponseTimings)); 
 if N == 0
     warning('stimResponse or trial_s is empty; skipping baseline correction.');
 else
@@ -334,7 +334,7 @@ winLen_s = 2.75;
 % --- Sanity: ensure vectors are proper types/shapes ---
 stimResponse = stimResponse(:);                 % trial window starts (s), Nx1
 nTrialsAvail = numel(stimResponse);
-nTrials      = min(80, nTrialsAvail);           % clamp to 80
+nTrials      = min(options.data.pupilTrials, nTrialsAvail); % clamp to whats defined in options
 
 % Conditions/emotion to string arrays for indexing
 condition   = string(condition(:));
@@ -349,7 +349,7 @@ nT = numel(relTime);
 t_sample_s = (timeVec - syncPulse) / 1000;
 
 % --- Preallocate window matrix: nT x 80 ---
-winMat = NaN(nT, 80);
+winMat = NaN(nT, options.data.pupilTrials);
 
 % --- Fill each trial column by interpolating perTrialBC at t = stim + relTime ---
 for n = 1:nTrials
@@ -357,11 +357,8 @@ for n = 1:nTrials
     winMat(:, n) = interp1(t_sample_s, perTrialBC, tAbs, 'linear', NaN);
 end
 
-% --- Peak per trial within window (1..80); NaN for trials without data ---
-peakPupil = max(winMat, [], 1, 'omitnan')';     % 80x1 vector
-
 % --- Build table: first col = relTime (0..2.75), then trial01..trial80 ---
-trialCols = compose('trial%02d', 1:80);
+trialCols = compose('trial%02d', 1:options.data.pupilTrials);
 winTbl = array2table([relTime, winMat], 'VariableNames', [{'time_s'}, trialCols]);
 
 % --- Save CSV ---
@@ -370,30 +367,6 @@ csvWinPath = fullfile(pupilDir, csvWinName);
 writetable(winTbl, csvWinPath);
 fprintf('Saved window table: %s  (rows=%d, trials=80)\n', csvWinPath, nT);
 
-% =========================
-% Plotting helper function
-% =========================
-    function plot_and_save(idx, titleStr, fileTag)
-    if isempty(idx), return; end
-    
-    % Create invisible figure
-    f = figure('Visible','off'); hold on;
-    plot(relTime, winMat(:, idx), 'LineWidth', 1.0);   % one line per selected trial
-    hold off; grid on;
-    xlabel('Time from window start (s)');
-    ylabel('Baseline-corrected pupil (a.u.)');
-    title(sprintf('%s (%d trials)', titleStr, numel(idx)));
-    
-    % Paths
-    figPath = fullfile(eyePlots, sprintf('%s_%s.fig', participantID_str, fileTag));
-    pngPath = fullfile(eyePlots, sprintf('%s_%s.png', participantID_str, fileTag));
-    
-    % Save in MATLAB format and PNG
-    savefig(f, figPath);
-    exportgraphics(f, pngPath, 'Resolution',300);  % high-quality PNG
-    
-    close(f);
-end
 
 % -------------------------------------------------------------
 % Build trial index sets (1..nTrials) using string comparisons
@@ -404,7 +377,7 @@ condition   = string(condition(:));
 partEmotion = string(partEmotion(:));
 
 % Number of valid trials (usually 80, but guard if inputs shorter)
-nTrials = min([80, numel(condition), numel(partEmotion)]);
+nTrials = min([options.data.pupilTrials, numel(condition), numel(partEmotion)]);
 
 % Universal set of trial indices
 allIdx = 1:nTrials;
@@ -424,15 +397,15 @@ HAincongIdx = intersect(HAIdx, incongIdx);
 ANincongIdx = intersect(ANIdx, incongIdx);
 
 % --- Make the 9 plots ---
-plot_and_save(allIdx,      'All trials',                   'allTrials');
-plot_and_save(congIdx,     'Congruent trials',             'congruentTrials');
-plot_and_save(incongIdx,   'Incongruent trials',           'incongruentTrials');
-plot_and_save(HAIdx,       'HA trials',                    'HAtrials');
-plot_and_save(ANIdx,       'AN trials',                    'ANtrials');
-plot_and_save(HAcongIdx,   'HA congruent',                 'HAcong');
-plot_and_save(ANcongIdx,   'AN congruent',                 'ANcong');
-plot_and_save(HAincongIdx, 'HA incongruent',               'HAincong');
-plot_and_save(ANincongIdx, 'AN incongruent',               'ANincong');
+plot_and_save(allIdx,      'All trials',         'allTrials',        participantID_str, eyePlots, winMat, relTime);
+plot_and_save(congIdx,     'Congruent trials',   'congruentTrials',  participantID_str, eyePlots, winMat, relTime);
+plot_and_save(incongIdx,   'Incongruent trials', 'incongruentTrials',participantID_str, eyePlots, winMat, relTime);
+plot_and_save(HAIdx,       'HA trials',          'HAtrials',         participantID_str, eyePlots, winMat, relTime);
+plot_and_save(ANIdx,       'AN trials',          'ANtrials',         participantID_str, eyePlots, winMat, relTime);
+plot_and_save(HAcongIdx,   'HA congruent',       'HAcong',           participantID_str, eyePlots, winMat, relTime);
+plot_and_save(ANcongIdx,   'AN congruent',       'ANcong',           participantID_str, eyePlots, winMat, relTime);
+plot_and_save(HAincongIdx, 'HA incongruent',     'HAincong',         participantID_str, eyePlots, winMat, relTime);
+plot_and_save(ANincongIdx, 'AN incongruent',     'ANincong',         participantID_str, eyePlots, winMat, relTime);
 
 
 % -----------------------------
@@ -468,7 +441,7 @@ eyeDataTbl = table( ...
 
 if ~isempty(trial_s)
     firstTrialStart = trial_s(1);  % seconds
-    baselineStart   = firstTrialStart - 10;
+    baselineStart   = firstTrialStart - options.data.baselineLength;
     baselineEnd     = firstTrialStart;
 
     % Find samples within this window
@@ -546,4 +519,29 @@ csvPath = fullfile(pupilDir, csvFileName);
 writetable(eyeDataTbl, csvPath);
 fprintf('Saved: %s (%d samples)\n', csvPath, nSamples);
 
+end
+
+% =========================
+% Plotting helper function
+% =========================
+function plot_and_save(idx, titleStr, fileTag, participantID_str, eyePlots, winMat, relTime)
+    if isempty(idx), return; end
+    
+    % Create invisible figure
+    f = figure('Visible','off'); hold on;
+    plot(relTime, winMat(:, idx), 'LineWidth', 1.0);   % one line per selected trial
+    hold off; grid on;
+    xlabel('Time from window start (s)');
+    ylabel('Baseline-corrected pupil (a.u.)');
+    title(sprintf('%s (%d trials)', titleStr, numel(idx)));
+    
+    % Paths
+    figPath = fullfile(eyePlots, sprintf('%s_%s.fig', participantID_str, fileTag));
+    pngPath = fullfile(eyePlots, sprintf('%s_%s.png', participantID_str, fileTag));
+    
+    % Save in MATLAB format and PNG
+    savefig(f, figPath);
+    exportgraphics(f, pngPath, 'Resolution',300);  % high-quality PNG
+    
+    close(f);
 end

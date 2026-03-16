@@ -1,4 +1,4 @@
-function PCNSHRDataExtract
+function mainPCNSHRDataExtract
 % Build HR-based dataset and write CSV, including shared REDCap/HBD/PANSS columns,
 % HR summary measures, PeakPPG metrics, and PPI summary metrics from cFaceHR.
 

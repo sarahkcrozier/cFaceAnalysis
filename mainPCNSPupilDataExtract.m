@@ -1,4 +1,4 @@
-function PCNSPupilDataExtract
+function mainPCNSPupilDataExtract
 % Build pupil-based dataset and write CSV, including shared REDCap/HBD/PANSS columns.
 
 options = specifyOptions();  % must return .paths.DBExport and any others you use
@@ -25,7 +25,7 @@ for i = 1:N
 
     if ~isempty(eyeFile)
         % [~, cFacePupil] per your convention
-        [~, cFacePupil] = cFacePupilArea(currentID);
+        [~, cFacePupil] = getPupilArea(currentID);
         %%
 
         if isfield(cFacePupil,'baseline'),             baselinePupil(i)            = cFacePupil.baseline;            end

@@ -186,3 +186,1137 @@ Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PC
         [~, cFacePupil] = cFacePupilArea(currentID);
                           ^^^^^^^^^^^^^^^^^^^^^^^^^
 } 
+No ASCI file found for participants ID 019. Processing next participant
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 68)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',68,0)">line 68</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 17)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 68)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',68,0)">line 68</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/20_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFacePupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m', 23)" style="font-weight:bold">cFacePupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/020.asc
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFacePupilArea.m',278,1)">278 </a>N = numel(trial_s);
+numel(trial_s)
+
+ans =
+
+    80
+
+numel(stimResponseTimings)
+
+ans =
+
+    80
+
+numel(trial_s)
+
+ans =
+
+    80
+
+N = min(numel(trial_s), numel(stimResponseTimings))
+
+N =
+
+    80
+
+PCNSPupilDataExtract
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 4)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',4,0)">line 4</a>)] 
+No ASCI file found for participants ID 019. Processing next participant
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',18,1)">18  </a>ascDir   = options.paths.eyeASCFiles;
+options.data
+
+ans = 
+
+  <a href="matlab:helpPopup('struct')" style="font-weight:bold">struct</a> with fields:
+
+         DBFileName: '/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/REDCapExport/CogEmotPsych_DATA_2026-03-10_0304.csv'
+     baselineLength: 10
+        pupilTrials: 80
+      pcnsDataTable: '/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/REDCapExport/pcnsDataTable.csv'
+    hbdOutcomesFile: '/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/HBDAnalysis/outcomes_myhrd.csv'
+        HRDiaryName: 'output_HR_cface.txt'
+     pupilDiaryName: 'output_pupils_cface.txt'
+       nPannsPItems: 7
+       nPannsNItems: 7
+       nPannsGItems: 16
+
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/20_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+segmentsTable
+
+segmentsTable =
+
+  80×12 <a href="matlab:helpPopup('table')" style="font-weight:bold">table</a>
+
+    <strong>trialNo</strong>    <strong>cong</strong>     <strong>condition</strong>     <strong>ptemot</strong>    <strong>stimMove_onset</strong>    <strong>fixation_onset</strong>    <strong>fixation_duration</strong>    <strong>instruct_onset</strong>    <strong>instruct_duration</strong>    <strong>postinstruct_onset</strong>    <strong>responseWindow</strong>    <strong>ParticipantID</strong>
+    <strong>_______</strong>    <strong>____</strong>    <strong>___________</strong>    <strong>______</strong>    <strong>______________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>______________</strong>    <strong>_________________</strong>    <strong>__________________</strong>    <strong>______________</strong>    <strong>_____________</strong>
+
+       1        0      incongruent    {'HA'}        16.866            18.583                1                14.549               0.5                 15.049              2.7179             20      
+       2        1      congruent      {'HA'}        24.016            25.734                1                19.583               0.5                 20.082              2.7184             20      
+       3        0      incongruent    {'AN'}        28.765            30.484                1                26.732               0.5                 27.232              2.7187             20      
+       4        1      congruent      {'AN'}        33.515            35.233                1                31.482               0.5                 31.982              2.7177             20      
+       5        0      incongruent    {'HA'}        39.066            40.783                1                36.233               0.5                 36.732              2.7175             20      
+
+       :        :           :           :             :                 :                   :                  :                   :                    :                   :                 :      
+
+      76        1      congruent      {'AN'}        477.51            479.23                1                472.68               0.5                 473.18              2.7161             20      
+      77        1      congruent      {'AN'}        485.86            487.58                1                480.23               0.5                 480.73              2.7177             20      
+      78        0      incongruent    {'AN'}        493.81            495.53                1                488.58               0.5                 489.08              2.7197             20      
+      79        1      congruent      {'AN'}        506.56            508.28                1                496.53               0.5                 497.03              2.7206             20      
+      80        0      incongruent    {'HA'}        515.31            517.03                1                509.28               0.5                 509.78              2.7157             20      
+
+	<a href="matlab:if exist('segmentsTable','var') && istabular(segmentsTable),displayWholeObj(segmentsTable,'segmentsTable'),else,fprintf('Unable to display table variable ''segmentsTable'' because it no longer exists.\n');end">Display all 80 rows.</a>
+
+trial_s
+
+trial_s =
+
+   14.5494
+   19.5831
+   26.7321
+   31.4820
+   36.2331
+   41.7819
+   46.9316
+   52.0818
+   56.8319
+   62.3815
+   67.9315
+   73.8827
+   79.0315
+   86.5815
+   91.3312
+   96.0813
+  101.6311
+  109.5812
+  116.3309
+  122.6810
+  127.4306
+  132.5810
+  139.7310
+  146.8803
+  153.2302
+  158.7803
+  174.7301
+  180.2806
+  185.4305
+  192.1811
+  197.3304
+  203.6802
+  213.6299
+  218.3795
+  223.1294
+  227.8798
+  237.8293
+  242.5792
+  247.7304
+  252.8798
+  258.0292
+  263.5788
+  269.5288
+  277.0788
+  283.0285
+  287.7785
+  292.9285
+  298.4784
+  304.0284
+  311.9782
+  321.1290
+  325.8780
+  331.0284
+  338.5782
+  346.9279
+  353.2777
+  359.2291
+  363.9783
+  369.1274
+  374.2773
+  381.4271
+  389.7795
+  394.5275
+  400.8776
+  405.6448
+  413.5777
+  418.7269
+  423.4768
+  429.4266
+  437.3765
+  442.5265
+  448.8762
+  454.0262
+  459.9762
+  464.7287
+  472.6759
+  480.2259
+  488.5780
+  496.5256
+  509.2756
+
+stimResponse
+
+stimResponse =
+
+   16.8655
+   24.0160
+   28.7654
+   33.5155
+   39.0656
+   44.2151
+   49.3655
+   54.1154
+   59.6658
+   65.2154
+   71.1652
+   76.3151
+   83.8648
+   88.6147
+   93.3649
+   98.9148
+  106.8651
+  113.6148
+  119.9642
+  124.7142
+  129.8643
+  137.0143
+  144.1648
+  150.5144
+  156.0642
+  172.0140
+  177.5637
+  182.7136
+  189.4634
+  194.6137
+  200.9633
+  210.9132
+  215.6634
+  220.4130
+  225.1628
+  235.1128
+  239.8628
+  245.0125
+  250.1629
+  255.3143
+  260.8629
+  266.8134
+  274.3638
+  280.3131
+  285.0621
+  290.2125
+  295.7621
+  301.3119
+  309.2618
+  318.4117
+  323.1633
+  328.3117
+  335.8633
+  344.2115
+  350.5613
+  356.5112
+  361.2611
+  366.4127
+  371.5610
+  378.7126
+  387.0609
+  391.8125
+  398.1627
+  402.9112
+  410.8626
+  416.0120
+  420.7606
+  426.7103
+  434.6619
+  439.8102
+  446.1604
+  451.3100
+  457.2597
+  462.0099
+  469.9597
+  477.5113
+  485.8598
+  493.8095
+  506.5595
+  515.3113
+
+partEmotion
+
+partEmotion =
+
+  80×1 <a href="matlab:helpPopup('cell')" style="font-weight:bold">cell</a> array
+
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'HA'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'AN'}
+    {'HA'}
+
+condition
+
+condition = 
+
+  80×1 <a href="matlab:helpPopup('categorical')" style="font-weight:bold">categorical</a> array
+
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+     incongruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     congruent 
+     incongruent 
+     congruent 
+     incongruent 
+
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/020.asc
+regexp(rawText, '\bRATE\s+(\d+(?:\.\d+)?)', 'tokens', 'once')
+
+ans =
+
+  0×0 empty <a href="matlab:helpPopup('cell')" style="font-weight:bold">cell</a> array
+
+regexp(rawText, '\bRATE\s+(\d+(?:\.\d+)?)', 'tokens')
+
+ans =
+
+  0×0 empty <a href="matlab:helpPopup('cell')" style="font-weight:bold">cell</a> array
+
+2*padN + 1
+
+ans =
+
+   301
+
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/020cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 020:
+  preTask baseline:      1282.7602
+  Overall average:      35.4916
+  Congruent average:    33.1893
+  Incongruent average:  37.7940
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_20.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/020_cface_eyeData.csv (52752 samples)
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',18,1)">18  </a>ascDir   = options.paths.eyeASCFiles;
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/22_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/022.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/022cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 022:
+  preTask baseline:      2964.0196
+  Overall average:      336.0454
+  Congruent average:    329.6904
+  Incongruent average:  342.4005
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_22.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/022_cface_eyeData.csv (52751 samples)
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',18,1)">18  </a>ascDir   = options.paths.eyeASCFiles;
+PCNSPupilDataExtract
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 4)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',4,0)">line 4</a>)] 
+No ASCI file found for participants ID 019. Processing next participant
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/20_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/020.asc
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',358,1)">358 </a>end
+peakPupil
+
+peakPupil =
+
+  123.2977
+    2.6296
+   66.1891
+  163.9634
+    0.7481
+   80.0751
+   22.0849
+   57.4882
+   31.8912
+   76.2035
+   38.6689
+   -0.4528
+   56.0831
+   25.5487
+   -1.2245
+   16.4963
+   25.5898
+   74.5779
+   64.3781
+    2.8160
+   46.1064
+   47.7784
+   25.4191
+    0.6136
+   23.1764
+   -1.1466
+    3.2959
+    5.6419
+   53.6256
+  128.4100
+   96.9636
+   23.9027
+   -2.1240
+   16.4618
+   15.7662
+   15.8810
+    4.7418
+   18.5233
+   49.3965
+    0.7941
+   14.5389
+   53.2310
+   12.3823
+   48.9229
+    8.5970
+   -3.9124
+   23.1907
+   34.0014
+   61.9204
+   33.8652
+    6.4798
+    2.5646
+   71.9447
+   30.2447
+   11.7406
+   55.8509
+   36.0042
+   29.2328
+   39.2373
+   23.5011
+   13.9690
+   20.4179
+  111.3737
+   82.8539
+   83.5795
+   20.9909
+   34.4288
+   25.8064
+   55.9712
+   85.3707
+   20.6650
+   33.4821
+   21.9379
+    3.0862
+   26.1212
+    9.6798
+   20.0183
+   48.4308
+    3.9425
+   23.3873
+
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/020cFaceResponseWindow.csv  (rows=276, trials=80)
+{Unrecognized function or variable 'relTime'.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea>plot_and_save', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 535)" style="font-weight:bold">getPupilArea>plot_and_save</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',535,0)">line 535</a>)
+    plot(relTime, winMat(:, idx), 'LineWidth', 1.0);   % one line per selected trial
+         ^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 403)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',403,0)">line 403</a>)
+plot_and_save(allIdx,      'All trials',                   'allTrials');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)
+        [~, cFacePupil] = getPupilArea(currentID);
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+} 
+PCNSPupilDataExtract
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 4)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',4,0)">line 4</a>)] 
+No ASCI file found for participants ID 019. Processing next participant
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/20_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/020.asc
+
+peakPupil =
+
+  123.2977
+    2.6296
+   66.1891
+  163.9634
+    0.7481
+   80.0751
+   22.0849
+   57.4882
+   31.8912
+   76.2035
+   38.6689
+   -0.4528
+   56.0831
+   25.5487
+   -1.2245
+   16.4963
+   25.5898
+   74.5779
+   64.3781
+    2.8160
+   46.1064
+   47.7784
+   25.4191
+    0.6136
+   23.1764
+   -1.1466
+    3.2959
+    5.6419
+   53.6256
+  128.4100
+   96.9636
+   23.9027
+   -2.1240
+   16.4618
+   15.7662
+   15.8810
+    4.7418
+   18.5233
+   49.3965
+    0.7941
+   14.5389
+   53.2310
+   12.3823
+   48.9229
+    8.5970
+   -3.9124
+   23.1907
+   34.0014
+   61.9204
+   33.8652
+    6.4798
+    2.5646
+   71.9447
+   30.2447
+   11.7406
+   55.8509
+   36.0042
+   29.2328
+   39.2373
+   23.5011
+   13.9690
+   20.4179
+  111.3737
+   82.8539
+   83.5795
+   20.9909
+   34.4288
+   25.8064
+   55.9712
+   85.3707
+   20.6650
+   33.4821
+   21.9379
+    3.0862
+   26.1212
+    9.6798
+   20.0183
+   48.4308
+    3.9425
+   23.3873
+
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/020cFaceResponseWindow.csv  (rows=276, trials=80)
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',531,1)">531 </a>    if isempty(idx), return; end
+{Unrecognized function or variable 'relTime'.
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea>plot_and_save', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 535)" style="font-weight:bold">getPupilArea>plot_and_save</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',535,0)">line 535</a>)
+    plot(relTime, winMat(:, idx), 'LineWidth', 1.0);   % one line per selected trial
+         ^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 403)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',403,0)">line 403</a>)
+plot_and_save(allIdx,      'All trials',                   'allTrials');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)
+        [~, cFacePupil] = getPupilArea(currentID);
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+} 
+PCNSPupilDataExtract
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 4)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',4,0)">line 4</a>)] 
+No ASCI file found for participants ID 019. Processing next participant
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/20_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/020.asc
+
+peakPupil =
+
+  123.2977
+    2.6296
+   66.1891
+  163.9634
+    0.7481
+   80.0751
+   22.0849
+   57.4882
+   31.8912
+   76.2035
+   38.6689
+   -0.4528
+   56.0831
+   25.5487
+   -1.2245
+   16.4963
+   25.5898
+   74.5779
+   64.3781
+    2.8160
+   46.1064
+   47.7784
+   25.4191
+    0.6136
+   23.1764
+   -1.1466
+    3.2959
+    5.6419
+   53.6256
+  128.4100
+   96.9636
+   23.9027
+   -2.1240
+   16.4618
+   15.7662
+   15.8810
+    4.7418
+   18.5233
+   49.3965
+    0.7941
+   14.5389
+   53.2310
+   12.3823
+   48.9229
+    8.5970
+   -3.9124
+   23.1907
+   34.0014
+   61.9204
+   33.8652
+    6.4798
+    2.5646
+   71.9447
+   30.2447
+   11.7406
+   55.8509
+   36.0042
+   29.2328
+   39.2373
+   23.5011
+   13.9690
+   20.4179
+  111.3737
+   82.8539
+   83.5795
+   20.9909
+   34.4288
+   25.8064
+   55.9712
+   85.3707
+   20.6650
+   33.4821
+   21.9379
+    3.0862
+   26.1212
+    9.6798
+   20.0183
+   48.4308
+    3.9425
+   23.3873
+
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/020cFaceResponseWindow.csv  (rows=276, trials=80)
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',531,1)">531 </a>    if isempty(idx), return; end
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',549,1)">549 </a>    close(f);
+<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',478,1)">478 </a>cFacePupil = struct();
+[allTrialPeaks peakPupil]
+{Error using <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('horzcat')" style="font-weight:bold">horzcat</a>
+Dimensions of arrays being concatenated are not consistent.
+} 
+peakPupil(1:10)
+
+ans =
+
+  123.2977
+    2.6296
+   66.1891
+  163.9634
+    0.7481
+   80.0751
+   22.0849
+   57.4882
+   31.8912
+   76.2035
+
+allTrialPeaks(1:10)
+
+ans =
+
+  123.2977    2.6296   66.1891  163.9634    0.7481   80.0751   22.0849   57.4882   31.8912   76.2035
+
+PCNSPupilDataExtract
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 4)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',4,0)">line 4</a>)] 
+No ASCI file found for participants ID 019. Processing next participant
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/20_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/020.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/020cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 020:
+  preTask baseline:      1282.7602
+  Overall average:      35.4916
+  Congruent average:    33.1893
+  Incongruent average:  37.7940
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_20.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/020_cface_eyeData.csv (52752 samples)
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/22_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/022.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/022cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 022:
+  preTask baseline:      2964.0196
+  Overall average:      336.0454
+  Congruent average:    329.6904
+  Incongruent average:  342.4005
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_22.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/022_cface_eyeData.csv (52751 samples)
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/24_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/024.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/024cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 024:
+  preTask baseline:      1754.2180
+  Overall average:      232.2203
+  Congruent average:    237.4762
+  Incongruent average:  226.9644
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_24.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/024_cface_eyeData.csv (52751 samples)
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/25_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/025.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/025cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 025:
+  preTask baseline:      2769.3435
+  Overall average:      1052.8840
+  Congruent average:    938.5975
+  Incongruent average:  1167.1705
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_25.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/025_cface_eyeData.csv (52752 samples)
+No ASCI file found for participants ID 026. Processing next participant
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/28_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/028.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/028cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 028:
+  preTask baseline:      2882.3889
+  Overall average:      249.3839
+  Congruent average:    195.1671
+  Incongruent average:  303.6008
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_28.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/028_cface_eyeData.csv (52752 samples)
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/29_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/029.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/029cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 029:
+  preTask baseline:      1227.2183
+  Overall average:      67.5736
+  Congruent average:    57.9341
+  Incongruent average:  77.2130
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_29.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/029_cface_eyeData.csv (52752 samples)
+No ASCI file found for participants ID 030. Processing next participant
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating variable names for the table. The
+original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+[Warning: Could not save segmentsTable: Unable to open file
+'/Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/TrialTimings/31_cface_TrialSegments.csv' for writing:
+
+No such file or directory] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 133)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',133,0)">line 133</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+Processing ASC: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/raw/EDFtoASC/031.asc
+Saved window table: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/031cFaceResponseWindow.csv  (rows=276, trials=80)
+Peak pupil summary for participant 031:
+  preTask baseline:      551.3753
+  Overall average:      26.9800
+  Congruent average:    28.1765
+  Incongruent average:  25.7835
+  (See cFacePupil.allTrialPeaks for trial-wise values)
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/plots/eyeDataPlots/pupil_plot_31.fig
+Saved: /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/eyeData/031_cface_eyeData.csv (52750 samples)
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 17)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',17,0)">line 17</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+[Warning: Directory already exists.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('specifyOptions', '/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m', 72)" style="font-weight:bold">specifyOptions</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/specifyOptions.m',72,0)">line 72</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 24)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',24,0)">line 24</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)] 
+{Error using <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('cFaceTrialSegments', '/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m', 43)" style="font-weight:bold">cFaceTrialSegments</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/cFaceTrialSegments.m',43,0)">line 43</a>)
+No matching participant folder found for "032" under /Volumes/Samsung_T5/SNG/projects/PCNS/IncongruentFaces/physio_paper/data/
+
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('getPupilArea', '/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m', 23)" style="font-weight:bold">getPupilArea</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/getPupilArea.m',23,0)">line 23</a>)
+segmentsTable = cFaceTrialSegments(participantID);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('PCNSPupilDataExtract', '/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m', 28)" style="font-weight:bold">PCNSPupilDataExtract</a> (<a href="matlab: opentoline('/Users/kwellste/projects/PCNS/cFaceAnalysis/PCNSPupilDataExtract.m',28,0)">line 28</a>)
+        [~, cFacePupil] = getPupilArea(currentID);
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+} 
