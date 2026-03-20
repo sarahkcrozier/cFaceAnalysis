@@ -39,7 +39,7 @@ folderPath = fullfile(options.paths.rawData, folderName);
 disp(['Using folder: ', folderName]);
 
 %% ---- STEP 1: Locate timings (baseline + post-task) ----
-filePattern   = [folderPath,filesep, 'beh',filesep, 'cface*MH*out.csv'];
+filePattern   = fullfile(folderPath, 'beh', 'cface*MH*', '*out.csv');
 summaryFile   = dir(filePattern);
 if isempty(summaryFile)
     warning('No *out.csv found for %s.', IDstring);
@@ -78,7 +78,7 @@ postTaskTimingStart = postTaskStart;
 postTaskTimingEnd   = postTaskEnd;
 
 %% ---- STEP 2 (inline): read PPG, high-pass, detect & clean beats ----
-ppgFilePattern = [folderPath,filesep, 'beh',filesep, 'cface*MH*ppg.csv'];
+ppgFilePattern = fullfile(folderPath, 'beh', 'cface*MH*', '*ppg.csv');
 ppgFile = dir(ppgFilePattern);
 if isempty(ppgFile)
     warning('No PPG file found for participant %s.', IDstring);
@@ -553,6 +553,8 @@ if ~isempty(postIdx)
     post3_vals = PPI(takePost);
     post3_mean = mean(post3_vals, 'omitnan');
     nPost = sum(~isnan(post3_vals));
+else 
+    post3_vals = [NaN, NaN, NaN]
 end
 
 % ----- Differences

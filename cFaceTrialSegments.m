@@ -46,7 +46,7 @@ folderName = names{find(hits,1)};
 folderPath = fullfile(options.paths.rawData, folderName);
 
 % Find the *out.csv file
-filePattern   = [folderPath,filesep, 'beh',filesep, 'cface*MH*out.csv'];
+filePattern   = fullfile(folderPath, 'beh', 'cface*MH*', '*out.csv');
 summaryFile   = dir(filePattern);
 if isempty(summaryFile)
     warning('No *out.csv found for %s.', IDstring);

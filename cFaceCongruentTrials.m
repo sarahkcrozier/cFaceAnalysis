@@ -23,7 +23,7 @@ folderName = folderNames{find(matchIdx, 1)};
 folderPath = fullfile(options.paths.rawData, folderName);
     
 % Locate summary file
-summaryFile = dir([folderPath,filesep,'beh',filesep,'cface*MH*out.csv']);
+summaryFile = dir(fullfile(folderPath, 'beh', 'cface*MH*', '*out.csv'));
 if isempty(summaryFile)
     error('No summary file found for participant %s.', IDstring);
 end

@@ -37,8 +37,8 @@ elseif strcmp(user,'yamaan')
     options.paths.data2   = [options.paths.data,'cFaceData/']; % the logic of why there is this subfolder is not clear to me. I just added this here for now to make that work
     options.paths.plots   = ['/Users/yamaan/Projects/',options.study.acronym,'/cFaceAnalysis/'];
 
-elseif strcmp(user,'Sarah') % TO COMPLETE for MAXXI with user Sarah
-    options.paths.rawData = '/Volumes/PCNS/Data/Data_raw/together';
+elseif strcmp(user,'sarah') % TO COMPLETE for MAXXI with user Sarah
+    options.paths.rawData = '/Volumes/NEWYSNG/PCNS/Data/Data_raw/together';
     options.paths.data    = '/Volumes/Scratch/Sarah/PCNS/Data/';
     options.paths.data2   = [options.paths.data,'cFaceData/'];
     options.paths.plots   = '/Volumes/Scratch/Sarah/PCNS/cFaceAnalysis/';
