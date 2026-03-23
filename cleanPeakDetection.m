@@ -55,6 +55,7 @@ upperBound  = (max(abs(highpassedSignal))-median(abs(highpassedSignal)))/2;
 signalOK    = find(peakAmpDiff);
 signalNotOK = [];
 bigUpwardOutlier = [];
+peakTooLow = [];
 
 % find identified peaks that appear at amplitudes that are clearly too
 % low while preserving peaks coming after large outliers due to
@@ -64,45 +65,54 @@ if ~isempty(find(peakAmpDiff>upperBound,1))
     bigDownwardOutlier = find(peakAmpDiff<0-upperBound);
 
     if ~isempty(bigDownwardOutlier)
-      if  any(peakAmpDiff(bigUpwardOutlier) > 2*median(highpassedSignal(peakIdx)))
-        if numel(bigUpwardOutlier)>numel(bigDownwardOutlier)
-            fillers = zeros(numel(bigUpwardOutlier)-numel(bigDownwardOutlier),1);
-            bigDownwardOutlier = [bigDownwardOutlier;fillers];
+        if  any(peakAmpDiff(bigUpwardOutlier) > 2*median(highpassedSignal(peakIdx)))
+            if numel(bigUpwardOutlier)>numel(bigDownwardOutlier)
+                fillers = zeros(numel(bigUpwardOutlier)-numel(bigDownwardOutlier),1);
+                bigDownwardOutlier = [bigDownwardOutlier;fillers];
 
-        elseif numel(bigUpwardOutlier)<numel(bigDownwardOutlier)
-            fillers = zeros(numel(bigDownwardOutlier)-numel(bigUpwardOutlier),1);
-            bigUpwardOutlier = [bigUpwardOutlier;fillers];
+            elseif numel(bigUpwardOutlier)<numel(bigDownwardOutlier)
+                fillers = zeros(numel(bigDownwardOutlier)-numel(bigUpwardOutlier),1);
+                bigUpwardOutlier = [bigUpwardOutlier;fillers];
 
-        end
+            end
             consecutive = bigDownwardOutlier-bigUpwardOutlier;
 
-            if any(consecutive ==1)
+            if any(abs(consecutive) ==1)
                 signalNotOK = find(peakAmpDiff<0-upperBound);
+                consecutive = abs(consecutive);
                 i = consecutive ==1;
                 if ~isempty(i)
-                    consecutiveOutlier = bigDownwardOutlier(i);
-                    [~,idx] = intersect(signalNotOK,consecutiveOutlier);
-                    signalNotOK(idx)=[];
+                    consecutiveOutlier = bigUpwardOutlier(i);
+                    signalNotOK = unique(sort([signalNotOK+1;consecutiveOutlier]));
                 end
             else
-                signalNotOK = bigDownwardOutlier;
+                peakTooLow = find(highpassedSignal(peakIdx)<=quantile(highpassedSignal,0.34));
+                bigDownwardOutlier = bigDownwardOutlier+1;
+                signalNotOK = unique(sort([bigDownwardOutlier;peakTooLow]));
             end
         else
-            signalNotOK = bigDownwardOutlier;
+            peakTooLow = find(highpassedSignal(peakIdx)<=quantile(highpassedSignal,0.34));
+            bigDownwardOutlier = bigDownwardOutlier+1;
+            signalNotOK = unique(sort([bigDownwardOutlier;peakTooLow]));
         end
+            peakTooLow = find(highpassedSignal(peakIdx)<=median(highpassedSignal)/3);
+            signalNotOK = unique(sort([signalNotOK;peakTooLow]));
+    else
+        peakTooLow = find(highpassedSignal(peakIdx)<median(highpassedSignal)/3);
+        signalNotOK = unique([signalNotOK;peakTooLow]);
+
     end
 end
+
+
+
 if ~isempty(signalNotOK)
     signalNotOK(signalNotOK==0)=[];
-    signalOK(signalNotOK) = [];
-    signalNotOK = signalNotOK+1;
+    idx = intersect(signalOK,signalNotOK);
+    signalOK(idx) = []; 
 else
     signalNotOK =[];
 end
-
-signalOK = signalOK+1;
-signalOK = [1; signalOK];
-signalOK(end) = []; % delete last index because edges are prone to erroneous detection
 
 % plot new peaks
 hold on
