@@ -1,4 +1,4 @@
-function [PPI, intervalOK, peakIdx, ampOutliers] = cleanPeakDetection(peakTimes,peakIdx,highpassedSignal)
+function [peakOK, peakIdx, ampOutliers] = cleanPeakDetection(peakTimes,peakIdx,highpassedSignal)
 % cleanPPI - Identifies artifacts but returns FULL list of peaks
 % and a PPI vector where artifacts are NaNs. This prevents "merging" gaps.
 
@@ -141,7 +141,5 @@ end
 % 5. REPLACE bad intervals with NaN (Do NOT remove peaks)
 % replace PPIs and peakIds after an outlier interval with NaN
 peakOK = intersect(intervalOK,signalOK);
-PPI(~peakOK) = NaN;
-peakIdx     = peakIdx(peakOK);
 ampOutliers = signalNotOK;
 end

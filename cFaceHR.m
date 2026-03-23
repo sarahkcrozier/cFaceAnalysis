@@ -39,44 +39,44 @@ folderPath = fullfile(options.paths.rawData, folderName);
 disp(['Using folder: ', folderName]);
 
 %% ---- STEP 1: Locate timings (baseline + post-task) ----
-% filePattern   = fullfile(folderPath, 'beh', 'cface*MH*', '*out.csv');
-% summaryFile   = dir(filePattern);
-% if isempty(summaryFile)
-%     warning('No *out.csv found for %s.', IDstring);
-%     return
-% end
-% summaryFilePath = fullfile(summaryFile.folder, summaryFile.name);
-% 
-% opts = detectImportOptions(summaryFilePath);
-% % these columns must exist in the CSV
-% opts.SelectedVariableNames = {'instruct_onset','instruct_duration', ...
-%     'postinstruct_onset','fixation_onset','fixation_duration'};
-% segmentsTable = readtable(summaryFilePath, opts);
-% 
-% % Add sequential trial numbers based on row order (1..N)
-% if ~ismember('trialNo', segmentsTable.Properties.VariableNames)
-%     segmentsTable.trialNo = (1:height(segmentsTable)).';
-% end
-% 
-% % Baseline timing (first instruct onset, with guard for 0)
-% if segmentsTable.instruct_onset(1) == 0
-%     if segmentsTable.postinstruct_onset(1) == 0
-%         baselineTiming = 10; % fallback
-%     else
-%         baselineTiming = segmentsTable.postinstruct_onset(1) - segmentsTable.instruct_duration(1);
-%     end
-% else
-%     baselineTiming = segmentsTable.instruct_onset(1);
-% end
+filePattern   = fullfile([folderPath,filesep,'beh',filesep,'cface*MH*out.csv']);
+summaryFile   = dir(filePattern);
+if isempty(summaryFile)
+    warning('No *out.csv found for %s.', IDstring);
+    return
+end
+summaryFilePath = fullfile(summaryFile.folder, summaryFile.name);
+
+opts = detectImportOptions(summaryFilePath);
+% these columns must exist in the CSV
+opts.SelectedVariableNames = {'instruct_onset','instruct_duration', ...
+    'postinstruct_onset','fixation_onset','fixation_duration'};
+segmentsTable = readtable(summaryFilePath, opts);
+
+% Add sequential trial numbers based on row order (1..N)
+if ~ismember('trialNo', segmentsTable.Properties.VariableNames)
+    segmentsTable.trialNo = (1:height(segmentsTable)).';
+end
+
+% Baseline timing (first instruct onset, with guard for 0)
+if segmentsTable.instruct_onset(1) == 0
+    if segmentsTable.postinstruct_onset(1) == 0
+        baselineTiming = 10; % fallback
+    else
+        baselineTiming = segmentsTable.postinstruct_onset(1) - segmentsTable.instruct_duration(1);
+    end
+else
+    baselineTiming = segmentsTable.instruct_onset(1);
+end
 
 % Post-task: last 10 s of the block, based on the final fixation row
 % This computes the pre and post task HR stuff
-% lastIdx = height(segmentsTable);
-% postTaskEnd   = segmentsTable.fixation_onset(lastIdx) + segmentsTable.fixation_duration(lastIdx);
-% postTaskStart = max(0, postTaskEnd - 10); % not sure what this does?
-% postTaskTimingStart = postTaskStart;
-% postTaskTimingEnd   = postTaskEnd;
-% 
+lastIdx = height(segmentsTable);
+postTaskEnd   = segmentsTable.fixation_onset(lastIdx) + segmentsTable.fixation_duration(lastIdx);
+postTaskStart = max(0, postTaskEnd - 10); % not sure what this does?
+postTaskTimingStart = postTaskStart;
+postTaskTimingEnd   = postTaskEnd;
+
 % %% ---- STEP 2 (inline): read PPG, high-pass, detect & clean beats ----
 ppgFilePattern = fullfile([folderPath,filesep,'beh',filesep,'cface*MH*ppg.csv']);
 ppgFile = dir(ppgFilePattern);
@@ -124,14 +124,9 @@ peakTimes = unique(time(peakIdx));
 
 % --- (4) artifact handling in interval domain
 % Returns full peakTimes and a PPI vector with NaNs for bad intervals
-[PPI, intervalOK, peakIdx, ampOutliers] = cleanPeakDetection(peakTimes,peakIdx,highpassedSignal);
+[peakOK, peakIdx, peakNotOK] = cleanPeakDetection(peakTimes,peakIdx,highpassedSignal);
 
-peakTimes = unique(time(peakIdx)); % update with new peakIds
-
-% ---- Rolling HR for 5 s windows (for trial means) ----
-rollingWindowSec = 5.0;
-% Updated: Pass the cleaned PPI vector so rolling HR ignores the gaps
-HRrolling5 = computeHRrolling(peakTimes, time, rollingWindowSec, PPI);
+[deletePeaks, addPeaks] = correctManuallyDetectedPeaks(IDstring);
 
 % Save .fig
 filename = sprintf('cFaceRawPlot_%s.fig', IDstring);
@@ -140,6 +135,32 @@ saveas(fig, fullfile(options.paths.plots, filename));
 filename = sprintf('cFaceRawPlot_%s.png', IDstring);
 saveas(fig, fullfile(options.paths.plots, filename),'png');
 close(fig);
+
+peakOK(deletePeaks)=[];
+peakOK  = sort([peakOK;peakNotOK(addPeaks)]);
+peakIdx = peakIdx(peakOK);
+
+% plot only indentified peaks
+fig=figure;
+plot(highpassedSignal);
+hold on
+plot(peakIdx,highpassedSignal(peakIdx),'Marker','o');
+
+% Save .fig
+filename = sprintf('cFaceFinalPeaksPlot_%s.fig', IDstring);
+saveas(fig, fullfile(options.paths.plots, filename));
+% Save .png
+filename = sprintf('cFaceFinalPeaksPlot_%s.png', IDstring);
+saveas(fig, fullfile(options.paths.plots, filename),'png');
+close(fig);
+
+peakTimes = unique(time(peakIdx)); % update with new peakIds
+PPI       = diff(peakTimes);
+
+% ---- Rolling HR for 5 s windows (for trial means) ----
+rollingWindowSec = 5.0;
+% Updated: Pass the cleaned PPI vector so rolling HR ignores the gaps
+HRrolling5 = computeHRrolling(peakTimes, time, rollingWindowSec, PPI);
 
 % ---- Baseline HR (from clean peaks) ----
 % Find intervals where the END of the interval is before the baseline timing
